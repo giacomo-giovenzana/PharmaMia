@@ -34,6 +34,7 @@ export interface Database {
           created_at?: string
           updated_at?: string
         }
+        Relationships: []
       }
       household_members: {
         Row: {
@@ -57,6 +58,7 @@ export interface Database {
           role?: HouseholdRole
           joined_at?: string
         }
+        Relationships: []
       }
       drugs_catalog: {
         Row: {
@@ -104,6 +106,7 @@ export interface Database {
           requires_prescription?: boolean
           created_at?: string
         }
+        Relationships: []
       }
       medications: {
         Row: {
@@ -151,6 +154,7 @@ export interface Database {
           created_at?: string
           updated_at?: string
         }
+        Relationships: []
       }
       therapies: {
         Row: {
@@ -201,6 +205,7 @@ export interface Database {
           created_at?: string
           updated_at?: string
         }
+        Relationships: []
       }
     }
     Views: Record<string, never>

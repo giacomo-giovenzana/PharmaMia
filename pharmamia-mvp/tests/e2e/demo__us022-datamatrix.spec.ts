@@ -103,7 +103,7 @@ test('Demo US-022: DataMatrix farmaco noto → form pre-compilato → scheda con
 
   // Form pre-compilato — scadenza, nome, lotto
   await expect(page.getByText('Conferma farmaco')).toBeVisible()
-  await expect(page.getByLabelText(/nome \*/i)).toHaveValue('ASPIRINA 500 mg COMPRESSE')
+  await expect(page.getByLabel(/nome \*/i)).toHaveValue('ASPIRINA 500 mg COMPRESSE')
   await expect(page.locator('#mf-expires')).toHaveValue('2027-03-31')
   await expect(page.locator('#mf-lot')).toHaveValue(LOT)
   await expect(page.locator('#mf-serial')).toHaveValue(SERIAL)
