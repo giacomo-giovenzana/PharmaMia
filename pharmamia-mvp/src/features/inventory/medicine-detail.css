@@ -1,0 +1,332 @@
+/* ============================================================
+   US-009 — MedicineDetailPage styles
+   ============================================================ */
+
+/* Screen container */
+.md-screen {
+  min-height: 100svh;
+  background: var(--c-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----- Topbar ----- */
+.md-topbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: var(--top-h);
+  padding: 28px 20px 8px;
+  background: var(--c-surface);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.md-topbar-back {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-2);
+  background: var(--c-surface-2);
+  flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.md-topbar-back:hover {
+  background: var(--c-surface-3);
+}
+
+.md-topbar-title {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--c-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.md-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.md-topbar-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-2);
+  background: var(--c-surface-2);
+  border: none;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+
+.md-topbar-icon-btn:hover {
+  background: var(--c-primary-lt);
+  color: var(--c-primary);
+}
+
+/* ----- Scrollable body ----- */
+.md-body {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 100px;
+}
+
+/* ----- Hero section ----- */
+.md-hero {
+  background: linear-gradient(160deg, var(--c-primary-lt) 0%, var(--c-bg) 100%);
+  padding: 24px 20px 20px;
+}
+
+.md-hero-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--c-primary);
+  border-radius: var(--r-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--sh-primary);
+  margin-bottom: 14px;
+  color: #fff;
+}
+
+.md-hero-name {
+  font-family: var(--f-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--c-text);
+  margin-bottom: 4px;
+}
+
+.md-hero-sub {
+  font-size: .8rem;
+  color: var(--c-text-3);
+}
+
+/* ----- Expiry status banner ----- */
+.md-expiry-banner {
+  margin: 16px 20px 0;
+  border-radius: var(--r-lg);
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--sh-sm);
+}
+
+.md-expiry-banner.ok {
+  background: var(--c-ok-lt);
+  border: 1px solid rgba(22, 163, 74, .18);
+}
+
+.md-expiry-banner.warning {
+  background: var(--c-warning-lt);
+  border: 1px solid rgba(217, 119, 6, .18);
+}
+
+.md-expiry-banner.danger {
+  background: var(--c-danger-lt);
+  border: 1px solid rgba(214, 78, 78, .18);
+}
+
+.md-expiry-banner-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-md);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.md-expiry-banner.ok .md-expiry-banner-icon    { background: var(--c-ok); }
+.md-expiry-banner.warning .md-expiry-banner-icon { background: var(--c-warning); }
+.md-expiry-banner.danger .md-expiry-banner-icon  { background: var(--c-danger); }
+
+.md-expiry-banner-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.md-expiry-banner-label {
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: 2px;
+}
+
+.md-expiry-banner.ok .md-expiry-banner-label      { color: var(--c-ok); }
+.md-expiry-banner.warning .md-expiry-banner-label  { color: var(--c-warning); }
+.md-expiry-banner.danger .md-expiry-banner-label   { color: var(--c-danger); }
+
+.md-expiry-banner-date {
+  font-family: var(--f-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--c-text);
+  line-height: 1.2;
+}
+
+.md-expiry-banner-note {
+  font-size: .72rem;
+  color: var(--c-text-2);
+  margin-top: 2px;
+}
+
+/* ----- Info grid (quantity + location tiles) ----- */
+.md-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 16px 20px 0;
+}
+
+.md-info-tile {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  padding: 16px;
+  box-shadow: var(--sh-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.md-info-tile-head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--c-text-3);
+}
+
+.md-info-tile-head svg {
+  color: var(--c-primary);
+}
+
+.md-info-tile-val {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--c-text);
+  line-height: 1.05;
+}
+
+.md-info-tile-unit {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--c-text-3);
+}
+
+.md-info-tile-text {
+  font-family: var(--f-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--c-text);
+  line-height: 1.25;
+}
+
+.md-info-tile-text.muted {
+  font-family: var(--f-body);
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--c-text-3);
+  font-style: italic;
+}
+
+/* ----- Detail rows list ----- */
+.md-detail-list {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-sm);
+  margin: 12px 20px 0;
+  padding: 4px 16px;
+}
+
+.md-detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.md-detail-row:last-child {
+  border-bottom: none;
+}
+
+.md-detail-row-key {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: .8rem;
+  color: var(--c-text-2);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.md-detail-row-key svg {
+  color: var(--c-text-3);
+  flex-shrink: 0;
+}
+
+.md-detail-row-val {
+  font-size: .84rem;
+  font-weight: 700;
+  color: var(--c-text);
+  text-align: right;
+}
+
+/* ----- Footer bar ----- */
+.md-footer {
+  padding: 16px 20px 24px;
+  background: var(--c-surface);
+  border-top: 1px solid var(--c-border);
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* ----- Badges ----- */
+.md-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+.md-badge-warning {
+  background: var(--c-warning-lt);
+  color: var(--c-warning);
+  border: 1px solid rgba(217, 119, 6, .2);
+}
+
+.md-badge-danger {
+  background: var(--c-danger-lt);
+  color: var(--c-danger);
+  border: 1px solid rgba(214, 78, 78, .2);
+}

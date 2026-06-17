@@ -1,6 +1,6 @@
 import { defineConfig, devices } from '@playwright/test'
 
-const outputDir = process.env.E2E_OUTPUT_DIR ?? 'docs/test-results/US-007'
+const outputDir = process.env.E2E_OUTPUT_DIR ?? 'docs/test-results/US-009'
 
 export default defineConfig({
   testDir: 'tests/e2e',

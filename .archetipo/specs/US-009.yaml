@@ -6,7 +6,7 @@ epic:
   title: Inventario Farmaci
 priority: HIGH
 points: 2
-status: PLANNED
+status: REVIEW
 blocked_by:
   - US-007
 scope: MVP

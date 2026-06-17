@@ -7,6 +7,7 @@ import { VerifyEmailPage } from '@features/auth/VerifyEmailPage'
 import { HomePage } from '@features/home/HomePage'
 import { ScanPage } from '@features/scanning/ScanPage'
 import { MedicineFormPage } from '@features/inventory/MedicineFormPage'
+import { MedicineDetailPage } from '@features/inventory/MedicineDetailPage'
 
 function App() {
   return (
@@ -33,6 +34,22 @@ function App() {
       />
       <Route
         path="/medicine/new"
+        element={
+          <ProtectedRoute>
+            <MedicineFormPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/medicine/:id"
+        element={
+          <ProtectedRoute>
+            <MedicineDetailPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/medicine/:id/edit"
         element={
           <ProtectedRoute>
             <MedicineFormPage />

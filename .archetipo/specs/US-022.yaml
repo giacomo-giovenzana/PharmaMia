@@ -1,0 +1,32 @@
+schema: archetipo/spec/v2
+code: US-022
+title: Lettura unificata barcode + DataMatrix con auto-compilazione di scadenza, lotto e seriale
+epic:
+  code: EP-002
+  title: Inventario Farmaci
+priority: HIGH
+points: 5
+status: REVIEW
+body: |-
+  #### US-022: Lettura unificata barcode + DataMatrix con auto-compilazione di scadenza, lotto e seriale
+
+  **Epica:** EP-002 | **Priorità:** HIGH | **Punti:** 5 | **Stato:** TODO
+  **Bloccato da:** US-007
+
+  **User Story**
+  In qualità di Giulia (caregiver di famiglia),
+  voglio poter inquadrare con la fotocamera sia il codice a barre sia il DataMatrix (2D) della confezione,
+  così che oltre a nome e principio attivo venga riconosciuta e compilata in automatico anche la data di scadenza, senza doverla leggere e digitare a mano.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, Giulia tocca "Aggiungi farmaco", punta la fotocamera sulla confezione e — indifferentemente da un barcode EAN o da un DataMatrix — l'app riconosce il codice; con il DataMatrix vede il form pre-compilato con scadenza, lotto e seriale (oltre a nome/principio attivo se il prodotto è nel DB AIFA) e, confermando, il farmaco entra nell'inventario con la scadenza già valorizzata.
+
+  **Criteri di Accettazione**
+  - [ ] Una singola inquadratura della fotocamera riconosce automaticamente sia i codici lineari (EAN/AIC) sia i `data_matrix`, senza che l'utente debba selezionare manualmente la modalità
+  - [ ] La scansione usa `BarcodeDetector` con i formati lineare e `data_matrix` abilitati, mantenendo il fallback su `@zxing/library` (che legge entrambi i tipi) quando l'API non è disponibile
+  - [ ] Dal contenuto del DataMatrix vengono estratti tramite parsing GS1 (Application Identifier): data di scadenza (AI 17), numero di lotto (AI 10), numero seriale (AI 21) e codice prodotto (AIC/GTIN, es. AI 01/710)
+  - [ ] La data di scadenza letta dal DataMatrix viene auto-compilata nel campo scadenza del form di inserimento, in formato coerente con US-009
+  - [ ] Numero di lotto e numero seriale vengono salvati con il farmaco nell'inventario e mostrati nel dettaglio del farmaco
+  - [ ] Il codice prodotto del DataMatrix viene cercato nel DB AIFA per pre-compilare nome, principio attivo e formato come in US-007
+  - [ ] Se il prodotto non è presente nel DB AIFA, scadenza, lotto e seriale restano comunque pre-compilati e l'utente completa manualmente i campi mancanti prima di salvare
+  - [ ] Se il DataMatrix è illeggibile o non contiene i campi GS1 attesi, l'utente vede un messaggio chiaro e può riprovare la scansione o passare all'inserimento manuale

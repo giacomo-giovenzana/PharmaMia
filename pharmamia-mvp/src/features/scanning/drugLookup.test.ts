@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { lookupByCode } from './drugLookup'
+import { lookupByCode, lookupByGs1 } from './drugLookup'
 import { catalogToDraft } from '@domain/medicationDraft'
 import type { DrugCatalogEntry } from './drugLookup'
 
@@ -63,6 +63,53 @@ describe('lookupByCode', () => {
 
     const result = await lookupByCode('0000000')
 
+    expect(result).toBeNull()
+  })
+})
+
+describe('lookupByGs1', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+  })
+
+  it('normalizza GTIN-14 in EAN-13 e cerca per ean_code', async () => {
+    maybeSingleMock.mockResolvedValueOnce({ data: baseEntry })
+
+    const result = await lookupByGs1({ gtin: '08001234567890' })
+
+    expect(result).toEqual(baseEntry)
+  })
+
+  it('fallback su aic quando EAN non trova nulla', async () => {
+    maybeSingleMock
+      .mockResolvedValueOnce({ data: null })   // EAN miss
+      .mockResolvedValueOnce({ data: baseEntry }) // AIC hit
+
+    const result = await lookupByGs1({ gtin: '08001234567890', aic: '012345678' })
+
+    expect(result).toEqual(baseEntry)
+  })
+
+  it('cerca direttamente per aic se gtin non è presente', async () => {
+    maybeSingleMock.mockResolvedValueOnce({ data: baseEntry })
+
+    const result = await lookupByGs1({ aic: '012345678' })
+
+    expect(result).toEqual(baseEntry)
+  })
+
+  it('restituisce null se né GTIN né AIC trovano risultati', async () => {
+    maybeSingleMock
+      .mockResolvedValueOnce({ data: null })
+      .mockResolvedValueOnce({ data: null })
+
+    const result = await lookupByGs1({ gtin: '00000000000000', aic: '000000000' })
+
+    expect(result).toBeNull()
+  })
+
+  it('restituisce null se chiamato senza argomenti', async () => {
+    const result = await lookupByGs1({})
     expect(result).toBeNull()
   })
 })

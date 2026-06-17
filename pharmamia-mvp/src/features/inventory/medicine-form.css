@@ -133,6 +133,19 @@
   border-color: var(--c-primary-lt);
 }
 
+.mf-field-error {
+  display: block;
+  margin-top: 4px;
+  font-size: .76rem;
+  color: var(--c-danger);
+  font-weight: 500;
+}
+
+.input-error {
+  border-color: var(--c-danger) !important;
+  outline-color: var(--c-danger);
+}
+
 .mf-error-banner {
   margin: 0 20px 16px;
   background: var(--c-danger-lt);

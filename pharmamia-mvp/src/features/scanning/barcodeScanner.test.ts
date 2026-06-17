@@ -36,9 +36,24 @@ describe('selectBarcodeBackend', () => {
 })
 
 describe('scanWithNative', () => {
+  it('contiene "data_matrix" tra i formati del detector nativo', async () => {
+    let capturedFormats: string[] = []
+    class FakeBarcodeDetector {
+      constructor(opts: { formats: string[] }) {
+        capturedFormats = opts.formats
+      }
+      detect = vi.fn().mockResolvedValue([])
+    }
+    vi.stubGlobal('BarcodeDetector', FakeBarcodeDetector)
+    const videoEl = document.createElement('video')
+    await scanWithNative(videoEl)
+    expect(capturedFormats).toContain('data_matrix')
+  })
+
   it('restituisce il rawValue quando vengono rilevati codici a barre', async () => {
     const fakeDetect = vi.fn().mockResolvedValue([{ rawValue: '1234567890123' }])
     class FakeBarcodeDetector {
+      constructor(_opts: { formats: string[] }) {}
       detect = fakeDetect
     }
     vi.stubGlobal('BarcodeDetector', FakeBarcodeDetector)
@@ -53,6 +68,7 @@ describe('scanWithNative', () => {
   it('restituisce null quando non vengono trovati codici a barre', async () => {
     const fakeDetect = vi.fn().mockResolvedValue([])
     class FakeBarcodeDetector {
+      constructor(_opts: { formats: string[] }) {}
       detect = fakeDetect
     }
     vi.stubGlobal('BarcodeDetector', FakeBarcodeDetector)

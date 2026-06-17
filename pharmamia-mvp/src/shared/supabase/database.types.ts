@@ -116,6 +116,8 @@ export interface Database {
           expires_at: string | null
           location: string | null
           notes: string | null
+          lot: string | null
+          serial: string | null
           created_at: string
           updated_at: string
         }
@@ -129,6 +131,8 @@ export interface Database {
           expires_at?: string | null
           location?: string | null
           notes?: string | null
+          lot?: string | null
+          serial?: string | null
           created_at?: string
           updated_at?: string
         }
@@ -142,6 +146,8 @@ export interface Database {
           expires_at?: string | null
           location?: string | null
           notes?: string | null
+          lot?: string | null
+          serial?: string | null
           created_at?: string
           updated_at?: string
         }

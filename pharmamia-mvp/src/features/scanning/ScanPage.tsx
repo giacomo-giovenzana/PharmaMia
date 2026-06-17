@@ -1,13 +1,17 @@
 import { useCallback, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useBarcodeScanner, type ScanError } from './useBarcodeScanner'
-import { lookupByCode, type DrugCatalogEntry } from './drugLookup'
+import { lookupByCode, lookupByGs1, type DrugCatalogEntry } from './drugLookup'
+import { parseGs1 } from '@domain/gs1'
 import './scan.css'
+
+type Gs1Prefill = { expiresAt?: string; lot?: string; serial?: string }
 
 type SheetState =
   | { type: 'hidden' }
-  | { type: 'found';     drug: DrugCatalogEntry }
-  | { type: 'not_found'; code: string }
+  | { type: 'found';        drug: DrugCatalogEntry; gs1Prefill?: Gs1Prefill }
+  | { type: 'not_found';    code: string }
+  | { type: 'gs1_not_found'; gs1Prefill: Gs1Prefill }
 
 function errorMessage(error: ScanError): string {
   switch (error.type) {
@@ -31,6 +35,20 @@ export function ScanPage() {
 
   const handleDetected = useCallback(async (code: string) => {
     setScanState('detected')
+
+    const gs1 = parseGs1(code)
+    if (gs1) {
+      const drug = await lookupByGs1({ gtin: gs1.gtin, aic: gs1.aic })
+      const prefill: Gs1Prefill = { expiresAt: gs1.expiresAt, lot: gs1.lot, serial: gs1.serial }
+      setScanState('found')
+      if (drug) {
+        setSheet({ type: 'found', drug, gs1Prefill: prefill })
+      } else {
+        setSheet({ type: 'gs1_not_found', gs1Prefill: prefill })
+      }
+      return
+    }
+
     const drug = await lookupByCode(code)
     if (drug) {
       setScanState('found')
@@ -229,7 +247,7 @@ export function ScanPage() {
               <button
                 className="btn btn-primary"
                 style={{ flex: 1 }}
-                onClick={() => navigate('/medicine/new', { state: { draft: sheet.type === 'found' ? sheet.drug : null } })}
+                onClick={() => navigate('/medicine/new', { state: { draft: sheet.drug, gs1: sheet.gs1Prefill } })}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                   <line x1="12" y1="5" x2="12" y2="19" />
@@ -247,7 +265,7 @@ export function ScanPage() {
           </div>
         )}
 
-        {/* Result bottom sheet — not found */}
+        {/* Result bottom sheet — not found (barcode lineare) */}
         {sheet.type === 'not_found' && (
           <div className="result-sheet">
             <div className="result-handle" />
@@ -276,6 +294,44 @@ export function ScanPage() {
                 onClick={() => navigate('/medicine/new')}
               >
                 Inserisci manualmente
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Result bottom sheet — GS1 DataMatrix, prodotto non a catalogo AIFA */}
+        {sheet.type === 'gs1_not_found' && (
+          <div className="result-sheet">
+            <div className="result-handle" />
+            <div className="result-not-found-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              Prodotto non in catalogo AIFA
+            </div>
+            <div className="result-med-name">DataMatrix letto</div>
+            <div className="result-not-found-text">
+              Scadenza, lotto e seriale sono stati pre-compilati dal codice.
+              Completa il nome del farmaco prima di salvare.
+            </div>
+            <div className="result-actions">
+              <button
+                className="btn btn-primary"
+                style={{ flex: 1 }}
+                onClick={() => navigate('/medicine/new', { state: { gs1: sheet.gs1Prefill } })}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+                Completa e aggiungi
+              </button>
+              <button className="btn btn-ghost" onClick={resetScan} aria-label="Scansiona di nuovo">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                  <polyline points="1 4 1 10 7 10" />
+                  <path d="M3.51 15a9 9 0 1 0 .49-3.78" />
+                </svg>
               </button>
             </div>
           </div>

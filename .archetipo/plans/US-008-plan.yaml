@@ -6,19 +6,22 @@ tasks:
     title: Validazione inline per-campo nel form farmaco (AC4)
     description: 'In MedicineFormPage.tsx convertire il banner di validazione unico in errore inline sotto il campo Nome obbligatorio: stato per-campo, messaggio inline, aria-invalid + aria-describedby e focus sul campo non valido; il banner mf-error-banner resta solo per errori di salvataggio/rete. Aggiungere lo stile inline in medicine-form.css.'
     type: Impl
-    status: TODO
+    status: DONE
+    ref: TASK-01
   - id: TASK-02
     title: Component test validazione inline e salvataggio manuale
     description: 'Estendere MedicineFormPage.test.tsx: submit con nome vuoto mostra errore inline sotto Nome con aria-invalid e nessun insert; l''errore scompare digitando; submit manuale valido (nome+principio+forma senza draft) invoca ensure_personal_household e insert in medications con catalog_id null. Aggiornare i test US-007 che assumevano il banner di validazione.'
     type: Test
-    status: TODO
+    status: DONE
     dependencies:
       - TASK-01
+    ref: TASK-02
   - id: TASK-03
     title: Test e2e flusso manuale e validazione inline con video
     description: 'Nuovo spec Playwright per US-008 con video on e output docs/test-results/US-008/: inserimento manuale puro dalla schermata di scansione (idle → Inserisci manualmente → compila → salva → home, insert intercettato con catalog_id null) e validazione inline del campo obbligatorio. Riusare installAuthMock e installScanSeam.'
     type: Test
-    status: TODO
+    status: DONE
     dependencies:
       - TASK-01
       - TASK-02
+    ref: TASK-03

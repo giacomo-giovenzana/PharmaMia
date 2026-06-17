@@ -8,7 +8,7 @@ export function selectBarcodeBackend(): BarcodeBackend {
 
 export async function scanWithNative(videoEl: HTMLVideoElement): Promise<string | null> {
   const detector = new (window as unknown as { BarcodeDetector: new (opts: { formats: string[] }) => { detect: (src: HTMLVideoElement) => Promise<{ rawValue: string }[]> } }).BarcodeDetector({
-    formats: ['ean_13', 'ean_8', 'code_128', 'code_39', 'qr_code', 'upc_a', 'upc_e'],
+    formats: ['ean_13', 'ean_8', 'code_128', 'code_39', 'qr_code', 'upc_a', 'upc_e', 'data_matrix'],
   })
   const barcodes = await detector.detect(videoEl)
   return barcodes.length > 0 ? barcodes[0].rawValue : null

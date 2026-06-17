@@ -6,58 +6,66 @@ tasks:
     title: Validazione scadenza di dominio (pura)
     description: Creare src/domain/medicationExpiry.ts con funzioni pure che rendono la scadenza obbligatoria e rifiutano date antecedenti a oggi (confronto su date locali), restituendo esito ed eventuale messaggio d'errore localizzato.
     type: Impl
-    status: TODO
+    status: DONE
+    ref: TASK-01
   - id: TASK-02
     title: Unit test validazione scadenza
     description: 'Test Vitest per i casi: data passata rifiutata, data odierna accettata, data futura accettata, valore vuoto rifiutato (obbligatorietà).'
     type: Test
-    status: TODO
+    status: DONE
     dependencies:
       - TASK-01
+    ref: TASK-02
   - id: TASK-03
     title: Repository inventario (get/update/insert)
     description: Creare src/features/inventory/medicationsRepo.ts con getMedicationById, updateMedication e insert con .select().single() per ottenere l'id del record creato, incapsulando l'accesso a supabase.from('medications').
     type: Impl
-    status: TODO
+    status: DONE
+    ref: TASK-03
   - id: TASK-04
     title: Unit test repository inventario
     description: 'Test Vitest con supabase-js mockato per getMedicationById, updateMedication e insert-con-select: query per id corretta e propagazione degli errori.'
     type: Test
-    status: TODO
+    status: DONE
     dependencies:
       - TASK-03
+    ref: TASK-04
   - id: TASK-05
     title: Scheda di dettaglio farmaco (MedicineDetailPage)
     description: Implementare src/features/inventory/MedicineDetailPage.tsx (rotta /medicine/:id) che carica il farmaco via repository e mostra scadenza con indicatore di stato, quantità+unità e posizione, con pulsante "Modifica", seguendo il mockup docs/mockups/US-009/medicine-detail.html.
     type: Impl
-    status: TODO
+    status: DONE
     dependencies:
       - TASK-03
+    ref: TASK-05
   - id: TASK-06
     title: Form unificato add/edit con scadenza validata
     description: 'Evolvere MedicineFormPage per supportare la modalità edit (rotta /medicine/:id/edit): precaricare i valori e fare update, rendere la scadenza obbligatoria applicando la validazione di TASK-01, e al salvataggio (sia new sia edit) navigare alla scheda di dettaglio del farmaco. Aggiungere le rotte /medicine/:id e /medicine/:id/edit in App.tsx.'
     type: Impl
-    status: TODO
+    status: DONE
     dependencies:
       - TASK-01
       - TASK-03
       - TASK-05
+    ref: TASK-06
   - id: TASK-07
     title: Component test dettaglio e form add/edit
     description: 'Test RTL: la scheda mostra scadenza/quantità/posizione; il form edit precompila e blocca il salvataggio con scadenza passata o vuota mostrando l''errore; salvataggio valido (new ed edit) naviga alla scheda. Repository e client mockati.'
     type: Test
-    status: TODO
+    status: DONE
     dependencies:
       - TASK-05
       - TASK-06
+    ref: TASK-07
   - id: TASK-08
     title: Config video Playwright e mock medications per e2e US-009
     description: Abilitare la registrazione video con output in docs/test-results/US-009/ e predisporre lo stub delle chiamate medications (GET per id, PATCH update, POST insert con select) riusando il pattern di mock auth/Supabase di US-007.
     type: Impl
-    status: TODO
+    status: DONE
     dependencies:
       - TASK-05
       - TASK-06
+    ref: TASK-08
   - id: TASK-09
     title: Test e2e flussi US-009 con video
     description: 'Scenari Playwright con video: aggiunta con scadenza+quantità+posizione → scheda mostra i tre dati; modifica di un campo → scheda aggiornata immediatamente; tentativo con scadenza passata → errore e salvataggio bloccato.'
@@ -66,3 +74,4 @@ tasks:
     dependencies:
       - TASK-07
       - TASK-08
+    ref: TASK-09

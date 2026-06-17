@@ -6,7 +6,7 @@ epic:
   title: Inventario Farmaci
 priority: HIGH
 points: 2
-status: PLANNED
+status: REVIEW
 scope: MVP
 body: |-
   #### US-008: Aggiunta manuale farmaco (fallback alla scansione)

@@ -1,0 +1,153 @@
+schema: archetipo/plan/v2
+spec_code: US-022
+body: |-
+  # US-022: Lettura unificata barcode + DataMatrix con auto-compilazione di scadenza, lotto e seriale — Piano di Implementazione
+
+  **Generato da:** ARchetipo Planning Team
+  **Data:** 2026-06-17
+
+  ---
+
+  ## Spec
+
+  **Epica:** EP-002 — Inventario Farmaci
+  **Priorità:** HIGH | **Punti:** 5
+  **Bloccata da:** US-007 (stato attuale: REVIEW — sufficiente per pianificare; portare a DONE prima del merge di US-022)
+
+  **User Story**
+  In qualità di Giulia (caregiver di famiglia), voglio poter inquadrare con la fotocamera sia il codice a barre sia il DataMatrix (2D) della confezione, così che oltre a nome e principio attivo venga riconosciuta e compilata in automatico anche la data di scadenza, senza doverla leggere e digitare a mano.
+
+  **Criteri di Accettazione**
+  - Una singola inquadratura riconosce automaticamente sia i codici lineari (EAN/AIC) sia i `data_matrix`, senza selezione manuale della modalità
+  - La scansione usa `BarcodeDetector` con formati lineare e `data_matrix` abilitati, mantenendo il fallback su `@zxing/library` (multi-formato) quando l'API non è disponibile
+  - Dal DataMatrix vengono estratti via parsing GS1: scadenza (AI 17), lotto (AI 10), seriale (AI 21) e codice prodotto (AIC/GTIN, es. AI 01/710)
+  - La scadenza letta viene auto-compilata nel campo scadenza del form, in formato coerente con US-009
+  - Lotto e seriale vengono salvati con il farmaco e mostrati nel dettaglio
+  - Il codice prodotto viene cercato nel DB AIFA per pre-compilare nome, principio attivo e formato come in US-007
+  - Se il prodotto non è in AIFA, scadenza/lotto/seriale restano pre-compilati e l'utente completa a mano i campi mancanti
+  - Se il DataMatrix è illeggibile o privo dei campi GS1 attesi, messaggio chiaro con riprova o inserimento manuale
+
+  ---
+
+  ## Technical Solution
+
+  L'estensione è additiva rispetto a US-007: il riconoscimento del tipo di codice avviene sul **contenuto** (tentativo di parsing GS1), non sulla modalità, così una singola viewport gestisce barcode e DataMatrix senza che l'utente scelga nulla. Il dato GS1 viene propagato al form tramite uno stato di navigazione opzionale `gs1`, senza rompere il contratto `draft` esistente del flusso barcode.
+
+  - **Parser GS1 puro** (`src/domain/gs1.ts`): `parseGs1(raw)` riconosce gli Application Identifier 01 (GTIN-14), 17 (scadenza YYMMDD), 10 (lotto), 21 (seriale) e 710 (AIC nazionale italiano), gestendo il separatore FNC1 (`\x1d`) tra campi a lunghezza variabile e convertendo YYMMDD→ISO `yyyy-mm-dd` (con DD=00 = ultimo giorno del mese). È **conservativo**: ritorna `null` su un EAN semplice o stringa non-GS1, così il flusso barcode resta invariato.
+  - **Scanner multi-formato** (`barcodeScanner.ts`): si aggiunge `data_matrix` alla lista formati del `BarcodeDetector` nativo; ZXing `BrowserMultiFormatReader` legge già i DataMatrix e non richiede modifiche.
+  - **Lookup AIFA esteso** (`drugLookup.ts`): `lookupByGs1({ gtin, aic })` normalizza il GTIN-14 in EAN-13 (rimozione zero/packaging indicator iniziale) e tenta match su `ean_code` poi `aic_code`, riusando la logica di `lookupByCode`.
+  - **Integrazione flusso** (`ScanPage.tsx`): in `handleDetected` si tenta `parseGs1`; se GS1 si fa lookup per GTIN/AIC e si naviga a `/medicine/new` passando `state.gs1 = { expiresAt, lot, serial }` sia nel caso "trovato" (con `draft` catalogo) sia "non trovato" (senza `draft`). Il ramo barcode lineare resta quello attuale.
+  - **Modello dati**: nuova migration che aggiunge le colonne `lot text` e `serial text` alla tabella `medications`, con rigenerazione di `database.types.ts`. `medicationsRepo` usa i tipi generati e propaga automaticamente i nuovi campi.
+  - **Form e dettaglio**: `MedicineFormPage` pre-compila scadenza/lotto/seriale dallo stato `gs1`, aggiunge i campi "Lotto" e "Numero seriale" (editabili) nella sezione "Dettagli confezione", li include in insert/update e li carica in modalità modifica; `MedicineDetailPage` mostra lotto e seriale come righe di dettaglio quando presenti, secondo lo stile esistente (`medicine-detail.css`).
+
+  ---
+
+  ## Test Strategy
+
+  La logica critica (parsing GS1) è coperta da unit test estesi; l'integrazione UI e di persistenza è verificata con component test, un test di integrazione RLS e scenari e2e con video.
+
+  - **Unit** — parser GS1: stringa completa AI 01/17/10/21, campi a lunghezza variabile con FNC1, scadenza fine-mese (DD=00), AIC italiano (AI 710), rifiuto di EAN semplice (`null`) e di payload malformati; normalizzazione GTIN-14→EAN-13 nel lookup; presenza di `data_matrix` tra i formati nativi e selezione backend invariata.
+  - **Component (RTL)** — `ScanPage`: DataMatrix trovato → navigazione con prefill; DataMatrix non trovato → navigazione con prefill scadenza/lotto/seriale e nome vuoto; barcode lineare ancora funzionante. `MedicineFormPage`: prefill e salvataggio di scadenza/lotto/seriale, caricamento in modifica. `MedicineDetailPage`: righe lotto/seriale visibili quando presenti.
+  - **Integrazione** — insert/update di `medications` con `lot` e `serial` su Supabase locale: supera le policy RLS ed è rileggibile.
+
+  ### E2E Tests — User Simulation
+
+  **Framework:** Playwright
+  **Video recording:** Abilitato per tutti gli scenari (output in `docs/test-results/US-022/`)
+
+  | Scenario | Descrizione del flusso utente |
+  |---|---|
+  | DataMatrix farmaco noto | Giulia apre "Aggiungi farmaco", inquadra un DataMatrix GS1 di un farmaco a catalogo → il form mostra nome/principio attivo da AIFA e scadenza/lotto/seriale pre-compilati → salva → la scheda farmaco mostra scadenza, lotto e seriale |
+  | DataMatrix farmaco non a catalogo | Giulia inquadra un DataMatrix GS1 di un prodotto non in AIFA → scadenza/lotto/seriale pre-compilati, nome vuoto → completa il nome a mano → salva e vede la scheda |
+  | Regressione barcode lineare | Giulia inquadra un barcode EAN nella stessa viewport → riconoscimento automatico → flusso US-007 invariato fino al salvataggio |
+
+  ---
+
+  _Piano generato via ARchetipo Planning — 2026-06-17_
+tasks:
+  - id: TASK-01
+    title: Parser GS1 DataMatrix puro
+    type: Impl
+    status: DONE
+    ref: TASK-01
+  - id: TASK-02
+    title: Unit test parser GS1
+    type: Test
+    status: DONE
+    dependencies:
+      - TASK-01
+    ref: TASK-02
+  - id: TASK-03
+    title: Abilitare DataMatrix nello scanner nativo
+    type: Impl
+    status: DONE
+    ref: TASK-03
+  - id: TASK-04
+    title: Unit test formati scanner
+    type: Test
+    status: DONE
+    dependencies:
+      - TASK-03
+    ref: TASK-04
+  - id: TASK-05
+    title: Lookup AIFA da dati GS1
+    type: Impl
+    status: DONE
+    ref: TASK-05
+  - id: TASK-06
+    title: Unit test lookup GS1
+    type: Test
+    status: DONE
+    dependencies:
+      - TASK-05
+    ref: TASK-06
+  - id: TASK-07
+    title: Migration colonne lot e serial + tipi
+    type: Impl
+    status: DONE
+    ref: TASK-07
+  - id: TASK-08
+    title: Integrazione GS1 in ScanPage
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-01
+      - TASK-05
+    ref: TASK-08
+  - id: TASK-09
+    title: Campi lotto/seriale e prefill scadenza nel form
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-07
+    ref: TASK-09
+  - id: TASK-10
+    title: Mostrare lotto e seriale nel dettaglio
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-07
+    ref: TASK-10
+  - id: TASK-11
+    title: Component test scan/form/dettaglio
+    type: Test
+    status: DONE
+    dependencies:
+      - TASK-08
+      - TASK-09
+      - TASK-10
+    ref: TASK-11
+  - id: TASK-12
+    title: Test integrazione persistenza lot/serial (RLS)
+    type: Test
+    status: DONE
+    dependencies:
+      - TASK-07
+    ref: TASK-12
+  - id: TASK-13
+    title: Estendere il seam e2e per DataMatrix
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-03
+    ref: TASK-13

@@ -25,18 +25,25 @@ vi.mock('./useBarcodeScanner', () => ({
 // ---------------------------------------------------------------------------
 vi.mock('./drugLookup', () => ({
   lookupByCode: vi.fn(),
+  lookupByGs1: vi.fn(),
 }))
 
 // ---------------------------------------------------------------------------
-// Mock scan.css (handled by vitest's css transform, but explicit for safety)
+// Mock gs1 domain
 // ---------------------------------------------------------------------------
+vi.mock('@domain/gs1', () => ({
+  parseGs1: vi.fn().mockReturnValue(null),
+}))
 
 import { useBarcodeScanner } from './useBarcodeScanner'
-import { lookupByCode } from './drugLookup'
+import { lookupByCode, lookupByGs1 } from './drugLookup'
+import { parseGs1 } from '@domain/gs1'
 import type { DrugCatalogEntry } from './drugLookup'
 
 const mockUseBarcodeScanner = useBarcodeScanner as Mock
 const mockLookupByCode = lookupByCode as Mock
+const mockLookupByGs1 = lookupByGs1 as Mock
+const mockParseGs1 = parseGs1 as Mock
 
 // ---------------------------------------------------------------------------
 // Helper
@@ -70,6 +77,8 @@ describe('ScanPage', () => {
     )
 
     mockLookupByCode.mockResolvedValue(null)
+    mockLookupByGs1.mockResolvedValue(null)
+    mockParseGs1.mockReturnValue(null) // default: not a GS1 code
   })
 
   it('mostra il link "Inserisci manualmente" quando non c\'è errore e lo sheet è nascosto', () => {
@@ -183,5 +192,93 @@ describe('ScanPage', () => {
     await waitFor(() => {
       expect(screen.getByText('Form farmaco')).toBeInTheDocument()
     })
+  })
+
+  // ---------------------------------------------------------------------------
+  // GS1 DataMatrix flows (US-022)
+  // ---------------------------------------------------------------------------
+
+  it('DataMatrix farmaco trovato: mostra lo sheet "Farmaco trovato" e naviga con gs1Prefill', async () => {
+    const user = userEvent.setup()
+    const drug: DrugCatalogEntry = {
+      id: 'uuid-001',
+      aic_code: '012345678',
+      ean_code: '7007123456784',
+      name: 'Tachipirina 1000mg',
+      active_ingredient: 'Paracetamolo',
+      form: 'Compresse',
+      dosage: null,
+      atc_code: null,
+      manufacturer: null,
+      package_desc: null,
+      is_otc: true,
+      requires_prescription: false,
+      created_at: '2024-01-01T00:00:00Z',
+    }
+
+    mockParseGs1.mockReturnValue({
+      gtin: '07007123456784',
+      expiresAt: '2027-03-31',
+      lot: 'LOT1',
+      serial: 'SER1',
+    })
+    mockLookupByGs1.mockResolvedValue(drug)
+
+    const { getByRole } = renderScanPage()
+
+    await act(async () => {
+      capturedOnDetected?.('010700712345678417270331\x1d10LOT1\x1d21SER1')
+    })
+
+    await waitFor(() => {
+      expect(screen.getByText('Tachipirina 1000mg')).toBeInTheDocument()
+    })
+
+    // Navigate to form
+    const addBtn = getByRole('button', { name: /aggiungi all'inventario/i })
+    await user.click(addBtn)
+
+    await waitFor(() => {
+      expect(screen.getByText('Form farmaco')).toBeInTheDocument()
+    })
+  })
+
+  it('DataMatrix farmaco non a catalogo: mostra lo sheet "Prodotto non in catalogo AIFA"', async () => {
+    mockParseGs1.mockReturnValue({
+      gtin: '09999999999999',
+      expiresAt: '2027-06-30',
+      lot: 'LOTTO99',
+      serial: null,
+    })
+    mockLookupByGs1.mockResolvedValue(null)
+
+    renderScanPage()
+
+    await act(async () => {
+      capturedOnDetected?.('010999999999999917270630\x1d10LOTTO99')
+    })
+
+    await waitFor(() => {
+      expect(screen.getByText('Prodotto non in catalogo AIFA')).toBeInTheDocument()
+    })
+  })
+
+  it('barcode lineare ancora funzionante dopo l\'aggiunta GS1 (regressione)', async () => {
+    // parseGs1 returns null → falls through to lookupByCode
+    mockParseGs1.mockReturnValue(null)
+    mockLookupByCode.mockResolvedValue(null)
+
+    renderScanPage()
+
+    await act(async () => {
+      capturedOnDetected?.('1234567890123')
+    })
+
+    await waitFor(() => {
+      expect(screen.getByText('Farmaco non trovato')).toBeInTheDocument()
+    })
+
+    expect(mockLookupByCode).toHaveBeenCalledWith('1234567890123')
+    expect(mockLookupByGs1).not.toHaveBeenCalled()
   })
 })
