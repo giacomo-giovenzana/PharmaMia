@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PharmaMia – Modifica farmaco (validazione scadenza)</title>
+<link rel="stylesheet" href="../pharmamia-mvp/shared.css">
+<style>
+/* Reuses .source-chip / .form-section / .form-section-title / .location-pill
+   styles from the existing medicine.html edit form. */
+.source-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: var(--c-primary-lt); color: var(--c-primary);
+  padding: 5px 12px; border-radius: var(--r-full);
+  font-size: .72rem; font-weight: 700; margin-bottom: 14px;
+}
+
+.form-section { padding: 20px; }
+
+.form-section-title {
+  font-size: .78rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--c-text-3);
+  margin-bottom: 14px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.location-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
+
+.location-pill {
+  padding: 7px 14px; border-radius: var(--r-full);
+  font-size: .76rem; font-weight: 600;
+  background: var(--c-surface-3); color: var(--c-text-3);
+  border: 1.5px solid var(--c-border); cursor: pointer; transition: all .15s;
+}
+
+.location-pill.active {
+  background: var(--c-primary-lt); color: var(--c-primary);
+  border-color: var(--c-primary-lt);
+}
+
+/* Validation error state for the expiry field */
+.form-input.error {
+  border-color: var(--c-danger);
+  box-shadow: 0 0 0 3px var(--c-danger-lt);
+}
+
+.field-error {
+  display: flex; align-items: center; gap: 6px;
+  margin-top: 7px;
+  font-size: .74rem; font-weight: 600; color: var(--c-danger);
+}
+
+.footer-bar {
+  padding: 16px 20px 24px; background: var(--c-surface);
+  border-top: 1px solid var(--c-border);
+  display: flex; gap: 12px; align-items: center;
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<div class="phone">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <a href="medicine-detail.html" class="topbar-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </a>
+    <span class="topbar-title">Modifica farmaco</span>
+  </div>
+
+  <!-- SCREEN -->
+  <div class="screen">
+
+    <!-- HERO -->
+    <div class="med-hero">
+      <div class="source-chip">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        Dati AIFA verificati
+      </div>
+      <div class="med-hero-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+        </svg>
+      </div>
+      <div class="med-hero-name">Tachipirina 1000 mg</div>
+      <div class="med-hero-sub">Paracetamolo · Angelini Pharma · 16 cpr</div>
+    </div>
+
+    <!-- FORM: DETTAGLI CONFEZIONE -->
+    <div class="form-section">
+      <div class="form-section-title">Dettagli confezione</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Scadenza</label>
+          <input class="form-input error" type="text" value="31/01/2026" placeholder="GG/MM/AAAA">
+          <div class="field-error">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            La data è già passata. Inserisci una scadenza futura.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Quantità</label>
+          <input class="form-input" type="number" value="15" placeholder="es. 16">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Unità</label>
+        <select class="form-input">
+          <option selected>Compresse</option>
+          <option>Capsule</option>
+          <option>Bustine</option>
+          <option>ml (flacone)</option>
+          <option>g (tubetto)</option>
+          <option>Fiale</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Posizione (opzionale)</label>
+        <div class="location-pills">
+          <button class="location-pill active" onclick="selectLoc(this)">Armadietto bagno</button>
+          <button class="location-pill" onclick="selectLoc(this)">Cassetto cucina</button>
+          <button class="location-pill" onclick="selectLoc(this)">Borsa</button>
+          <button class="location-pill" onclick="selectLoc(this)">Altra stanza</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:24px"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-bar">
+    <a href="medicine-detail.html" class="btn btn-ghost" style="flex-shrink:0">Annulla</a>
+    <button class="btn btn-primary w-full" onclick="alert('Correggi la data di scadenza prima di salvare.')">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+      Salva modifiche
+    </button>
+  </div>
+
+</div>
+</div>
+<script>
+function selectLoc(el) {
+  document.querySelectorAll('.location-pill').forEach(x => x.classList.remove('active'));
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>

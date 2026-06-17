@@ -1,0 +1,32 @@
+schema: archetipo/spec/v2
+code: US-018
+title: Vista inventario condiviso dell'household
+epic:
+  code: EP-005
+  title: Farmacia Condivisa
+priority: HIGH
+points: 2
+status: TODO
+blocked_by:
+  - US-017
+scope: MVP
+body: |-
+  #### US-018: Vista inventario condiviso dell'household
+
+  **Epica:** EP-005 | **Priorità:** HIGH | **Punti:** 2 | **Stato:** TODO
+  **Bloccato da:** US-017
+
+  **User Story**
+  In qualità di Giulia (caregiver di famiglia),
+  voglio vedere un inventario unificato con tutti i farmaci di tutti i membri della mia household,
+  così da gestire la farmacia di famiglia da un unico punto senza dover chiedere a ogni familiare cosa ha.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, Giulia accede alla vista "Farmacia di famiglia" e vede i farmaci di tutti i membri con indicazione del proprietario; i farmaci aggiunti da un membro compaiono in tempo reale per tutti gli altri.
+
+  **Criteri di Accettazione**
+  - [ ] La vista household mostra tutti i farmaci di tutti i membri con nome del proprietario
+  - [ ] I farmaci si aggiornano in tempo reale tramite Supabase Realtime quando un membro modifica l'inventario
+  - [ ] L'utente può filtrare l'inventario per membro
+  - [ ] Ogni membro può vedere ma non modificare i farmaci degli altri (salvo ruolo caregiver)
+  - [ ] La vista household è accessibile solo ai membri dell'household

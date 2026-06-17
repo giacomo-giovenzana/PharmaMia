@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PharmaMia – Dettaglio farmaco</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.source-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--c-primary-lt);
+  color: var(--c-primary);
+  padding: 5px 12px;
+  border-radius: var(--r-full);
+  font-size: .72rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.form-section {
+  padding: 20px;
+}
+
+.form-section-title {
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--c-text-3);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.location-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.location-pill {
+  padding: 7px 14px;
+  border-radius: var(--r-full);
+  font-size: .76rem;
+  font-weight: 600;
+  background: var(--c-surface-3);
+  color: var(--c-text-3);
+  border: 1.5px solid var(--c-border);
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.location-pill.active {
+  background: var(--c-primary-lt);
+  color: var(--c-primary);
+  border-color: var(--c-primary-lt);
+}
+
+.therapy-panel {
+  background: var(--c-surface-2);
+  border-radius: var(--r-lg);
+  padding: 16px;
+  margin-top: 12px;
+  display: none;
+}
+
+.therapy-panel.visible { display: block; }
+
+.freq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.freq-btn {
+  padding: 10px 8px;
+  border-radius: var(--r-sm);
+  border: 1.5px solid var(--c-border);
+  background: var(--c-surface);
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--c-text-2);
+  text-align: center;
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.freq-btn.active {
+  background: var(--c-primary-lt);
+  color: var(--c-primary);
+  border-color: var(--c-primary-lt);
+}
+
+.time-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.time-tag {
+  padding: 6px 12px;
+  border-radius: var(--r-full);
+  background: var(--c-surface);
+  border: 1.5px solid var(--c-border);
+  font-size: .74rem;
+  font-weight: 600;
+  color: var(--c-text-3);
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.time-tag.active {
+  background: var(--c-primary);
+  color: #fff;
+  border-color: var(--c-primary);
+}
+
+.footer-bar {
+  padding: 16px 20px 24px;
+  background: var(--c-surface);
+  border-top: 1px solid var(--c-border);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.step-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 20px 12px;
+}
+
+.step-dot {
+  width: 8px; height: 8px;
+  border-radius: var(--r-full);
+  background: var(--c-border);
+}
+
+.step-dot.done   { background: var(--c-ok); }
+.step-dot.active { background: var(--c-primary); width: 20px; }
+</style>
+</head>
+<body>
+<div class="shell">
+<div class="phone">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <a href="scan.html" class="topbar-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </a>
+    <span class="topbar-title">Aggiungi farmaco</span>
+    <div class="topbar-actions">
+      <button class="topbar-icon-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- STEP INDICATOR -->
+  <div class="step-indicator">
+    <div class="step-dot done"></div>
+    <div class="step-dot active"></div>
+    <div class="step-dot"></div>
+  </div>
+
+  <!-- SCREEN -->
+  <div class="screen">
+
+    <!-- HERO -->
+    <div class="med-hero">
+      <div class="source-chip">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        Dati AIFA verificati
+      </div>
+      <div class="med-hero-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+        </svg>
+      </div>
+      <div class="med-hero-name">Tachipirina 1000 mg</div>
+      <div class="med-hero-sub">Paracetamolo · Angelini Pharma · 16 cpr</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <span class="badge badge-muted">Antipiretico</span>
+        <span class="badge badge-muted">Analgesico</span>
+        <span class="badge badge-muted">AIC 012745098</span>
+      </div>
+    </div>
+
+    <!-- FORM: DETTAGLI CONFEZIONE -->
+    <div class="form-section">
+      <div class="form-section-title">Dettagli confezione</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Scadenza</label>
+          <input class="form-input" type="text" value="06 / 2026" placeholder="MM / AAAA">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Quantità</label>
+          <input class="form-input" type="number" value="16" placeholder="es. 16">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Unità</label>
+        <select class="form-input">
+          <option selected>Compresse</option>
+          <option>Capsule</option>
+          <option>Bustine</option>
+          <option>ml (flacone)</option>
+          <option>g (tubetto)</option>
+          <option>Fiale</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Posizione (opzionale)</label>
+        <div class="location-pills">
+          <button class="location-pill active" onclick="selectLoc(this)">Armadietto bagno</button>
+          <button class="location-pill" onclick="selectLoc(this)">Cassetto cucina</button>
+          <button class="location-pill" onclick="selectLoc(this)">Borsa</button>
+          <button class="location-pill" onclick="selectLoc(this)">Altra stanza</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- FORM: TERAPIA -->
+    <div class="form-section">
+      <div class="form-section-title">Piano terapeutico</div>
+
+      <div class="toggle-row">
+        <div>
+          <div class="toggle-label">Attiva piano terapeutico</div>
+          <div class="toggle-sub">Promemoria e decremento automatico</div>
+        </div>
+        <div class="toggle" id="therapyToggle" onclick="toggleTherapy()"></div>
+      </div>
+
+      <div class="therapy-panel" id="therapyPanel">
+        <div class="form-group">
+          <label class="form-label">Dose per assunzione</label>
+          <div style="display:flex;align-items:center;gap:12px">
+            <button style="width:36px;height:36px;background:var(--c-surface);border-radius:var(--r-sm);border:1.5px solid var(--c-border);font-size:1.2rem;color:var(--c-text-2)" onclick="changeDose(-1)">−</button>
+            <span id="doseCount" style="font-size:1.4rem;font-weight:800;color:var(--c-text);min-width:28px;text-align:center">1</span>
+            <button style="width:36px;height:36px;background:var(--c-surface);border-radius:var(--r-sm);border:1.5px solid var(--c-border);font-size:1.2rem;color:var(--c-text-2)" onclick="changeDose(1)">+</button>
+            <span style="font-size:.82rem;color:var(--c-text-3);font-weight:500">compressa / volta</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Frequenza</label>
+          <div class="freq-grid">
+            <button class="freq-btn active" onclick="selectFreq(this)">Giornaliera</button>
+            <button class="freq-btn" onclick="selectFreq(this)">A giorni alterni</button>
+            <button class="freq-btn" onclick="selectFreq(this)">Settimanale</button>
+            <button class="freq-btn" onclick="selectFreq(this)">Mensile</button>
+            <button class="freq-btn" onclick="selectFreq(this)">Al bisogno</button>
+            <button class="freq-btn" onclick="selectFreq(this)">Personalizzata</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Orari assunzione</label>
+          <div class="time-tag-row">
+            <button class="time-tag active" onclick="toggleTime(this)">Mattina</button>
+            <button class="time-tag" onclick="toggleTime(this)">Mezzogiorno</button>
+            <button class="time-tag active" onclick="toggleTime(this)">Sera</button>
+            <button class="time-tag" onclick="toggleTime(this)">Notte</button>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Ore mattina</label>
+            <input class="form-input" type="time" value="08:00">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Ore sera</label>
+            <input class="form-input" type="time" value="21:00">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Per</label>
+          <div style="display:flex;align-items:center;gap:10px">
+            <input class="form-input" type="number" value="7" style="width:90px">
+            <select class="form-input">
+              <option>giorni</option>
+              <option>settimane</option>
+              <option>mesi</option>
+              <option selected>fino a esaurimento</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="background:var(--c-primary-lt);border-radius:var(--r-md);padding:12px;display:flex;align-items:center;gap:8px">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--c-primary)" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <span style="font-size:.74rem;color:var(--c-primary);font-weight:500">Con 16 compresse: scorte per <strong>8 giorni</strong></span>
+        </div>
+      </div>
+
+      <div class="toggle-row">
+        <div>
+          <div class="toggle-label">Avviso scorta bassa</div>
+          <div class="toggle-sub">Notifica quando rimangono ≤ 5 dosi</div>
+        </div>
+        <div class="toggle on"></div>
+      </div>
+
+      <div class="toggle-row">
+        <div>
+          <div class="toggle-label">Avviso scadenza</div>
+          <div class="toggle-sub">Notifica 30 giorni prima</div>
+        </div>
+        <div class="toggle on"></div>
+      </div>
+    </div>
+
+    <div style="height:100px"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-bar">
+    <a href="inventory.html" class="btn btn-ghost" style="flex-shrink:0">Annulla</a>
+    <a href="inventory.html" class="btn btn-primary w-full">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+      Salva nell'inventario
+    </a>
+  </div>
+
+</div>
+</div>
+<script>
+function toggleTherapy() {
+  const t = document.getElementById('therapyToggle');
+  const p = document.getElementById('therapyPanel');
+  t.classList.toggle('on');
+  p.classList.toggle('visible');
+}
+
+let dose = 1;
+function changeDose(d) {
+  dose = Math.max(1, dose + d);
+  document.getElementById('doseCount').textContent = dose;
+}
+
+function selectLoc(el) {
+  document.querySelectorAll('.location-pill').forEach(x => x.classList.remove('active'));
+  el.classList.add('active');
+}
+
+function selectFreq(el) {
+  document.querySelectorAll('.freq-btn').forEach(x => x.classList.remove('active'));
+  el.classList.add('active');
+}
+
+function toggleTime(el) {
+  el.classList.toggle('active');
+}
+</script>
+</body>
+</html>

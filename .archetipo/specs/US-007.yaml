@@ -1,0 +1,30 @@
+schema: archetipo/spec/v2
+code: US-007
+title: Scansione barcode e ricerca nel database AIFA
+epic:
+  code: EP-002
+  title: Inventario Farmaci
+priority: HIGH
+points: 3
+status: REVIEW
+scope: MVP
+body: |-
+  #### US-007: Scansione barcode e ricerca nel database AIFA
+
+  **Epica:** EP-002 | **Priorità:** HIGH | **Punti:** 3 | **Stato:** TODO
+  **Bloccato da:** -
+
+  **User Story**
+  In qualità di Giulia (caregiver di famiglia),
+  voglio aggiungere un farmaco all'inventario scansionando il codice a barre della confezione,
+  così da non dover digitare nome, principio attivo e formato, riducendo al minimo il rischio di errori.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, Giulia tocca "Aggiungi farmaco", punta la fotocamera su un barcode EAN e vede il form pre-compilato con nome, principio attivo e formato dal database AIFA; confermando, il farmaco appare nell'inventario.
+
+  **Criteri di Accettazione**
+  - [ ] La funzione di scansione usa `BarcodeDetector` API con fallback automatico su `@zxing/library` quando l'API non è disponibile
+  - [ ] Il barcode/AIC letto viene cercato nel database AIFA e i campi nome, principio attivo e formato vengono auto-compilati
+  - [ ] Se il farmaco è trovato nel DB, l'utente può confermare o modificare i dati prima del salvataggio
+  - [ ] Il farmaco viene aggiunto all'inventario dell'utente con i dati confermati
+  - [ ] Se la scansione fallisce (barcode illeggibile o non nel DB), l'utente vede un messaggio chiaro e può riprovare o passare all'inserimento manuale

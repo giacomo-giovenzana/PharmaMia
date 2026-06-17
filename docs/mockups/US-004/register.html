@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PharmaMia – Registrati</title>
+<link rel="stylesheet" href="../pharmamia-mvp/shared.css">
+<link rel="stylesheet" href="auth.css">
+</head>
+<body>
+<div class="shell">
+<div class="phone">
+
+  <div class="screen auth-screen">
+
+    <!-- HERO -->
+    <div class="auth-hero" style="padding-top:36px;padding-bottom:22px">
+      <div class="logo">
+        <div class="logo-mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
+            <path d="m8.5 8.5 7 7"/>
+          </svg>
+        </div>
+        <span class="logo-wordmark">Pharma<span>Mia</span></span>
+      </div>
+      <h1 class="auth-title">Crea il tuo account</h1>
+      <p class="auth-subtitle">Bastano un'email e una password per mettere al sicuro i tuoi farmaci.</p>
+    </div>
+
+    <!-- FORM -->
+    <form class="auth-body" id="registerForm" novalidate>
+
+      <!-- ERRORE GLOBALE: email già registrata (nascosto di default, mostrato in demo via bottone) -->
+      <div class="form-notice danger" id="emailTakenError" style="display:none">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <span><strong>Email già registrata.</strong> <span class="form-notice-text">Esiste già un account con questa email. <a href="login.html" style="color:var(--c-danger);font-weight:700;text-decoration:underline">Accedi invece</a>.</span></span>
+      </div>
+
+      <div class="form-group" id="grp-email">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-input" type="email" id="email" inputmode="email" autocomplete="email" placeholder="giulia@email.it">
+        <div class="field-error">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Inserisci un'email valida
+        </div>
+      </div>
+
+      <div class="form-group" id="grp-password">
+        <label class="form-label" for="password">Password</label>
+        <div class="input-affix">
+          <input class="form-input" type="password" id="password" autocomplete="new-password" placeholder="Almeno 8 caratteri">
+          <button type="button" class="input-affix-btn" data-toggle="password" aria-label="Mostra password">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+            </svg>
+          </button>
+        </div>
+        <div class="pw-strength" id="pwStrength">
+          <span class="pw-bar"></span><span class="pw-bar"></span><span class="pw-bar"></span><span class="pw-bar"></span>
+        </div>
+        <ul class="pw-rules">
+          <li class="pw-rule" data-rule="len">
+            <span class="pw-rule-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Almeno 8 caratteri
+          </li>
+          <li class="pw-rule" data-rule="num">
+            <span class="pw-rule-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Almeno un numero
+          </li>
+        </ul>
+      </div>
+
+      <div class="form-group" id="grp-confirm">
+        <label class="form-label" for="confirm">Conferma password</label>
+        <div class="input-affix">
+          <input class="form-input" type="password" id="confirm" autocomplete="new-password" placeholder="Ripeti la password">
+          <button type="button" class="input-affix-btn" data-toggle="confirm" aria-label="Mostra password">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+            </svg>
+          </button>
+        </div>
+        <div class="field-error">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Le password non coincidono
+        </div>
+      </div>
+
+      <p class="field-hint" style="margin:-2px 0 18px">
+        Registrandoti accetti i <a href="#" class="auth-link" style="font-size:.72rem">Termini</a> e l'<a href="#" class="auth-link" style="font-size:.72rem">Informativa privacy</a>.
+      </p>
+
+      <button type="submit" class="btn btn-primary btn-full">
+        Crea account
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </button>
+
+      <!-- Demo toggle: simula email già registrata -->
+      <button type="button" class="btn btn-ghost btn-full btn-sm mt-12" onclick="document.getElementById('emailTakenError').style.display='flex';document.getElementById('grp-email').classList.add('is-invalid');window.scrollTo(0,0)">
+        ⓘ Demo: simula “email già registrata”
+      </button>
+    </form>
+
+    <div class="auth-footer">
+      Hai già un account? <a href="login.html">Accedi</a>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+<script>
+document.querySelectorAll('[data-toggle]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const input = document.getElementById(btn.dataset.toggle);
+    input.type = input.type === 'password' ? 'text' : 'password';
+  });
+});
+
+const pw = document.getElementById('password');
+const meter = document.getElementById('pwStrength');
+const ruleLen = document.querySelector('[data-rule="len"]');
+const ruleNum = document.querySelector('[data-rule="num"]');
+
+pw.addEventListener('input', () => {
+  const v = pw.value;
+  const hasLen = v.length >= 8;
+  const hasNum = /\d/.test(v);
+  const hasMix = /[a-z]/.test(v) && /[A-Z]/.test(v);
+  const hasSym = /[^A-Za-z0-9]/.test(v);
+  ruleLen.classList.toggle('ok', hasLen);
+  ruleNum.classList.toggle('ok', hasNum);
+  let level = 0;
+  if (v.length > 0) level = 1;
+  if (hasLen && hasNum) level = 2;
+  if (hasLen && hasNum && (hasMix || hasSym)) level = 3;
+  if (hasLen && hasNum && hasMix && hasSym) level = 4;
+  meter.dataset.level = level;
+});
+
+document.getElementById('registerForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const email = document.getElementById('email');
+  const confirm = document.getElementById('confirm');
+  let ok = true;
+
+  const grpEmail = document.getElementById('grp-email');
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value)) { grpEmail.classList.add('is-invalid'); ok = false; }
+  else grpEmail.classList.remove('is-invalid');
+
+  const grpConfirm = document.getElementById('grp-confirm');
+  if (pw.value.length < 8 || pw.value !== confirm.value) { grpConfirm.classList.add('is-invalid'); ok = false; }
+  else grpConfirm.classList.remove('is-invalid');
+
+  if (ok) window.location.href = 'verify-email.html?email=' + encodeURIComponent(email.value);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+schema: archetipo/spec/v2
+code: US-003
+title: Pipeline CI/CD e deploy automatizzato su staging
+epic:
+  code: EP-000
+  title: Foundation del Progetto
+priority: MEDIUM
+points: 2
+status: TODO
+scope: MVP
+body: |-
+  #### US-003: Pipeline CI/CD e deploy automatizzato su staging
+
+  **Epica:** EP-000 | **Priorità:** MEDIUM | **Punti:** 2 | **Stato:** TODO
+  **Bloccato da:** -
+
+  **User Story**
+  In qualità di sviluppatore del team,
+  voglio una pipeline CI/CD che esegua lint, type-check, test e build ad ogni push e rilasci automaticamente il frontend su staging,
+  così da mantenere la qualità del codice e avere sempre un ambiente accessibile per la revisione.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, una push su un branch di feature avvia la pipeline CI; lint, type-check, test e build passano senza errori; una merge su main fa partire il deploy e il frontend è accessibile all'URL di staging entro pochi minuti.
+
+  **Criteri di Accettazione**
+  - [ ] La pipeline CI esegue lint, TypeScript type-check, Vitest e build Vite su ogni push/PR
+  - [ ] I test Playwright e2e sono eseguiti sui flussi critici in CI
+  - [ ] Il deploy del frontend su Vercel/Netlify è configurato e avviene automaticamente su merge in main
+  - [ ] Le migration Supabase sono applicate in modo controllato via CLI in pipeline
+  - [ ] Il badge di stato CI è visibile nel README

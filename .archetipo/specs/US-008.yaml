@@ -1,0 +1,29 @@
+schema: archetipo/spec/v2
+code: US-008
+title: Aggiunta manuale farmaco (fallback alla scansione)
+epic:
+  code: EP-002
+  title: Inventario Farmaci
+priority: HIGH
+points: 2
+status: PLANNED
+scope: MVP
+body: |-
+  #### US-008: Aggiunta manuale farmaco (fallback alla scansione)
+
+  **Epica:** EP-002 | **Priorità:** HIGH | **Punti:** 2 | **Stato:** TODO
+  **Bloccato da:** -
+
+  **User Story**
+  In qualità di Giulia (caregiver di famiglia),
+  voglio inserire manualmente un farmaco quando la scansione non è disponibile o il farmaco non è nel database AIFA,
+  così da poter sempre completare il mio inventario anche in condizioni non ideali.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, Giulia sceglie "Inserimento manuale", compila il form con nome e principio attivo, e il farmaco appare nell'inventario; un farmaco inserito manualmente è trattato in modo identico a uno scansionato nelle funzionalità successive.
+
+  **Criteri di Accettazione**
+  - [ ] L'utente può accedere al form di inserimento manuale dalla stessa schermata della scansione
+  - [ ] Il form permette di inserire nome del farmaco (obbligatorio), principio attivo e formato
+  - [ ] Il farmaco inserito manualmente è salvato nell'inventario e indistinguibile da uno scansionato nelle funzionalità successive
+  - [ ] La validazione del form mostra errori inline per i campi obbligatori mancanti

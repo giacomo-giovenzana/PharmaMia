@@ -1,0 +1,31 @@
+schema: archetipo/spec/v2
+code: US-017
+title: Creazione household e invito membri
+epic:
+  code: EP-005
+  title: Farmacia Condivisa
+priority: HIGH
+points: 3
+status: TODO
+scope: MVP
+body: |-
+  #### US-017: Creazione household e invito membri
+
+  **Epica:** EP-005 | **Priorità:** HIGH | **Punti:** 3 | **Stato:** TODO
+  **Bloccato da:** -
+
+  **User Story**
+  In qualità di Giulia (caregiver di famiglia),
+  voglio creare una farmacia condivisa di famiglia e invitare i miei familiari come membri,
+  così da avere un unico inventario comune e coordinare la gestione dei farmaci con tutti.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, Giulia crea la household "Famiglia Rossi", copia il link di invito e lo invia al fratello; il fratello apre il link, si autentica, e vede la richiesta di unirsi all'household; dopo l'accettazione entrambi compaiono nella lista membri.
+
+  **Criteri di Accettazione**
+  - [ ] L'utente può creare una nuova household assegnandole un nome
+  - [ ] Il creatore diventa automaticamente amministratore dell'household
+  - [ ] L'amministratore può generare un link o codice di invito da condividere
+  - [ ] Un utente invitato può accettare o rifiutare l'invito
+  - [ ] La lista dei membri è visibile nell'household con il loro ruolo (membro, caregiver, admin)
+  - [ ] L'amministratore può rimuovere un membro dall'household

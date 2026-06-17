@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PharmaMia – Accedi</title>
+<link rel="stylesheet" href="../pharmamia-mvp/shared.css">
+<link rel="stylesheet" href="auth.css">
+</head>
+<body>
+<div class="shell">
+<div class="phone">
+
+  <div class="screen auth-screen">
+
+    <!-- HERO -->
+    <div class="auth-hero">
+      <div class="logo">
+        <div class="logo-mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
+            <path d="m8.5 8.5 7 7"/>
+          </svg>
+        </div>
+        <span class="logo-wordmark">Pharma<span>Mia</span></span>
+      </div>
+      <h1 class="auth-title">Bentornata</h1>
+      <p class="auth-subtitle">Accedi per ritrovare il tuo armadietto dei farmaci, sincronizzato su ogni dispositivo.</p>
+    </div>
+
+    <!-- FORM -->
+    <form class="auth-body" id="loginForm" novalidate>
+
+      <!-- ERRORE GLOBALE: credenziali errate (visibile per mostrare lo stato) -->
+      <div class="form-notice danger" id="loginError">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <span><strong>Credenziali errate.</strong> <span class="form-notice-text">Controlla l'email e la password e riprova.</span></span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-input" type="email" id="email" inputmode="email" autocomplete="email" placeholder="giulia@email.it" value="giulia@email.it">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <div class="input-affix">
+          <input class="form-input" type="password" id="password" autocomplete="current-password" placeholder="La tua password" value="sbagliata">
+          <button type="button" class="input-affix-btn" data-toggle="password" aria-label="Mostra password">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+            </svg>
+          </button>
+        </div>
+        <div class="field-error">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Password non valida
+        </div>
+      </div>
+
+      <div class="auth-aux">
+        <span></span>
+        <a href="#" class="auth-link">Password dimenticata?</a>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-full">
+        Accedi
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </button>
+    </form>
+
+    <div class="auth-footer">
+      Non hai un account? <a href="register.html">Registrati</a>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+<script>
+document.querySelectorAll('[data-toggle]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const input = document.getElementById(btn.dataset.toggle);
+    input.type = input.type === 'password' ? 'text' : 'password';
+  });
+});
+
+// Demo: on submit go to the dashboard (or show error if password is the demo-wrong value)
+document.getElementById('loginForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const pw = document.getElementById('password').value;
+  if (pw === 'sbagliata' || pw.length < 1) {
+    document.getElementById('loginError').style.display = 'flex';
+    return;
+  }
+  window.location.href = '../pharmamia-mvp/index.html';
+});
+</script>
+</body>
+</html>

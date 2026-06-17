@@ -1,0 +1,131 @@
+schema: archetipo/plan/v2
+spec_code: US-002
+body: |
+  # US-002: Setup Supabase locale e schema database iniziale — Piano di Implementazione
+
+  **Generato da:** Team di Planning ARchetipo
+  **Data:** 2026-06-17
+
+  ---
+
+  ## Spec
+
+  **Epica:** EP-000 — Foundation del Progetto
+  **Priorità:** HIGH | **Punti:** 3
+
+  **User Story**
+  In qualità di sviluppatore del team, voglio Supabase CLI configurato localmente con le migration iniziali e il seed del database farmaci AIFA, così da sviluppare e testare le funzionalità con uno stack backend completo senza dipendere dall'ambiente cloud.
+
+  **Criteri di Accettazione**
+  - Supabase CLI è configurato e `supabase start` avvia correttamente l'ambiente locale (Postgres, Auth, Studio)
+  - Le migration iniziali creano le tabelle core del dominio con i tipi corretti
+  - Il seed importa il dataset AIFA: lookup per AIC e EAN funziona su almeno 1000 farmaci di esempio
+  - Le Row-Level Security policy di base sono definite nelle migration
+  - Il client `supabase-js` è integrato nel progetto con tipi generati dallo schema
+
+  ---
+
+  ## Soluzione Tecnica
+
+  Inizializziamo lo stack Supabase locale (Postgres + Auth + Studio via Docker) sotto `supabase/`, secondo la struttura definita nel PRD, e versioniamo tutto lo schema come migration SQL timestampate idempotenti. Lo schema iniziale copre i tre gruppi di dominio richiesti — **household** (con membri, base del multi-tenant), **catalogo farmaci AIFA** (dato di riferimento globale) e **inventario + terapie** (dati per-household) — separando nettamente il catalogo di riferimento (sola lettura, condiviso) dai dati sensibili isolati per household. La sicurezza è demandata al database tramite Row-Level Security basata sull'appartenenza alla household, requisito non negoziabile per dati sanitari (ADR-03).
+
+  - **Inizializzazione CLI:** `supabase init` genera `supabase/config.toml`; le porte locali e l'ID progetto sono versionati. Prerequisito operativo: Docker attivo e Supabase CLI installato (documentati nel README/`.env.example`).
+  - **Schema household e multi-tenancy:** tabelle `households` (id, nome, created_by, created_at) e `household_members` (household_id, user_id → `auth.users`, ruolo `owner|caregiver|member`, joined_at). Una funzione helper `is_household_member(uuid)` in `SECURITY DEFINER` centralizza il controllo di appartenenza ed **evita la ricorsione RLS** sulla tabella `household_members` che si auto-referenzia.
+  - **Catalogo farmaci AIFA:** tabella `drugs_catalog` (aic_code UNIQUE, ean_code nullable, denominazione, principio_attivo, forma_farmaceutica, confezione, titolare_aic) con indice univoco su `aic_code` e indice su `ean_code` per garantire lookup rapidi. È dato di riferimento pubblico: RLS abilitata con policy di sola SELECT per qualunque utente autenticato. Il mapping EAN↔AIC e il fallback per confezioni prive di EAN seguono ADR-05.
+  - **Inventario e terapie:** `medications` (household_id, catalog_id nullable verso `drugs_catalog` per l'inserimento manuale, scadenza, dosi/quantità, posizione, added_by) e `therapies` (medication_id, for_member → `auth.users`, dose, frequenza, orari, periodo). Entrambe portano `household_id` per agganciare le policy RLS.
+  - **Row-Level Security:** RLS abilitata su tutte le tabelle tenant; policy CRUD che ammettono solo le righe la cui `household_id` appartiene alle household dell'utente corrente via `is_household_member(household_id)`. Nessun dato visibile fuori dalla propria rete.
+  - **Seed AIFA:** dataset di esempio di almeno 1000 farmaci committato sotto `supabase/seed/data/` (CSV derivato dall'open data AIFA — Lista di Trasparenza) caricato da `supabase/seed.sql` via `\copy`, eseguito automaticamente da `supabase db reset`. Lo script di trasformazione e la fonte sono documentati.
+  - **Integrazione client:** `supabase-js` installato; client tipizzato in `src/shared/supabaseClient.ts`; tipi generati con `supabase gen types typescript --local` in `src/shared/database.types.ts` e script npm `db:types`. Le chiavi locali finiscono in `.env.example`.
+
+  **Assunzioni e questioni aperte**
+  - Questa spec presuppone il root di progetto prodotto da US-001 (package.json/pnpm, struttura `src/`). Se eseguita prima, il task di integrazione `supabase-js` crea un root minimo. Dipendenza logica segnalata, non bloccante (`Bloccato da: -`).
+  - Per lo sviluppo locale si committa un **campione** del dataset AIFA (≥1000 voci). La definizione del dataset canonico completo, della strategia di refresh periodico e del fallback per le voci prive di EAN (ADR-05) resta rimandata a una spec dedicata al data ingestion.
+
+  ---
+
+  ## Strategia di Test
+
+  Il focus è sull'integrità dello schema, sulla correttezza del lookup farmaci e — priorità assoluta — sull'isolamento RLS tra household. I test girano contro l'istanza Supabase locale.
+
+  - **Integrazione migration + seed:** `supabase db reset` applica tutte le migration senza errori; verifica che il catalogo contenga ≥1000 righe; lookup per `aic_code` restituisce la voce attesa e lookup per `ean_code` restituisce la confezione corretta (test in Vitest via `supabase-js`, oltre a una verifica di uso degli indici).
+  - **Isolamento RLS (pgTAP):** con due utenti di test, l'utente A membro della household H legge i farmaci di H; l'utente B non membro riceve zero righe / accesso negato in SELECT, INSERT, UPDATE e DELETE. Verifica anche che il catalogo AIFA resti leggibile da entrambi.
+  - **Smoke client tipizzato:** i tipi generati compilano (type-check) e una query di esempio tramite il client `supabase-js` ritorna dati tipizzati dal catalogo.
+
+  > Spec puramente infrastrutturale/backend: nessuna interfaccia utente coinvolta, quindi non sono previsti test e2e né registrazioni video.
+
+  ---
+
+  _Piano generato tramite ARchetipo Planning — 2026-06-17_
+tasks:
+  - id: TASK-01
+    title: Inizializzare Supabase CLI e configurare l'ambiente locale
+    description: Eseguire `supabase init`, versionare `supabase/config.toml` e verificare che `supabase start` avvii Postgres, Auth e Studio via Docker. Documentare i prerequisiti (Docker, Supabase CLI) e le variabili locali.
+    type: Impl
+    status: DONE
+    ref: TASK-01
+  - id: TASK-02
+    title: Migration schema household e membri con helper RLS
+    description: Creare le tabelle `households` e `household_members` (con ruoli e FK a auth.users) e la funzione `is_household_member` in SECURITY DEFINER per evitare la ricorsione RLS.
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-01
+    ref: TASK-02
+  - id: TASK-03
+    title: Migration catalogo farmaci AIFA con indici AIC/EAN
+    description: Creare la tabella `drugs_catalog` con i campi di dominio, indice univoco su aic_code e indice su ean_code per lookup rapidi.
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-01
+    ref: TASK-03
+  - id: TASK-04
+    title: Migration inventario farmaci e piani terapeutici
+    description: Creare le tabelle `medications` (con household_id e catalog_id nullable) e `therapies` collegate al catalogo, alle household e ai membri.
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-02
+      - TASK-03
+    ref: TASK-04
+  - id: TASK-05
+    title: Migration policy Row-Level Security
+    description: Abilitare RLS su tutte le tabelle tenant con policy CRUD basate su `is_household_member`; abilitare la sola SELECT sul catalogo AIFA per utenti autenticati.
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-04
+    ref: TASK-05
+  - id: TASK-06
+    title: Seed del dataset AIFA di esempio (≥1000 farmaci)
+    description: Committare un campione CSV (≥1000 voci) sotto supabase/seed/data/, caricarlo via supabase/seed.sql con \copy e documentare fonte e script di trasformazione.
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-03
+    ref: TASK-06
+  - id: TASK-07
+    title: Integrare il client supabase-js e generare i tipi
+    description: Installare supabase-js, creare il client tipizzato in src/shared/supabaseClient.ts, generare src/shared/database.types.ts con uno script `db:types` e documentare le chiavi in .env.example.
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-05
+    ref: TASK-07
+  - id: TASK-08
+    title: Test integrazione migration e lookup AIC/EAN
+    description: Verificare che `supabase db reset` applichi tutte le migration, che il catalogo abbia ≥1000 righe e che il lookup per AIC e per EAN restituisca i risultati attesi.
+    type: Test
+    status: DONE
+    dependencies:
+      - TASK-06
+      - TASK-07
+    ref: TASK-08
+  - id: TASK-09
+    title: Test RLS di isolamento household (pgTAP)
+    description: Con due utenti di test verificare che un membro legga i farmaci della propria household e che un non membro sia negato in SELECT/INSERT/UPDATE/DELETE, mentre il catalogo resta leggibile.
+    type: Test
+    status: DONE
+    dependencies:
+      - TASK-05
+    ref: TASK-09

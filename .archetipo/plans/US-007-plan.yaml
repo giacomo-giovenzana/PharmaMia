@@ -1,0 +1,92 @@
+schema: archetipo/plan/v2
+spec_code: US-007
+body: "# US-007: Scansione barcode e ricerca nel database AIFA — Piano di Implementazione\n\n**Generato da:** Team di Planning ARchetipo\n**Data:** 2026-06-17\n\n---\n\n## Spec\n\n**Epica:** EP-002 — Inventario Farmaci\n**Priorità:** HIGH | **Punti:** 3\n\n**User Story**\nIn qualità di Giulia (caregiver di famiglia), voglio aggiungere un farmaco all'inventario scansionando il codice a barre della confezione, così da non dover digitare nome, principio attivo e formato, riducendo al minimo il rischio di errori.\n\n**Criteri di Accettazione**\n- La funzione di scansione usa `BarcodeDetector` API con fallback automatico su `@zxing/library` quando l'API non è disponibile\n- Il barcode/AIC letto viene cercato nel database AIFA e i campi nome, principio attivo e formato vengono auto-compilati\n- Se il farmaco è trovato nel DB, l'utente può confermare o modificare i dati prima del salvataggio\n- Il farmaco viene aggiunto all'inventario dell'utente con i dati confermati\n- Se la scansione fallisce (barcode illeggibile o non nel DB), l'utente vede un messaggio chiaro e può riprovare o passare all'inserimento manuale\n\n---\n\n## Soluzione Tecnica\n\nIntroduciamo un nuovo feature module `src/features/scanning/` che incapsula l'accesso alla fotocamera e la decodifica del codice a barre, più un form di conferma/inserimento in `src/features/inventory/` che persiste il farmaco sulla tabella `medications` già definita in US-002. Il cuore tecnico è un'astrazione dello scanner che preferisce la `BarcodeDetector` API nativa e ricade automaticamente su `@zxing/library` quando l'API è assente (ADR-04: il fallback è obbligatorio, non opzionale, per iOS Safari e browser non supportati). Il lookup AIFA interroga `drugs_catalog` (sola lettura via RLS) per EAN e AIC e auto-compila il form. Le scelte chiave:\n\n- **Astrazione scanner con fallback:** `src/features/scanning/barcodeScanner.ts` espone un'interfaccia unica `scan(videoStream)`; sceglie il backend a runtime — `'BarcodeDetector' in window` → API nativa, altrimenti `BrowserMultiFormatReader` di `@zxing/library` (nuova dipendenza, oggi **assente** dal `package.json`). Un hook `useBarcodeScanner` gestisce il ciclo di vita di `navigator.mediaDevices.getUserMedia`, lo stato (in ascolto / rilevato / errore), il toggle torcia quando supportato, e il cleanup allo unmount.\n- **Lookup AIFA:** `src/features/scanning/drugLookup.ts` interroga `drugs_catalog` prima per `ean_code` poi per `aic_code` tramite il client `supabase-js` tipizzato esistente, restituendo la voce di catalogo o `null`. Una funzione pura in `src/domain/` mappa la voce di catalogo in una bozza di `medication` (copia di `name`, `active_ingredient`, `form`/`dosage`, `catalog_id`).\n- **Auto-provisioning household (sblocco del salvataggio):** poiché nessuna spec crea ancora una household e l'INSERT su `medications` richiede un `household_id` che soddisfi `is_household_member`, aggiungiamo una migration con la funzione Postgres `ensure_personal_household()` in `SECURITY DEFINER` (idempotente): se l'utente corrente non ha alcuna household ne crea una \"personale\" e lo aggiunge come `admin`, poi restituisce l'`household_id`. È l'unico modo pulito per bypassare le policy RLS attuali (households = solo `service_role`, membri = solo `admin`). Concesso `execute` a `authenticated`; rigenerazione dei tipi via `db:types`.\n- **ScanPage:** `src/features/scanning/ScanPage.tsx` (route protetta `/scan`) replica il mockup `docs/mockups/pharmamia-mvp/scan.html` — viewport fotocamera, frame, chip di stato, bottom sheet con risultato e azioni; su \"non trovato\" / barcode illeggibile / permesso negato mostra un messaggio chiaro con \"Riprova\" e \"Inserisci manualmente\". Voce d'ingresso \"Aggiungi farmaco\" sulla HomePage.\n- **Form conferma/manuale:** `src/features/inventory/MedicineFormPage.tsx` (route `/medicine/new`) replica `docs/mockups/pharmamia-mvp/medicine.html`; pre-compilato dalla voce AIFA (modificabile) o vuoto per il fallback manuale (`catalog_id = null`, RF-02). Al salvataggio chiama `ensure_personal_household()` e poi inserisce in `medications` con i campi confermati (scadenza, quantità, unità, posizione opzionale).\n- **Gestione errori in italiano:** permesso fotocamera negato, fotocamera assente, API+fallback entrambi non disponibili, codice non in catalogo, errori di rete — tutti mappati su messaggi chiari coerenti con i mockup e l'accessibilità (persona Marco).\n\n**Assunzioni e questioni aperte**\n- **Auto-provisioning concordato con lo stakeholder:** US-007 introduce una household \"personale\" minima per rendere il salvataggio dimostrabile end-to-end. La gestione completa delle household (creazione esplicita, inviti, ruoli caregiver) resta a EP-005 e l'isolamento RLS dedicato a US-005.\n- **Scope concordato:** scansione + lookup AIFA + form di conferma/modifica con salvataggio + fallback manuale. La **pagina lista inventario** è fuori scope (spec separata).\n- **Solo EAN-13 lineare nell'MVP:** il bollino Data Matrix e la derivazione algoritmica EAN↔AIC (ADR-05) sono rimandati; il lookup avviene per colonna su `ean_code` e `aic_code`.\n- US-004 (auth) è IN PROGRESS: ScanPage e il form si agganciano a `ProtectedRoute`/`useAuth` esistenti. Dipendenza logica segnalata, non bloccante (`Bloccato da: -`).\n\n---\n\n## Strategia di Test\n\nLa strategia copre quattro livelli — logica pura (unit), componenti UI (RTL), integrazione DB/RLS e flussi utente completi (e2e) — con focus sul corretto switch nativo/fallback dello scanner, sul lookup AIFA, sull'idempotenza dell'auto-provisioning household e sul percorso di fallback manuale.\n\n- **Unit (Vitest):** selezione del backend scanner (`BarcodeDetector` presente → path nativo; assente → fallback ZXing) con global mockati; lookup AIFA (hit EAN, hit AIC, non trovato → `null`) con `supabase-js` mockato; mappatura pura voce-catalogo → bozza medication.\n- **Component (Vitest + React Testing Library):** stati di ScanPage (in ascolto, rilevato, trovato con sheet, non trovato, permesso negato, link fallback manuale) e form conferma/manuale (pre-compilazione da catalogo, validazione, salvataggio che invoca l'insert, form vuoto manuale) con client e scanner mockati.\n- **Integrazione (Vitest vs Supabase locale):** `ensure_personal_household()` crea household + membership `admin` in modo idempotente (seconda invocazione restituisce la stessa household); l'insert in `medications` con l'`household_id` restituito supera le policy RLS ed è rileggibile.\n\n### Test E2E — Simulazione Utente\n\n**Framework:** Playwright (già configurato: `playwright.config.ts`, `@playwright/test`)\n**Registrazione video:** Abilitata per tutti gli scenari — output in `docs/test-results/US-007/`\n\nNota tecnica: la fotocamera reale non è utilizzabile headless, quindi un seam di test stubba `navigator.mediaDevices.getUserMedia` e `window.BarcodeDetector` via `page.addInitScript`, emettendo un codice EAN presente nel seed AIFA; il codice di produzione resta invariato.\n\n| Scenario | Descrizione del flusso utente |\n|---|---|\n| Scan trovato → conferma → salva | Utente autenticato apre l'app, tocca \"Aggiungi farmaco\", lo scanner rileva un EAN presente nel catalogo, vede il form pre-compilato con nome/principio attivo/formato, conferma e il farmaco viene salvato nell'inventario |\n| Non trovato → fallback manuale | Lo scanner rileva un codice non presente nel DB, l'utente vede il messaggio d'errore, tocca \"Inserisci manualmente\", compila il form e salva |\n| Permesso fotocamera negato | L'accesso alla fotocamera viene negato; l'utente vede un messaggio chiaro e può proseguire con l'inserimento manuale |\n\n---\n\n> \U0001F3A8 Mockup di riferimento esistenti: `docs/mockups/pharmamia-mvp/scan.html` (schermata scansione) e `docs/mockups/pharmamia-mvp/medicine.html` (form farmaco).\n\n_Piano generato tramite ARchetipo Planning — 2026-06-17_"
+tasks:
+  - id: TASK-01
+    title: Astrazione scanner barcode con BarcodeDetector + fallback ZXing
+    description: Installare la dipendenza `@zxing/library` e creare `src/features/scanning/barcodeScanner.ts` + hook `useBarcodeScanner` che gestisce getUserMedia, scelta runtime del backend (nativo vs ZXing), toggle torcia e cleanup.
+    type: Impl
+    status: DONE
+    ref: TASK-01
+  - id: TASK-02
+    title: Unit test selezione scanner e ciclo di vita fotocamera
+    description: Testare con global mockati che lo scanner usi BarcodeDetector quando presente e ricada su ZXing quando assente, e che lo stream venga avviato/fermato correttamente.
+    type: Test
+    status: DONE
+    dependencies:
+      - TASK-01
+    ref: TASK-02
+  - id: TASK-03
+    title: Servizio di lookup AIFA e mappatura verso medication
+    description: Creare `drugLookup.ts` che cerca in `drugs_catalog` per ean_code poi aic_code via supabase-js, e una funzione pura in `src/domain/` che mappa la voce di catalogo in una bozza di medication.
+    type: Impl
+    status: DONE
+    ref: TASK-03
+  - id: TASK-04
+    title: Unit test lookup AIFA e mappatura bozza
+    description: Verificare hit per EAN, hit per AIC e caso non trovato (null) con supabase-js mockato, oltre alla correttezza della mappatura catalogo → bozza medication.
+    type: Test
+    status: DONE
+    dependencies:
+      - TASK-03
+    ref: TASK-04
+  - id: TASK-05
+    title: Migration ensure_personal_household() SECURITY DEFINER
+    description: Aggiungere una migration con la funzione idempotente `ensure_personal_household()` che crea una household personale e la membership admin se assenti e restituisce l'household_id; concedere execute a authenticated e rigenerare i tipi.
+    type: Impl
+    status: DONE
+    ref: TASK-05
+  - id: TASK-06
+    title: Test integrazione auto-provisioning household e insert RLS
+    description: Su Supabase locale verificare che l'RPC crei household + membership admin in modo idempotente e che l'insert in medications con l'household_id restituito superi le policy RLS e sia rileggibile.
+    type: Test
+    status: DONE
+    dependencies:
+      - TASK-05
+    ref: TASK-06
+  - id: TASK-07
+    title: ScanPage con viewport fotocamera, stati ed errori
+    description: 'Implementare `src/features/scanning/ScanPage.tsx` (route protetta /scan) seguendo il mockup docs/mockups/pharmamia-mvp/scan.html: stati di scansione, bottom sheet risultato, messaggi di errore/non trovato con riprova e fallback manuale; aggiungere la voce "Aggiungi farmaco" sulla Home.'
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-01
+      - TASK-03
+    ref: TASK-07
+  - id: TASK-08
+    title: Form conferma/manuale e salvataggio in medications
+    description: 'Implementare `src/features/inventory/MedicineFormPage.tsx` (route /medicine/new) seguendo docs/mockups/pharmamia-mvp/medicine.html: pre-compilazione da catalogo o form vuoto manuale, e salvataggio che invoca ensure_personal_household() e inserisce in medications.'
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-05
+      - TASK-07
+    ref: TASK-08
+  - id: TASK-09
+    title: Component test ScanPage e form farmaco
+    description: Test RTL per gli stati di ScanPage (in ascolto, trovato, non trovato, permesso negato, link manuale) e per il form (pre-compilazione, validazione, salvataggio, modalità manuale vuota) con scanner e client mockati.
+    type: Test
+    status: DONE
+    dependencies:
+      - TASK-07
+      - TASK-08
+    ref: TASK-09
+  - id: TASK-10
+    title: Configurare video e seam di test fotocamera per e2e US-007
+    description: Abilitare la registrazione video Playwright con output in docs/test-results/US-007/ e predisporre un seam (addInitScript) che stubba getUserMedia e BarcodeDetector emettendo un EAN del seed.
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-07
+      - TASK-08
+    ref: TASK-10
+  - id: TASK-11
+    title: Test e2e flussi di scansione con video
+    description: 'Scenari Playwright con video: scan trovato → conferma → salva; codice non trovato → inserimento manuale; permesso fotocamera negato → fallback manuale.'
+    type: Test
+    status: DONE
+    dependencies:
+      - TASK-06
+      - TASK-09
+      - TASK-10
+    ref: TASK-11

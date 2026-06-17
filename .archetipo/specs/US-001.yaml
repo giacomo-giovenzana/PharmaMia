@@ -1,0 +1,30 @@
+schema: archetipo/spec/v2
+code: US-001
+title: Scaffold del progetto React PWA e ambiente di sviluppo
+epic:
+  code: EP-000
+  title: Foundation del Progetto
+priority: HIGH
+points: 3
+status: DONE
+scope: MVP
+body: |-
+  #### US-001: Scaffold del progetto React PWA e ambiente di sviluppo
+
+  **Epica:** EP-000 | **Priorità:** HIGH | **Punti:** 3 | **Stato:** TODO
+  **Bloccato da:** -
+
+  **User Story**
+  In qualità di sviluppatore del team,
+  voglio un ambiente di sviluppo locale funzionante con scaffold React + Vite + TypeScript e suite di test configurata,
+  così da avviare immediatamente lo sviluppo delle funzionalità senza configurazioni manuali.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, uno sviluppatore clona il repository, esegue `pnpm install && pnpm dev` e vede l'app React avviarsi nel browser; `pnpm test` fa passare i test di esempio; la PWA risulta installabile dal browser.
+
+  **Criteri di Accettazione**
+  - [ ] Il progetto React 18 + Vite 5 + TypeScript 5 è scaffoldato con struttura feature-based conforme all'architettura definita nel PRD
+  - [ ] Vitest, React Testing Library e Playwright sono configurati con almeno un test di esempio funzionante per ogni layer
+  - [ ] ESLint e type-check TypeScript passano senza errori sul codice iniziale
+  - [ ] Il manifest PWA e il service worker di base sono configurati: la PWA è installabile localmente
+  - [ ] Il file `.env.example` documenta le variabili d'ambiente necessarie (chiavi Supabase, VAPID)

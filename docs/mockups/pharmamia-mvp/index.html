@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PharmaMia – Dashboard</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.greeting-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 20px 16px;
+  background: var(--c-surface);
+}
+
+.greeting-left { display: flex; flex-direction: column; gap: 3px; }
+
+.greeting-tag {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--c-text-3);
+}
+
+.greeting-name {
+  font-family: var(--f-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--c-text);
+  line-height: 1.2;
+}
+
+.greeting-date {
+  font-size: .74rem;
+  color: var(--c-text-3);
+}
+
+.greeting-right { display: flex; align-items: center; gap: 10px; }
+
+/* Hero stats bar */
+.stats-strip {
+  background: var(--c-surface);
+  border-bottom: 1px solid var(--c-border);
+  padding: 0 20px 16px;
+}
+
+.summary-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--r-full);
+  font-size: .76rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity .15s;
+}
+
+.summary-pill:hover { opacity: .85; }
+.summary-pill.danger  { background: var(--c-danger-lt);  color: var(--c-danger); }
+.summary-pill.warning { background: var(--c-warning-lt); color: var(--c-warning); }
+.summary-pill.ok      { background: var(--c-ok-lt);      color: var(--c-ok); }
+
+.summary-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<div class="phone">
+
+  <!-- GREETING BAR -->
+  <div class="greeting-bar">
+    <div class="greeting-left">
+      <span class="greeting-tag">Mercoledì 17 giugno</span>
+      <span class="greeting-name">Ciao, Giulia 👋</span>
+    </div>
+    <div class="greeting-right">
+      <a href="household.html">
+        <div class="avatar avatar-teal" style="width:40px;height:40px;font-size:.85rem;">GI</div>
+      </a>
+      <a href="#">
+        <div class="topbar-icon-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <span class="badge-dot"></span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="summary-pills">
+      <a href="inventory.html" class="summary-pill danger">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        1 scaduto
+      </a>
+      <a href="inventory.html" class="summary-pill warning">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+        2 in scadenza
+      </a>
+      <a href="inventory.html" class="summary-pill warning">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        </svg>
+        3 scorte basse
+      </a>
+    </div>
+  </div>
+
+  <!-- SCREEN SCROLL -->
+  <div class="screen">
+
+    <!-- ALERT: SCADUTO -->
+    <div class="section">
+      <div class="alert-card danger fade-up fade-up-1">
+        <div class="alert-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+        </div>
+        <div class="alert-content">
+          <div class="alert-title">Amoxicillina scaduta</div>
+          <div class="alert-desc">Scaduta il 31/01/2026 — rimuovila dall'armadietto al più presto.</div>
+        </div>
+      </div>
+
+      <div class="alert-card warning fade-up fade-up-2">
+        <div class="alert-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </div>
+        <div class="alert-content">
+          <div class="alert-title" style="color:var(--c-warning)">Tachipirina scade tra 5 giorni</div>
+          <div class="alert-desc">Scadenza: 22/06/2026 — controlla se serve riacquistare.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK ACTIONS -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Azioni rapide</span>
+      </div>
+    </div>
+    <div class="quick-actions fade-up fade-up-2">
+      <a href="scan.html" class="quick-btn">
+        <div class="quick-btn-icon" style="background:var(--c-primary-lt)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--c-primary)" stroke-width="2" stroke-linecap="round">
+            <polyline points="23 7 23 1 17 1"/>
+            <polyline points="1 17 1 23 7 23"/>
+            <polyline points="17 23 23 23 23 17"/>
+            <polyline points="1 7 1 1 7 1"/>
+            <rect x="7" y="7" width="10" height="10"/>
+          </svg>
+        </div>
+        <span class="quick-btn-label">Scansiona</span>
+      </a>
+      <a href="medicine.html" class="quick-btn">
+        <div class="quick-btn-icon" style="background:var(--c-info-lt)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--c-info)" stroke-width="2" stroke-linecap="round">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </div>
+        <span class="quick-btn-label">Aggiungi</span>
+      </a>
+      <a href="household.html" class="quick-btn">
+        <div class="quick-btn-icon" style="background:var(--c-purple-lt)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--c-purple)" stroke-width="2" stroke-linecap="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <span class="quick-btn-label">Famiglia</span>
+      </a>
+    </div>
+
+    <!-- FARMACI IN EVIDENZA -->
+    <div class="section" style="padding-bottom:0">
+      <div class="section-header">
+        <span class="section-title">Da tenere d'occhio</span>
+        <a href="inventory.html" class="section-link">Vedi tutti</a>
+      </div>
+    </div>
+
+    <div class="hscroll fade-up fade-up-3">
+      <!-- SCADUTO -->
+      <a href="inventory.html" class="hscroll-card danger">
+        <span class="badge badge-danger" style="margin-bottom:10px">Scaduto</span>
+        <div class="hscroll-card-name">Amoxicillina<br>500 mg</div>
+        <div class="hscroll-card-sub">Antibiotico · 8 cpr</div>
+        <div style="margin-top:10px">
+          <div class="hscroll-card-qty" style="color:var(--c-danger)">31/01</div>
+          <div class="hscroll-card-qty-label">scadenza 2026</div>
+        </div>
+      </a>
+      <!-- SCADE PRESTO -->
+      <a href="inventory.html" class="hscroll-card warning">
+        <span class="badge badge-warning" style="margin-bottom:10px">5 giorni</span>
+        <div class="hscroll-card-name">Tachipirina<br>1000 mg</div>
+        <div class="hscroll-card-sub">Paracetamolo · 15 cpr</div>
+        <div style="margin-top:10px">
+          <div class="hscroll-card-qty" style="color:var(--c-warning)">22/06</div>
+          <div class="hscroll-card-qty-label">scadenza 2026</div>
+        </div>
+      </a>
+      <!-- SCORTA BASSA -->
+      <a href="inventory.html" class="hscroll-card warning">
+        <span class="badge badge-warning" style="margin-bottom:10px">Scorta bassa</span>
+        <div class="hscroll-card-name">Atorvastatina<br>20 mg</div>
+        <div class="hscroll-card-sub">Statina · in terapia</div>
+        <div style="margin-top:10px">
+          <div class="hscroll-card-qty" style="color:var(--c-warning)">8</div>
+          <div class="hscroll-card-qty-label">compresse rimaste</div>
+        </div>
+      </a>
+      <!-- SCORTA BASSA -->
+      <a href="inventory.html" class="hscroll-card warning">
+        <span class="badge badge-warning" style="margin-bottom:10px">Scorta bassa</span>
+        <div class="hscroll-card-name">Amlodipina<br>5 mg</div>
+        <div class="hscroll-card-sub">Antiipertensivo · in terapia</div>
+        <div style="margin-top:10px">
+          <div class="hscroll-card-qty" style="color:var(--c-warning)">12</div>
+          <div class="hscroll-card-qty-label">compresse rimaste</div>
+        </div>
+      </a>
+      <!-- OK -->
+      <a href="inventory.html" class="hscroll-card ok">
+        <span class="badge badge-ok" style="margin-bottom:10px">OK</span>
+        <div class="hscroll-card-name">Aspirina<br>100 mg</div>
+        <div class="hscroll-card-sub">Acido acetilsalicilico</div>
+        <div style="margin-top:10px">
+          <div class="hscroll-card-qty">30</div>
+          <div class="hscroll-card-qty-label">compresse rimaste</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- TERAPIE OGGI -->
+    <div class="section" style="padding-bottom:0;padding-top:8px">
+      <div class="section-header">
+        <span class="section-title">Terapie di oggi</span>
+        <a href="therapy.html" class="section-link">Vedi tutto</a>
+      </div>
+    </div>
+
+    <div style="padding: 4px 20px 0" class="fade-up fade-up-4">
+      <!-- FATTO -->
+      <div class="therapy-card morning">
+        <div class="therapy-time">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="display:inline-block;margin-bottom:-2px">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          08:00 · Mattina
+        </div>
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="therapy-name">Amlodipina 5 mg</div>
+            <div class="therapy-dose">1 compressa · antipertensivo</div>
+          </div>
+          <button class="dose-btn done">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Presa
+          </button>
+        </div>
+      </div>
+
+      <!-- DA PRENDERE -->
+      <div class="therapy-card evening">
+        <div class="therapy-time">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="display:inline-block;margin-bottom:-2px">
+            <path d="M17 18a5 5 0 0 0-10 0"/>
+            <line x1="12" y1="2" x2="12" y2="9"/>
+            <line x1="4.22" y1="10.22" x2="5.64" y2="11.64"/>
+            <line x1="1" y1="18" x2="3" y2="18"/>
+            <line x1="21" y1="18" x2="23" y2="18"/>
+            <line x1="18.36" y1="11.64" x2="19.78" y2="10.22"/>
+          </svg>
+          21:00 · Sera
+        </div>
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="therapy-name">Atorvastatina 20 mg</div>
+            <div class="therapy-dose">1 compressa · statina</div>
+          </div>
+          <button class="dose-btn pending" onclick="this.className='dose-btn done';this.innerHTML='<svg width=14 height=14 viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=3 stroke-linecap=\'round\'><polyline points=\'20 6 9 17 4 12\'></polyline></svg> Presa'">
+            Conferma
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RETE CONDIVISA -->
+    <div class="section fade-up fade-up-5">
+      <div class="section-header">
+        <span class="section-title">La tua rete</span>
+        <a href="household.html" class="section-link">Gestisci</a>
+      </div>
+      <div class="card">
+        <div class="card-body" style="padding:16px">
+          <div class="flex items-center justify-between" style="margin-bottom:14px">
+            <div>
+              <div class="card-title">Casa Bianchi</div>
+              <div class="card-sub">4 membri · 46 farmaci totali</div>
+            </div>
+            <div style="display:flex;gap:-6px">
+              <div class="avatar avatar-teal"   style="width:32px;height:32px;font-size:.7rem;border:2px solid white;z-index:4">GI</div>
+              <div class="avatar avatar-amber"  style="width:32px;height:32px;font-size:.7rem;border:2px solid white;z-index:3;margin-left:-8px">MA</div>
+              <div class="avatar avatar-purple" style="width:32px;height:32px;font-size:.7rem;border:2px solid white;z-index:2;margin-left:-8px">MR</div>
+              <div class="avatar avatar-blue"   style="width:32px;height:32px;font-size:.7rem;border:2px solid white;z-index:1;margin-left:-8px">LU</div>
+            </div>
+          </div>
+          <!-- Richiesta prestito pending -->
+          <div style="background:var(--c-info-lt);border-radius:var(--r-md);padding:12px;display:flex;align-items:center;gap:10px">
+            <div style="width:36px;height:36px;background:var(--c-info);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                <path d="M20 12V22H4V12"/>
+                <path d="M22 7H2v5h20V7z"/>
+                <path d="M12 22V7"/>
+                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+              </svg>
+            </div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:.78rem;font-weight:700;color:var(--c-info)">Richiesta prestito</div>
+              <div style="font-size:.72rem;color:var(--c-text-2)">Silvia chiede Voltaren Emulgel</div>
+            </div>
+            <a href="household.html" style="font-size:.74rem;font-weight:700;color:var(--c-info)">Rispondi →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPACER -->
+    <div style="height:12px"></div>
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item active">
+      <div class="nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </div>
+      Home
+    </a>
+    <a href="inventory.html" class="nav-item">
+      <div class="nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <rect x="3" y="3" width="7" height="7" rx="1"/>
+          <rect x="14" y="3" width="7" height="7" rx="1"/>
+          <rect x="3" y="14" width="7" height="7" rx="1"/>
+          <rect x="14" y="14" width="7" height="7" rx="1"/>
+        </svg>
+      </div>
+      Inventario
+    </a>
+    <div class="nav-item-scan">
+      <a href="scan.html" class="scan-fab">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+          <polyline points="23 7 23 1 17 1"/>
+          <polyline points="1 17 1 23 7 23"/>
+          <polyline points="17 23 23 23 23 17"/>
+          <polyline points="1 7 1 1 7 1"/>
+          <rect x="7" y="7" width="10" height="10" rx="1"/>
+        </svg>
+      </a>
+    </div>
+    <a href="therapy.html" class="nav-item">
+      <div class="nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <line x1="8" y1="14" x2="8" y2="14"/>
+          <line x1="12" y1="14" x2="12" y2="14"/>
+          <line x1="16" y1="14" x2="16" y2="14"/>
+        </svg>
+      </div>
+      Terapie
+    </a>
+    <a href="household.html" class="nav-item">
+      <div class="nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      Famiglia
+    </a>
+  </nav>
+
+</div>
+</div>
+</body>
+</html>

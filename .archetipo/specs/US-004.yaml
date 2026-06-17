@@ -1,0 +1,30 @@
+schema: archetipo/spec/v2
+code: US-004
+title: Registrazione e login con email
+epic:
+  code: EP-001
+  title: Autenticazione e Account
+priority: HIGH
+points: 3
+status: REVIEW
+scope: MVP
+body: |-
+  #### US-004: Registrazione e login con email
+
+  **Epica:** EP-001 | **Priorità:** HIGH | **Punti:** 3 | **Stato:** TODO
+  **Bloccato da:** -
+
+  **User Story**
+  In qualità di Giulia (caregiver di famiglia),
+  voglio registrarmi con la mia email e accedere all'app con le mie credenziali,
+  così da avere i miei dati farmaci salvati in modo sicuro e accessibili da qualsiasi dispositivo.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, un nuovo utente apre la PWA, si registra con email e password, riceve una mail di conferma, completa la verifica e accede alla schermata principale; un utente già registrato può fare login e logout.
+
+  **Criteri di Accettazione**
+  - [ ] L'utente può registrarsi con email e password tramite Supabase Auth; riceve una mail di conferma
+  - [ ] L'utente può fare login con email e password ed essere reindirizzato alla schermata principale
+  - [ ] L'utente può fare logout; la sessione viene invalidata e l'utente viene reindirizzato al login
+  - [ ] Le route protette reindirizzano al login se la sessione è assente o scaduta
+  - [ ] La gestione degli errori mostra messaggi chiari (email già registrata, credenziali errate)

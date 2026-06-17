@@ -1,0 +1,32 @@
+schema: archetipo/spec/v2
+code: US-010
+title: Modifica, consumo e rimozione farmaco dall'inventario
+epic:
+  code: EP-002
+  title: Inventario Farmaci
+priority: HIGH
+points: 2
+status: TODO
+blocked_by:
+  - US-009
+scope: MVP
+body: |-
+  #### US-010: Modifica, consumo e rimozione farmaco dall'inventario
+
+  **Epica:** EP-002 | **Priorità:** HIGH | **Punti:** 2 | **Stato:** TODO
+  **Bloccato da:** US-009
+
+  **User Story**
+  In qualità di Marco (paziente cronico),
+  voglio modificare i dati di un farmaco, registrare un consumo (decrementare le dosi) ed eliminarlo dall'inventario,
+  così da mantenere il mio inventario sempre aggiornato e fedele alla realtà.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, Marco apre il dettaglio di un farmaco, registra di aver consumato 2 compresse e vede la quantità aggiornata; modifica la data di scadenza; elimina un farmaco esaurito con una conferma esplicita.
+
+  **Criteri di Accettazione**
+  - [ ] L'utente può modificare tutti i campi del farmaco (nome, scadenza, quantità, posizione) dalla scheda di dettaglio
+  - [ ] L'utente può decrementare la quantità disponibile specificando il numero di dosi consumate
+  - [ ] L'utente può eliminare un farmaco dall'inventario; viene richiesta una conferma esplicita prima della cancellazione
+  - [ ] Le modifiche sono riflesse immediatamente nell'inventario e nella dashboard
+  - [ ] Non è possibile portare la quantità sotto zero

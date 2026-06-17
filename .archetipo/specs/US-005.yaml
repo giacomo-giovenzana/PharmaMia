@@ -1,0 +1,31 @@
+schema: archetipo/spec/v2
+code: US-005
+title: Isolamento dati household via Row-Level Security
+epic:
+  code: EP-001
+  title: Autenticazione e Account
+priority: HIGH
+points: 3
+status: TODO
+blocked_by:
+  - US-004
+scope: MVP
+body: |-
+  #### US-005: Isolamento dati household via Row-Level Security
+
+  **Epica:** EP-001 | **Priorità:** HIGH | **Punti:** 3 | **Stato:** TODO
+  **Bloccato da:** US-004
+
+  **User Story**
+  In qualità di Giulia (caregiver di famiglia),
+  voglio che i dati della mia farmacia siano accessibili solo a me e ai membri della mia household,
+  così da garantire la privacy dei dati sanitari della mia famiglia.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, un test di integrazione con due utenti distinti conferma che nessuno può leggere o modificare i farmaci dell'altro tramite query diretta; le RLS policy bloccano ogni accesso non autorizzato.
+
+  **Criteri di Accettazione**
+  - [ ] Le RLS policy su tutte le tabelle sensibili (farmaci, terapie, household) bloccano l'accesso a utenti non appartenenti alla household
+  - [ ] Un utente autenticato vede solo i dati delle household di cui è membro
+  - [ ] Un test di integrazione verifica il comportamento RLS con due utenti distinti
+  - [ ] L'API client non espone dati di altri utenti neanche in caso di errore di configurazione

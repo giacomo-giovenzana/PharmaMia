@@ -1,0 +1,39 @@
+schema: archetipo/backlog/v2
+version: 2
+epics:
+  - code: EP-000
+    title: Foundation del Progetto
+  - code: EP-001
+    title: Autenticazione e Account
+  - code: EP-002
+    title: Inventario Farmaci
+  - code: EP-003
+    title: Scadenze e Scorte
+  - code: EP-004
+    title: Piano Terapeutico
+  - code: EP-005
+    title: Farmacia Condivisa
+  - code: EP-006
+    title: Anti-Spreco e Prestito
+order:
+  - US-007
+  - US-002
+  - US-004
+  - US-008
+  - US-009
+  - US-005
+  - US-006
+  - US-010
+  - US-011
+  - US-012
+  - US-013
+  - US-014
+  - US-015
+  - US-016
+  - US-017
+  - US-018
+  - US-019
+  - US-020
+  - US-021
+  - US-003
+  - US-001

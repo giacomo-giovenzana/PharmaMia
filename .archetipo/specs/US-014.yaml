@@ -1,0 +1,30 @@
+schema: archetipo/spec/v2
+code: US-014
+title: Definizione piano terapeutico per un farmaco
+epic:
+  code: EP-004
+  title: Piano Terapeutico
+priority: HIGH
+points: 3
+status: TODO
+scope: MVP
+body: |-
+  #### US-014: Definizione piano terapeutico per un farmaco
+
+  **Epica:** EP-004 | **Priorità:** HIGH | **Punti:** 3 | **Stato:** TODO
+  **Bloccato da:** -
+
+  **User Story**
+  In qualità di Marco (paziente cronico),
+  voglio definire un piano terapeutico per un farmaco specificando dose, frequenza, durata e orari di assunzione,
+  così da avere un programma strutturato che guidi la mia terapia quotidiana.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, Marco seleziona "Metoprololo" dal suo inventario, tocca "Crea piano terapeutico", inserisce 1 compressa ogni mattina alle 08:00 per 30 giorni, e vede il piano attivo nella scheda del farmaco con il prossimo promemoria pianificato.
+
+  **Criteri di Accettazione**
+  - [ ] L'utente può creare un piano terapeutico partendo da un farmaco nell'inventario
+  - [ ] Il piano include: dose per assunzione, frequenza (giornaliera, più volte al giorno, settimanale), durata opzionale e orari di assunzione
+  - [ ] Il piano attivo è visibile nella scheda del farmaco con il prossimo promemoria pianificato
+  - [ ] L'utente può modificare o interrompere un piano terapeutico attivo
+  - [ ] È possibile avere un solo piano attivo per farmaco alla volta

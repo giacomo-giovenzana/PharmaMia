@@ -1,0 +1,32 @@
+schema: archetipo/spec/v2
+code: US-015
+title: Registrazione dose assunta e decremento automatico scorte
+epic:
+  code: EP-004
+  title: Piano Terapeutico
+priority: HIGH
+points: 2
+status: TODO
+blocked_by:
+  - US-014
+scope: MVP
+body: |-
+  #### US-015: Registrazione dose assunta e decremento automatico scorte
+
+  **Epica:** EP-004 | **Priorità:** HIGH | **Punti:** 2 | **Stato:** TODO
+  **Bloccato da:** US-014
+
+  **User Story**
+  In qualità di Marco (paziente cronico),
+  voglio registrare con un tap che ho assunto la dose prevista,
+  così da non dover aggiornare manualmente le scorte e avere sempre la data stimata di esaurimento aggiornata.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, Marco vede la dose di mattina da prendere, tocca "Confermata", e la quantità residua del farmaco si decrementa automaticamente; la data stimata di esaurimento viene ricalcolata e mostrata aggiornata nella scheda.
+
+  **Criteri di Accettazione**
+  - [ ] L'utente può registrare una dose come "assunta" con un singolo tap dalla scheda del farmaco
+  - [ ] Ogni dose confermata decrementa automaticamente la quantità residua secondo il dosaggio del piano
+  - [ ] La data stimata di esaurimento viene ricalcolata ad ogni dose registrata e mostrata nella scheda del farmaco
+  - [ ] L'utente può segnare una dose come "saltata" senza decrementare le scorte
+  - [ ] Lo storico delle dosi registrate è visibile nella scheda del farmaco

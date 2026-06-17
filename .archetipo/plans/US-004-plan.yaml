@@ -1,0 +1,87 @@
+schema: archetipo/plan/v2
+spec_code: US-004
+body: "# US-004: Registrazione e login con email — Piano di Implementazione\n\n**Generato da:** Team ARchetipo Planning\n**Data:** 2026-06-17\n\n---\n\n## Spec\n\n**Epica:** EP-001 — Autenticazione e Account\n**Priorità:** HIGH | **Punti:** 3\n\n**User Story**\nIn qualità di Giulia (caregiver di famiglia), voglio registrarmi con la mia email e accedere all'app con le mie credenziali, così da avere i miei dati farmaci salvati in modo sicuro e accessibili da qualsiasi dispositivo.\n\n**Criteri di Accettazione**\n- L'utente può registrarsi con email e password tramite Supabase Auth; riceve una mail di conferma\n- L'utente può fare login con email e password ed essere reindirizzato alla schermata principale\n- L'utente può fare logout; la sessione viene invalidata e l'utente viene reindirizzato al login\n- Le route protette reindirizzano al login se la sessione è assente o scaduta\n- La gestione degli errori mostra messaggi chiari (email già registrata, credenziali errate)\n\n---\n\n## Soluzione Tecnica\n\nIntroduciamo l'autenticazione email/password basata su **Supabase Auth**, incapsulata in un feature module `src/features/auth/` coerente con l'organizzazione feature-based del progetto. Un client Supabase tipizzato e condiviso espone l'auth all'intera app; lo stato di sessione è gestito da un `AuthProvider` (React Context) costruito su `supabase.auth.getSession()` + `onAuthStateChange`, e il routing client-side (nuova dipendenza `react-router-dom`) separa le route pubbliche (login, registrazione, verifica, callback) da quelle protette tramite un componente `ProtectedRoute`. Questa spec copre autenticazione e gestione sessione; l'isolamento dati per household via RLS (RF-15) è demandato a una spec successiva.\n\n- **Client condiviso:** `src/shared/supabase/client.ts` crea il client da `VITE_SUPABASE_URL` / `VITE_SUPABASE_PUBLISHABLE_KEY` (già presenti in `.env.example`), con persistenza sessione e auto-refresh dei token abilitati.\n- **Stato auth centralizzato:** `AuthProvider` + hook `useAuth()` espongono `session`, `user`, `loading`, `signUp`, `signIn`, `signOut`; la UI reagisce a `onAuthStateChange` senza polling.\n- **Routing e protezione:** `react-router-dom` con route `/login`, `/register`, `/verify-email`, `/auth/callback` (conferma email via `emailRedirectTo`) e home protetta; `ProtectedRoute` reindirizza a `/login` quando la sessione è assente o scaduta.\n- **Gestione errori in italiano:** una funzione pura mappa i codici/errori di Supabase Auth in messaggi chiari (es. email già registrata, credenziali errate), mostrati come banner coerenti con i mockup.\n- **Conferma email:** registrazione con `emailRedirectTo` verso `/auth/callback`; dopo il signup l'utente vede la schermata \"Controlla la tua email\" con possibilità di reinvio.\n- **UI da mockup:** le schermate login, registrazione, verifica email e il menu account/logout seguono i mockup in `docs/mockups/US-004/`, riusando il design system esistente (token, font, scocca telefono).\n\n**Assunzioni registrate:**\n- `react-router-dom` viene adottato come libreria di routing (oggi assente nel progetto): scelta standard per SPA React, necessaria per route protette e callback di conferma.\n- La conferma email è abilitata nel progetto Supabase; in sviluppo/e2e si usa Supabase locale con auto-confirm per rendere i flussi testabili.\n\n---\n\n## Strategia di Test\n\nLa strategia copre tre livelli — logica pura (unit), componenti UI (RTL) e flussi utente completi (e2e) — con focus sulle regole di validazione, sulla mappatura degli errori e sul comportamento di redirect delle route protette.\n\n- **Unit (Vitest):** validazione form (formato email, match e robustezza password) e mappatura pura degli errori Supabase nei messaggi italiani.\n- **Component (Vitest + React Testing Library):** rendering ed errori inline dei form Login/Register, e comportamento di `ProtectedRoute`/`AuthProvider` con client Supabase mockato (redirect quando la sessione è assente).\n- **E2E (Playwright):** flussi utente end-to-end con video, contro Supabase locale (auto-confirm) per coprire registrazione, login, logout, route protette ed errori.\n\n### Test E2E — Simulazione Utente\n\n**Framework:** Playwright (già configurato nel progetto: `playwright.config.ts`, `@playwright/test`)\n**Registrazione video:** Abilitata per tutti gli scenari — output in `docs/test-results/US-004/`\n\n| Scenario | Descrizione del flusso utente |\n|---|---|\n| Registrazione e verifica | Un nuovo utente apre la PWA, va su Registrati, inserisce email e password valide, invia e arriva alla schermata \"Controlla la tua email\" |\n| Login e accesso | Un utente registrato apre l'app, inserisce credenziali corrette e viene reindirizzato alla schermata principale |\n| Route protetta | Un utente non autenticato tenta di aprire una route protetta e viene reindirizzato a /login |\n| Logout | Un utente autenticato apre il menu account, conferma il logout e viene riportato alla schermata di login; la sessione non è più valida |\n| Errore credenziali | Un utente inserisce credenziali errate e vede un messaggio di errore chiaro nel banner |\n\n---\n\n> \U0001F3A8 I mockup per questa spec sono disponibili in `docs/mockups/US-004/`\n\n_Piano generato tramite ARchetipo Planning — 2026-06-17_"
+tasks:
+  - id: TASK-01
+    title: Installare dipendenze e creare il client Supabase condiviso
+    description: Aggiungere @supabase/supabase-js e react-router-dom. Creare src/shared/supabase/client.ts che inizializza il client da VITE_SUPABASE_URL/VITE_SUPABASE_PUBLISHABLE_KEY con persistenza sessione e auto-refresh. Documentare l'abilitazione della conferma email nel progetto Supabase.
+    type: Impl
+    status: DONE
+    ref: TASK-01
+  - id: TASK-02
+    title: Definire validazione form e mappatura errori auth
+    description: In src/features/auth aggiungere helper di validazione (formato email, match e robustezza password) e una funzione pura che mappa gli errori di Supabase Auth in messaggi chiari in italiano (email già registrata, credenziali errate).
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-01
+    ref: TASK-02
+  - id: TASK-03
+    title: Unit test per validazione e mappatura errori
+    description: Test Vitest sulle funzioni pure di validazione form e di mappatura degli errori, coprendo i casi limite (email non valida, password non corrispondenti, codici errore Supabase noti).
+    type: Test
+    status: DONE
+    dependencies:
+      - TASK-02
+    ref: TASK-03
+  - id: TASK-04
+    title: Implementare AuthProvider e hook useAuth
+    description: Creare il Context AuthProvider basato su supabase.auth.getSession() e onAuthStateChange, esponendo session, user, loading e i metodi signUp, signIn, signOut. Montare il provider in main.tsx/App.
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-01
+      - TASK-02
+    ref: TASK-04
+  - id: TASK-05
+    title: Configurare routing, ProtectedRoute e callback di conferma email
+    description: Introdurre react-router-dom con route /login, /register, /verify-email, /auth/callback e home protetta. Implementare ProtectedRoute che reindirizza a /login quando la sessione è assente o scaduta, e la gestione del callback emailRedirectTo.
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-04
+    ref: TASK-05
+  - id: TASK-06
+    title: Component test per ProtectedRoute e AuthProvider
+    description: Test RTL con client Supabase mockato che verificano il redirect a /login senza sessione, l'accesso alla route protetta con sessione valida e la reattività agli eventi onAuthStateChange.
+    type: Test
+    status: DONE
+    dependencies:
+      - TASK-04
+      - TASK-05
+    ref: TASK-06
+  - id: TASK-07
+    title: Implementare le schermate Login, Registrazione e Verifica email
+    description: Costruire i form di login e registrazione e la schermata 'Controlla la tua email' seguendo i mockup in docs/mockups/US-004/, con validazione inline, banner di errore e collegamento ai metodi di AuthProvider.
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-04
+      - TASK-05
+    ref: TASK-07
+  - id: TASK-08
+    title: Implementare logout e menu account nella schermata principale
+    description: Aggiungere il menu account/conferma logout (da logout-menu.html) nella schermata principale, collegato a signOut, con invalidazione sessione e reindirizzamento a /login.
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-04
+      - TASK-07
+    ref: TASK-08
+  - id: TASK-09
+    title: Component test per i form Login e Registrazione
+    description: Test RTL che verificano rendering, errori di validazione inline, banner di errore (credenziali errate, email già registrata) e l'invocazione corretta di signIn/signUp.
+    type: Test
+    status: DONE
+    dependencies:
+      - TASK-07
+    ref: TASK-09
+  - id: TASK-10
+    title: Test e2e Playwright dei flussi di autenticazione con video
+    description: 'Scrivere i test e2e con video abilitato e output in docs/test-results/US-004/ (parametrizzando l''outputDir, oggi fissato a US-001), contro Supabase locale con auto-confirm: registrazione→verifica, login→home, route protetta→redirect, logout→login, credenziali errate→messaggio.'
+    type: Test
+    status: DONE
+    dependencies:
+      - TASK-07
+      - TASK-08
+    ref: TASK-10

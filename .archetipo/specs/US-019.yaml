@@ -1,0 +1,32 @@
+schema: archetipo/spec/v2
+code: US-019
+title: Ruolo caregiver per la gestione dei farmaci di altri membri
+epic:
+  code: EP-005
+  title: Farmacia Condivisa
+priority: HIGH
+points: 3
+status: TODO
+blocked_by:
+  - US-018
+scope: MVP
+body: |-
+  #### US-019: Ruolo caregiver per la gestione dei farmaci di altri membri
+
+  **Epica:** EP-005 | **Priorità:** HIGH | **Punti:** 3 | **Stato:** TODO
+  **Bloccato da:** US-018
+
+  **User Story**
+  In qualità di Giulia (caregiver di famiglia),
+  voglio gestire i farmaci e i piani terapeutici per conto dei miei familiari anziani nella household,
+  così da supportarli nella gestione della loro salute senza che debbano usare l'app autonomamente.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, Giulia ha il ruolo "caregiver" nella household; accede alla scheda dei farmaci di suo padre, aggiunge un nuovo farmaco, modifica un piano terapeutico e registra una dose assunta — tutte azioni che appaiono come eseguite per conto del padre nel suo inventario.
+
+  **Criteri di Accettazione**
+  - [ ] L'amministratore dell'household può assegnare il ruolo "caregiver" a un membro
+  - [ ] Un caregiver può aggiungere, modificare, consumare ed eliminare farmaci per conto di altri membri della household
+  - [ ] Un caregiver può creare e modificare piani terapeutici per altri membri
+  - [ ] Le azioni del caregiver sono registrate come eseguite "per conto di" il membro, visibile nello storico
+  - [ ] Un membro può revocare l'accesso caregiver al proprio account in qualsiasi momento

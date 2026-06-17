@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PharmaMia – Scansione</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.scan-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0D1A24;
+  color: #fff;
+}
+
+.scan-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 36px 20px 16px;
+  z-index: 10;
+}
+
+.scan-topbar-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.scan-topbar-close {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,.1);
+  border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+}
+
+.scan-topbar-torch {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,.1);
+  border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+}
+
+.scan-viewport {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+/* Simulated camera view */
+.scan-camera {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, #0D1A24 0%, #1A2E3D 50%, #0D2030 100%);
+  background-size: 400% 400%;
+  animation: camera-shift 8s ease infinite;
+}
+
+@keyframes camera-shift {
+  0%, 100% { background-position: 0% 0%; }
+  50%       { background-position: 100% 100%; }
+}
+
+/* Slight grain texture */
+.scan-camera::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: .4;
+}
+
+.scan-frame {
+  width: 240px; height: 160px;
+  position: relative;
+  z-index: 5;
+}
+
+.scan-frame-corners {
+  position: relative;
+  width: 100%; height: 100%;
+}
+
+.scan-frame-corners .scan-corner { width: 28px; height: 28px; }
+
+.scan-line { z-index: 6; }
+
+/* Dark overlay with hole cut-out effect */
+.scan-overlay-top,
+.scan-overlay-bottom,
+.scan-overlay-left,
+.scan-overlay-right {
+  position: absolute;
+  background: rgba(13, 26, 36, 0.72);
+  z-index: 4;
+}
+
+.scan-overlay-top    { top: 0; left: 0; right: 0; bottom: calc(50% + 80px); }
+.scan-overlay-bottom { bottom: 0; left: 0; right: 0; top: calc(50% + 80px); }
+.scan-overlay-left   { top: calc(50% - 80px); bottom: calc(50% - 80px); left: 0; right: calc(50% + 120px); }
+.scan-overlay-right  { top: calc(50% - 80px); bottom: calc(50% - 80px); right: 0; left: calc(50% + 120px); }
+
+.scan-hint {
+  position: absolute;
+  bottom: 24px;
+  left: 0; right: 0;
+  text-align: center;
+  z-index: 10;
+  font-size: .82rem;
+  color: rgba(255,255,255,.7);
+  font-weight: 500;
+}
+
+/* Result bottom sheet */
+.result-sheet {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: var(--c-surface);
+  border-radius: 28px 28px 0 0;
+  z-index: 20;
+  padding: 12px 20px 24px;
+  display: none;
+}
+
+.result-sheet.visible {
+  display: block;
+  animation: slide-up .45s cubic-bezier(.34,1.1,.64,1) both;
+}
+
+.result-handle {
+  width: 36px; height: 4px;
+  background: var(--c-border-dk);
+  border-radius: var(--r-full);
+  margin: 0 auto 20px;
+}
+
+.result-found-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--c-ok-lt);
+  color: var(--c-ok);
+  font-size: .72rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--r-full);
+  margin-bottom: 14px;
+}
+
+.result-med-name {
+  font-family: var(--f-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--c-text);
+  margin-bottom: 4px;
+}
+
+.result-med-sub {
+  font-size: .8rem;
+  color: var(--c-text-3);
+  margin-bottom: 14px;
+}
+
+.result-db-row {
+  background: var(--c-surface-2);
+  border-radius: var(--r-md);
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.result-db-icon {
+  width: 32px; height: 32px;
+  background: var(--c-primary-lt);
+  border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  color: var(--c-primary);
+}
+
+.result-db-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.result-db-label {
+  font-size: .72rem;
+  color: var(--c-text-3);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.result-db-val {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--c-text-2);
+}
+
+.result-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Simulate scan state */
+.scan-indicator {
+  position: absolute;
+  top: calc(50% - 80px - 40px);
+  left: 0; right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+
+.scan-state-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: var(--r-full);
+  padding: 6px 14px;
+  font-size: .74rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.9);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .5; transform: scale(.8); }
+}
+
+.scan-dot {
+  width: 8px; height: 8px;
+  border-radius: var(--r-full);
+  background: #15A090;
+  animation: pulse-dot 1.2s ease infinite;
+}
+
+/* Manual input button */
+.scan-manual {
+  position: absolute;
+  bottom: 100px;
+  left: 0; right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+
+.scan-manual-btn {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: var(--r-full);
+  padding: 8px 20px;
+  font-size: .76rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.8);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<div class="phone">
+  <div class="scan-screen" id="scanScreen">
+
+    <!-- TOPBAR -->
+    <div class="scan-topbar">
+      <a href="index.html" class="scan-topbar-close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </a>
+      <span class="scan-topbar-title">Scansione farmaco</span>
+      <button class="scan-topbar-torch" id="torchBtn" onclick="toggleTorch()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- VIEWPORT -->
+    <div class="scan-viewport">
+
+      <!-- Camera simulation -->
+      <div class="scan-camera"></div>
+
+      <!-- Dark overlays -->
+      <div class="scan-overlay-top"></div>
+      <div class="scan-overlay-bottom"></div>
+      <div class="scan-overlay-left"></div>
+      <div class="scan-overlay-right"></div>
+
+      <!-- Status chip -->
+      <div class="scan-indicator">
+        <div class="scan-state-chip" id="scanStateChip">
+          <span class="scan-dot"></span>
+          In ascolto…
+        </div>
+      </div>
+
+      <!-- Scan frame -->
+      <div class="scan-frame">
+        <div class="scan-frame-corners">
+          <div class="scan-corner tl"></div>
+          <div class="scan-corner tr"></div>
+          <div class="scan-corner bl"></div>
+          <div class="scan-corner br"></div>
+          <div class="scan-line"></div>
+        </div>
+      </div>
+
+      <!-- Hint text -->
+      <div class="scan-hint">
+        Inquadra il barcode o il codice AIC<br>della confezione del farmaco
+      </div>
+
+      <!-- Manual fallback -->
+      <div class="scan-manual">
+        <a href="medicine.html" class="scan-manual-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+          Inserisci manualmente
+        </a>
+      </div>
+
+      <!-- RESULT SHEET (shown after scan) -->
+      <div class="result-sheet" id="resultSheet">
+        <div class="result-handle"></div>
+
+        <div class="result-found-tag">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Farmaco trovato nel database AIFA
+        </div>
+
+        <div class="result-med-name">Tachipirina 1000 mg</div>
+        <div class="result-med-sub">Paracetamolo · Angelini · 16 compresse</div>
+
+        <div class="result-db-row">
+          <div class="result-db-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+            </svg>
+          </div>
+          <div class="result-db-info">
+            <div class="result-db-label">Codice AIC</div>
+            <div class="result-db-val">012745098</div>
+          </div>
+          <div class="result-db-info">
+            <div class="result-db-label">Codice EAN</div>
+            <div class="result-db-val">8004032050010</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:16px">
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="badge badge-muted">Paracetamolo 1000mg</span>
+            <span class="badge badge-muted">Antipiretico</span>
+            <span class="badge badge-muted">Analgesico</span>
+          </div>
+        </div>
+
+        <div class="result-actions">
+          <a href="medicine.html" class="btn btn-primary" style="flex:1">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Aggiungi all'inventario
+          </a>
+          <button class="btn btn-ghost" onclick="resetScan()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="1 4 1 10 7 10"/>
+              <path d="M3.51 15a9 9 0 1 0 .49-3.78"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</div>
+
+<script>
+let scanTimeout;
+
+function startScan() {
+  const chip = document.getElementById('scanStateChip');
+  chip.innerHTML = '<span class="scan-dot"></span> In ascolto…';
+
+  scanTimeout = setTimeout(() => {
+    chip.innerHTML = '<span class="scan-dot" style="background:#F5A62B"></span> Codice rilevato…';
+    setTimeout(showResult, 600);
+  }, 2000);
+}
+
+function showResult() {
+  const chip = document.getElementById('scanStateChip');
+  chip.innerHTML = '<span class="scan-dot" style="background:#25A169;animation:none"></span> Trovato!';
+  document.getElementById('resultSheet').classList.add('visible');
+}
+
+function resetScan() {
+  document.getElementById('resultSheet').classList.remove('visible');
+  setTimeout(startScan, 300);
+}
+
+function toggleTorch() {
+  const btn = document.getElementById('torchBtn');
+  btn.style.background = btn.style.background ? '' : 'rgba(245,166,43,.3)';
+}
+
+startScan();
+</script>
+</body>
+</html>

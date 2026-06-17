@@ -1,0 +1,33 @@
+schema: archetipo/spec/v2
+code: US-016
+title: Promemoria dosi via notifica Web Push
+epic:
+  code: EP-004
+  title: Piano Terapeutico
+priority: HIGH
+points: 3
+status: TODO
+blocked_by:
+  - US-015
+scope: MVP
+body: |-
+  #### US-016: Promemoria dosi via notifica Web Push
+
+  **Epica:** EP-004 | **Priorità:** HIGH | **Punti:** 3 | **Stato:** TODO
+  **Bloccato da:** US-015
+
+  **User Story**
+  In qualità di Marco (paziente cronico),
+  voglio ricevere una notifica Web Push all'orario pianificato per ricordarmi di prendere la dose,
+  così da non dimenticare la mia terapia anche quando non ho l'app aperta.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, Marco installa la PWA, accetta le notifiche e all'orario pianificato (es. 08:00) riceve una notifica push sul dispositivo; toccando la notifica si apre l'app sulla schermata di conferma dose; il promemoria funziona anche con il browser chiuso.
+
+  **Criteri di Accettazione**
+  - [ ] Il service worker registra la PWA per le Web Push notification tramite VAPID
+  - [ ] Una Edge Function/pg_cron schedulata invia notifiche push agli utenti con promemoria attivi all'orario configurato
+  - [ ] La notifica mostra nome del farmaco, dose e orario previsto
+  - [ ] Toccando la notifica l'utente viene portato direttamente alla schermata di conferma dose
+  - [ ] Se la dose è già stata confermata prima dell'orario, la notifica non viene inviata
+  - [ ] La funzionalità rispetta le preferenze di notifica dell'utente (canale disabilitato, orari silenziosi)

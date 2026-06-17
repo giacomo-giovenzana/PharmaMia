@@ -1,0 +1,30 @@
+schema: archetipo/spec/v2
+code: US-012
+title: Avviso scadenza imminente con soglia configurabile
+epic:
+  code: EP-003
+  title: Scadenze e Scorte
+priority: HIGH
+points: 2
+status: TODO
+scope: MVP
+body: |-
+  #### US-012: Avviso scadenza imminente con soglia configurabile
+
+  **Epica:** EP-003 | **Priorità:** HIGH | **Punti:** 2 | **Stato:** TODO
+  **Bloccato da:** -
+
+  **User Story**
+  In qualità di Giulia (caregiver di famiglia),
+  voglio ricevere un avviso quando un farmaco dell'inventario è prossimo alla scadenza,
+  così da usarlo in tempo o sostituirlo prima che scada inutilizzato.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, un farmaco con scadenza entro 30 giorni (soglia di default) appare nella sezione "In scadenza" della dashboard e genera una notifica Web Push se le notifiche sono abilitate; Giulia può modificare la soglia di anticipo nelle preferenze.
+
+  **Criteri di Accettazione**
+  - [ ] Il sistema calcola i farmaci in scadenza entro la soglia configurata (default: 30 giorni)
+  - [ ] L'avviso appare nella dashboard e nella lista notifiche in-app
+  - [ ] Se le notifiche Web Push sono abilitate, viene inviata una notifica push
+  - [ ] La soglia di anticipo è configurabile per utente nelle preferenze di notifica
+  - [ ] Il calcolo viene eseguito almeno una volta al giorno tramite Edge Function o pg_cron schedulato

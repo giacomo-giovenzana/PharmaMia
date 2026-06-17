@@ -1,0 +1,31 @@
+schema: archetipo/spec/v2
+code: US-009
+title: Registrazione scadenza, quantità disponibile e posizione
+epic:
+  code: EP-002
+  title: Inventario Farmaci
+priority: HIGH
+points: 2
+status: PLANNED
+blocked_by:
+  - US-007
+scope: MVP
+body: |-
+  #### US-009: Registrazione scadenza, quantità disponibile e posizione
+
+  **Epica:** EP-002 | **Priorità:** HIGH | **Punti:** 2 | **Stato:** TODO
+  **Bloccato da:** US-007
+
+  **User Story**
+  In qualità di Giulia (caregiver di famiglia),
+  voglio registrare la data di scadenza, la quantità disponibile e la posizione di ogni farmaco nell'inventario,
+  così da sapere sempre cosa ho, quanto me ne resta e dove trovarlo.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, Giulia aggiunge un farmaco, inserisce scadenza, numero di compresse rimanenti e posizione "armadietto bagno"; nel dettaglio del farmaco tutte e tre le informazioni sono visibili e modificabili.
+
+  **Criteri di Accettazione**
+  - [ ] Il form di aggiunta/modifica include: data di scadenza (date picker, obbligatoria), quantità/dosi disponibili (numero) e posizione (testo libero, opzionale)
+  - [ ] I dati salvati sono mostrati nella scheda di dettaglio del farmaco
+  - [ ] Modificare uno qualsiasi dei campi aggiorna immediatamente la scheda del farmaco
+  - [ ] La data di scadenza è validata (non accetta date già passate come nuova scadenza)

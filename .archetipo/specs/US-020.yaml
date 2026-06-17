@@ -1,0 +1,30 @@
+schema: archetipo/spec/v2
+code: US-020
+title: Richiesta prestito farmaco a una rete collegata
+epic:
+  code: EP-006
+  title: Anti-Spreco e Prestito
+priority: MEDIUM
+points: 3
+status: TODO
+scope: MVP
+body: |-
+  #### US-020: Richiesta prestito farmaco a una rete collegata
+
+  **Epica:** EP-006 | **Priorità:** MEDIUM | **Punti:** 3 | **Stato:** TODO
+  **Bloccato da:** -
+
+  **User Story**
+  In qualità di Giulia (caregiver di famiglia),
+  voglio richiedere in prestito un farmaco disponibile presso una rete di fiducia collegata,
+  così da evitare di acquistare un farmaco che un contatto ha già disponibile e non sta usando.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, Giulia cerca "Amoxicillina" nell'inventario della rete collegata, trova che un contatto ne ha una confezione disponibile, invia una richiesta di prestito per 10 compresse; il contatto riceve la notifica della richiesta.
+
+  **Criteri di Accettazione**
+  - [ ] Un utente può cercare un farmaco nell'inventario delle household della rete collegata
+  - [ ] L'utente può inviare una richiesta di prestito specificando farmaco e quantità richiesta
+  - [ ] Il proprietario del farmaco riceve una notifica della richiesta
+  - [ ] La richiesta è visibile nella lista "Richieste inviate" con stato (in attesa, accettata, rifiutata)
+  - [ ] La visibilità dei farmaci tra reti richiede una connessione esplicita preventivamente accettata da entrambe le parti

@@ -1,0 +1,30 @@
+schema: archetipo/spec/v2
+code: US-013
+title: Avviso scorte basse con soglia configurabile
+epic:
+  code: EP-003
+  title: Scadenze e Scorte
+priority: HIGH
+points: 2
+status: TODO
+scope: MVP
+body: |-
+  #### US-013: Avviso scorte basse con soglia configurabile
+
+  **Epica:** EP-003 | **Priorità:** HIGH | **Punti:** 2 | **Stato:** TODO
+  **Bloccato da:** -
+
+  **User Story**
+  In qualità di Marco (paziente cronico),
+  voglio ricevere un avviso quando le dosi rimanenti di un mio farmaco scendono sotto una soglia,
+  così da riacquistarlo in anticipo e non restare mai senza i farmaci della mia terapia.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, un farmaco di Marco con 5 compresse rimanenti (sotto la soglia di default) appare nella sezione "Scorte basse" della dashboard e genera una notifica Web Push di riacquisto; Marco può personalizzare la soglia farmaco per farmaco.
+
+  **Criteri di Accettazione**
+  - [ ] Il sistema rileva i farmaci con quantità residua sotto la soglia configurata (default configurabile globalmente)
+  - [ ] L'avviso appare nella sezione "Scorte basse" della dashboard
+  - [ ] Se le notifiche Web Push sono abilitate, viene inviata una notifica push di riacquisto
+  - [ ] La soglia di scorta minima è configurabile per singolo farmaco
+  - [ ] Il calcolo viene aggiornato ad ogni consumo registrato e durante il job giornaliero

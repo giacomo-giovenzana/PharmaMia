@@ -1,0 +1,1001 @@
+aic_code,ean_code,name,active_ingredient,form,dosage,atc_code,manufacturer,package_desc,is_otc,requires_prescription
+000000001,0433218196003,TACHIPIRINA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Novartis Farma S.p.A.,20 compresse,true,false
+000000002,8908386379401,TACHIPIRINA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,AstraZeneca S.p.A.,30 compresse,true,false
+000000003,5423511615597,TACHIPIRINA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Recordati S.p.A.,16 compresse,true,false
+000000004,7816184959316,TACHIPIRINA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Teva Italia S.r.l.,10 compresse,true,false
+000000005,4131647525536,TACHIPIRINA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Chiesi Farmaceutici S.p.A.,50 compresse,true,false
+000000006,1928327648356,TACHIPIRINA 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,EG S.p.A.,20 compresse,true,false
+000000007,0564139537672,TACHIPIRINA 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Roche S.p.A.,30 compresse,true,false
+000000008,3884969653289,TACHIPIRINA 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Fidia Farmaceutici S.p.A.,16 compresse,true,false
+000000009,0122691669783,TACHIPIRINA 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Recordati S.p.A.,10 compresse,true,false
+000000010,0184514627042,TACHIPIRINA 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Pharmos S.p.A.,50 compresse,true,false
+000000011,8148932528802,TACHIPIRINA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Bristol-Myers Squibb S.r.l.,20 compresse,true,false
+000000012,0154303911713,TACHIPIRINA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Biogen Italia S.r.l.,30 compresse,true,false
+000000013,2782489638346,TACHIPIRINA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Viatris Italia S.r.l.,16 compresse,true,false
+000000014,5787133150981,TACHIPIRINA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Boehringer Ingelheim Italia S.p.A.,10 compresse,true,false
+000000015,0103105183477,TACHIPIRINA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Takeda Italia S.p.A.,50 compresse,true,false
+000000016,9973763116565,EFFERALGAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Almirall S.p.A.,20 compresse,true,false
+000000017,0106513338729,EFFERALGAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Pierre Fabre Italia S.p.A.,30 compresse,true,false
+000000018,7317810801325,EFFERALGAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Almirall S.p.A.,16 compresse,true,false
+000000019,3602606474680,EFFERALGAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Fidia Farmaceutici S.p.A.,10 compresse,true,false
+000000020,4309805009789,EFFERALGAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Farmitalia S.r.l.,50 compresse,true,false
+000000021,8121913619393,EFFERALGAN 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Bristol-Myers Squibb S.r.l.,20 compresse,true,false
+000000022,,EFFERALGAN 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Novartis Farma S.p.A.,30 compresse,true,false
+000000023,9985435346248,EFFERALGAN 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Alfasigma S.p.A.,16 compresse,true,false
+000000024,1079911838421,EFFERALGAN 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Zentiva Italia S.r.l.,10 compresse,true,false
+000000025,3542784980842,EFFERALGAN 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Sanofi S.r.l.,50 compresse,true,false
+000000026,2411824493530,EFFERALGAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Recordati S.p.A.,20 compresse,true,false
+000000027,4016400524271,EFFERALGAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Amgen S.r.l.,30 compresse,true,false
+000000028,8011280598264,EFFERALGAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,GSK S.p.A.,16 compresse,true,false
+000000029,,EFFERALGAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Aurobindo Pharma S.r.l.,10 compresse,true,false
+000000030,0533158692327,EFFERALGAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,MSD Italia S.r.l.,50 compresse,true,false
+000000031,0256342160739,PANADOL 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Abbvie S.r.l.,20 compresse,true,false
+000000032,7543303654141,PANADOL 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Zentiva Italia S.r.l.,30 compresse,true,false
+000000033,6850142940191,PANADOL 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Pierre Fabre Italia S.p.A.,16 compresse,true,false
+000000034,5698169340607,PANADOL 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Farmitalia S.r.l.,10 compresse,true,false
+000000035,8356159514847,PANADOL 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Almirall S.p.A.,50 compresse,true,false
+000000036,4823662994687,PANADOL 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Angelini Pharma S.r.l.,20 compresse,true,false
+000000037,3699577738729,PANADOL 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Novartis Farma S.p.A.,30 compresse,true,false
+000000038,9513433200370,PANADOL 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Astellas Pharma S.p.A.,16 compresse,true,false
+000000039,1769367632017,PANADOL 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Pierre Fabre Italia S.p.A.,10 compresse,true,false
+000000040,8708317278892,PANADOL 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Bracco S.p.A.,50 compresse,true,false
+000000041,7986872774344,PANADOL 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Farmitalia S.r.l.,20 compresse,true,false
+000000042,3471434558127,PANADOL 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Roche S.p.A.,30 compresse,true,false
+000000043,2316658760363,PANADOL 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Mylan Italia S.r.l.,16 compresse,true,false
+000000044,9096705466884,PANADOL 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Bristol-Myers Squibb S.r.l.,10 compresse,true,false
+000000045,7346706562729,PANADOL 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Astellas Pharma S.p.A.,50 compresse,true,false
+000000046,6990162720462,PARACETAMOLO EG 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Bracco S.p.A.,20 compresse,true,false
+000000047,5564641708053,PARACETAMOLO EG 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Boehringer Ingelheim Italia S.p.A.,30 compresse,true,false
+000000048,0033092327199,PARACETAMOLO EG 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Takeda Italia S.p.A.,16 compresse,true,false
+000000049,4529912419046,PARACETAMOLO EG 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Lilly Italia S.p.A.,10 compresse,true,false
+000000050,6631931491908,PARACETAMOLO EG 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Zentiva Italia S.r.l.,50 compresse,true,false
+000000051,5185067165727,PARACETAMOLO EG 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Pierre Fabre Italia S.p.A.,20 compresse,true,false
+000000052,8498776945311,PARACETAMOLO EG 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Chiesi Farmaceutici S.p.A.,30 compresse,true,false
+000000053,3799650752731,PARACETAMOLO EG 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Zentiva Italia S.r.l.,16 compresse,true,false
+000000054,5494808313670,PARACETAMOLO EG 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Amgen S.r.l.,10 compresse,true,false
+000000055,7770143634952,PARACETAMOLO EG 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Ibsa Farmaceutici Italia S.r.l.,50 compresse,true,false
+000000056,5685574443139,PARACETAMOLO EG 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Bracco S.p.A.,20 compresse,true,false
+000000057,8233749894131,PARACETAMOLO EG 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Dompé Farmaceutici S.p.A.,30 compresse,true,false
+000000058,2408240084275,PARACETAMOLO EG 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Sanofi S.r.l.,16 compresse,true,false
+000000059,9477752047118,PARACETAMOLO EG 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Viatris Italia S.r.l.,10 compresse,true,false
+000000060,9022941318694,PARACETAMOLO EG 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Bristol-Myers Squibb S.r.l.,50 compresse,true,false
+000000061,3867749649900,PARACETAMOLO TEVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Astellas Pharma S.p.A.,20 compresse,true,false
+000000062,1334123281206,PARACETAMOLO TEVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Almirall S.p.A.,30 compresse,true,false
+000000063,9740344713495,PARACETAMOLO TEVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Abbvie S.r.l.,16 compresse,true,false
+000000064,8324210249946,PARACETAMOLO TEVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Neopharmed Gentili S.p.A.,10 compresse,true,false
+000000065,4648877190651,PARACETAMOLO TEVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Bristol-Myers Squibb S.r.l.,50 compresse,true,false
+000000066,1399049027871,PARACETAMOLO TEVA 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Chiesi Farmaceutici S.p.A.,20 compresse,true,false
+000000067,9671756551255,PARACETAMOLO TEVA 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Almirall S.p.A.,30 compresse,true,false
+000000068,4680715451685,PARACETAMOLO TEVA 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Angelini Pharma S.r.l.,16 compresse,true,false
+000000069,8760385977039,PARACETAMOLO TEVA 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Chiesi Farmaceutici S.p.A.,10 compresse,true,false
+000000070,4771093248087,PARACETAMOLO TEVA 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Almirall S.p.A.,50 compresse,true,false
+000000071,1712748467739,PARACETAMOLO TEVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Alfasigma S.p.A.,20 compresse,true,false
+000000072,6398214658402,PARACETAMOLO TEVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Dompé Farmaceutici S.p.A.,30 compresse,true,false
+000000073,9972787558863,PARACETAMOLO TEVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Alfasigma S.p.A.,16 compresse,true,false
+000000074,3396360576628,PARACETAMOLO TEVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Fidia Farmaceutici S.p.A.,10 compresse,true,false
+000000075,2895171870266,PARACETAMOLO TEVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Roche S.p.A.,50 compresse,true,false
+000000076,4596158657808,PARACETAMOLO SANDOZ 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Astellas Pharma S.p.A.,20 compresse,true,false
+000000077,4316117240052,PARACETAMOLO SANDOZ 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,EG S.p.A.,30 compresse,true,false
+000000078,5623869222199,PARACETAMOLO SANDOZ 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Mylan Italia S.r.l.,16 compresse,true,false
+000000079,3792374740749,PARACETAMOLO SANDOZ 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Biogen Italia S.r.l.,10 compresse,true,false
+000000080,7594647436719,PARACETAMOLO SANDOZ 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Servier Italia S.p.A.,50 compresse,true,false
+000000081,5944064090971,PARACETAMOLO SANDOZ 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Dompé Farmaceutici S.p.A.,20 compresse,true,false
+000000082,3953394210470,PARACETAMOLO SANDOZ 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Teva Italia S.r.l.,30 compresse,true,false
+000000083,2145623285880,PARACETAMOLO SANDOZ 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Chiesi Farmaceutici S.p.A.,16 compresse,true,false
+000000084,4745171236853,PARACETAMOLO SANDOZ 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Novartis Farma S.p.A.,10 compresse,true,false
+000000085,0481754965133,PARACETAMOLO SANDOZ 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Ibsa Farmaceutici Italia S.r.l.,50 compresse,true,false
+000000086,,PARACETAMOLO SANDOZ 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Amgen S.r.l.,20 compresse,true,false
+000000087,9317461200476,PARACETAMOLO SANDOZ 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Bayer S.p.A.,30 compresse,true,false
+000000088,8267586926175,PARACETAMOLO SANDOZ 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Astellas Pharma S.p.A.,16 compresse,true,false
+000000089,4053773515857,PARACETAMOLO SANDOZ 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,EG S.p.A.,10 compresse,true,false
+000000090,3171390053291,PARACETAMOLO SANDOZ 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Takeda Italia S.p.A.,50 compresse,true,false
+000000091,8393352904228,PARACETAMOLO MYLAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Biogen Italia S.r.l.,20 compresse,true,false
+000000092,2102053950245,PARACETAMOLO MYLAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,EG S.p.A.,30 compresse,true,false
+000000093,6811775891786,PARACETAMOLO MYLAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Boehringer Ingelheim Italia S.p.A.,16 compresse,true,false
+000000094,0847007661779,PARACETAMOLO MYLAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Pfizer Italia S.r.l.,10 compresse,true,false
+000000095,5921249985697,PARACETAMOLO MYLAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Farmitalia S.r.l.,50 compresse,true,false
+000000096,8961183673653,PARACETAMOLO MYLAN 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Alfasigma S.p.A.,20 compresse,true,false
+000000097,1565452711113,PARACETAMOLO MYLAN 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Pierre Fabre Italia S.p.A.,30 compresse,true,false
+000000098,5280988516563,PARACETAMOLO MYLAN 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,EG S.p.A.,16 compresse,true,false
+000000099,9451983273157,PARACETAMOLO MYLAN 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Amgen S.r.l.,10 compresse,true,false
+000000100,4936899809409,PARACETAMOLO MYLAN 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,MSD Italia S.r.l.,50 compresse,true,false
+000000101,4550229612011,PARACETAMOLO MYLAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Farmitalia S.r.l.,20 compresse,true,false
+000000102,6752545991025,PARACETAMOLO MYLAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,AstraZeneca S.p.A.,30 compresse,true,false
+000000103,0147679764380,PARACETAMOLO MYLAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Bayer S.p.A.,16 compresse,true,false
+000000104,1497840369005,PARACETAMOLO MYLAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Takeda Italia S.p.A.,10 compresse,true,false
+000000105,3244510762264,PARACETAMOLO MYLAN 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Biogen Italia S.r.l.,50 compresse,true,false
+000000106,8851606071596,PARACETAMOLO DOC 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Pierre Fabre Italia S.p.A.,20 compresse,true,false
+000000107,6416052975168,PARACETAMOLO DOC 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Sanofi S.r.l.,30 compresse,true,false
+000000108,9681645352184,PARACETAMOLO DOC 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Bayer S.p.A.,16 compresse,true,false
+000000109,3552312432927,PARACETAMOLO DOC 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Pfizer Italia S.r.l.,10 compresse,true,false
+000000110,7799799552717,PARACETAMOLO DOC 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Ibsa Farmaceutici Italia S.r.l.,50 compresse,true,false
+000000111,4490581477005,PARACETAMOLO DOC 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Aurobindo Pharma S.r.l.,20 compresse,true,false
+000000112,1199867980798,PARACETAMOLO DOC 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Abbvie S.r.l.,30 compresse,true,false
+000000113,7820715182036,PARACETAMOLO DOC 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Neopharmed Gentili S.p.A.,16 compresse,true,false
+000000114,8892554665901,PARACETAMOLO DOC 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Sandoz S.p.A.,10 compresse,true,false
+000000115,1864492519254,PARACETAMOLO DOC 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Italfarmaco S.p.A.,50 compresse,true,false
+000000116,6291486528162,PARACETAMOLO DOC 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Pharmos S.p.A.,20 compresse,true,false
+000000117,5423573322143,PARACETAMOLO DOC 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Sanofi S.r.l.,30 compresse,true,false
+000000118,8805929622294,PARACETAMOLO DOC 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,AstraZeneca S.p.A.,16 compresse,true,false
+000000119,0653794738347,PARACETAMOLO DOC 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Ibsa Farmaceutici Italia S.r.l.,10 compresse,true,false
+000000120,3597746886236,PARACETAMOLO DOC 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Bristol-Myers Squibb S.r.l.,50 compresse,true,false
+000000121,4075818141241,PARACETAMOLO ZENTIVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Neopharmed Gentili S.p.A.,20 compresse,true,false
+000000122,2613750606859,PARACETAMOLO ZENTIVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Servier Italia S.p.A.,30 compresse,true,false
+000000123,1530515220475,PARACETAMOLO ZENTIVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,GSK S.p.A.,16 compresse,true,false
+000000124,7790104328980,PARACETAMOLO ZENTIVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Pierre Fabre Italia S.p.A.,10 compresse,true,false
+000000125,4341036971176,PARACETAMOLO ZENTIVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Bristol-Myers Squibb S.r.l.,50 compresse,true,false
+000000126,8932460953966,PARACETAMOLO ZENTIVA 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,MSD Italia S.r.l.,20 compresse,true,false
+000000127,1851888880678,PARACETAMOLO ZENTIVA 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Teva Italia S.r.l.,30 compresse,true,false
+000000128,5405153195200,PARACETAMOLO ZENTIVA 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Zentiva Italia S.r.l.,16 compresse,true,false
+000000129,2772217043030,PARACETAMOLO ZENTIVA 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Teva Italia S.r.l.,10 compresse,true,false
+000000130,4868740345050,PARACETAMOLO ZENTIVA 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Chiesi Farmaceutici S.p.A.,50 compresse,true,false
+000000131,5667652775844,PARACETAMOLO ZENTIVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Novartis Farma S.p.A.,20 compresse,true,false
+000000132,1692845115446,PARACETAMOLO ZENTIVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Neopharmed Gentili S.p.A.,30 compresse,true,false
+000000133,6275705964016,PARACETAMOLO ZENTIVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Viatris Italia S.r.l.,16 compresse,true,false
+000000134,2029702135566,PARACETAMOLO ZENTIVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Lilly Italia S.p.A.,10 compresse,true,false
+000000135,,PARACETAMOLO ZENTIVA 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Roche S.p.A.,50 compresse,true,false
+000000136,5571928565438,PARACETAMOLO AUROBINDO 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Bayer S.p.A.,20 compresse,true,false
+000000137,,PARACETAMOLO AUROBINDO 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,MSD Italia S.r.l.,30 compresse,true,false
+000000138,6814473947311,PARACETAMOLO AUROBINDO 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,GSK S.p.A.,16 compresse,true,false
+000000139,7271551884422,PARACETAMOLO AUROBINDO 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,MSD Italia S.r.l.,10 compresse,true,false
+000000140,8313237058952,PARACETAMOLO AUROBINDO 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Alfasigma S.p.A.,50 compresse,true,false
+000000141,8291146786695,PARACETAMOLO AUROBINDO 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Pfizer Italia S.r.l.,20 compresse,true,false
+000000142,5177852892260,PARACETAMOLO AUROBINDO 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Pharmos S.p.A.,30 compresse,true,false
+000000143,0182422535848,PARACETAMOLO AUROBINDO 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Novartis Farma S.p.A.,16 compresse,true,false
+000000144,8424981829924,PARACETAMOLO AUROBINDO 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,AstraZeneca S.p.A.,10 compresse,true,false
+000000145,9590010943967,PARACETAMOLO AUROBINDO 1000 mg COMPRESSE,paracetamolo,compressa,1000 mg,N02BE01,Astellas Pharma S.p.A.,50 compresse,true,false
+000000146,7844736471023,PARACETAMOLO AUROBINDO 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Neopharmed Gentili S.p.A.,20 compresse,true,false
+000000147,7359255562584,PARACETAMOLO AUROBINDO 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Amgen S.r.l.,30 compresse,true,false
+000000148,3714732104697,PARACETAMOLO AUROBINDO 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Almirall S.p.A.,16 compresse,true,false
+000000149,2595327877476,PARACETAMOLO AUROBINDO 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Menarini Group,10 compresse,true,false
+000000150,6873395004793,PARACETAMOLO AUROBINDO 500 mg COMPRESSE,paracetamolo,compressa,500 mg,N02BE01,Ibsa Farmaceutici Italia S.r.l.,50 compresse,true,false
+000000151,0162456506090,TACHIPIRINA 120 mg/5 ml SCIROPPO,paracetamolo,sciroppo,120 mg/5 ml,N02BE01,Amgen S.r.l.,150 ml sciroppo,true,false
+000000152,8416878499129,TACHIPIRINA 120 mg/5 ml SCIROPPO,paracetamolo,sciroppo,120 mg/5 ml,N02BE01,Sanofi S.r.l.,120 ml sciroppo,true,false
+000000153,5852398680006,TACHIPIRINA 120 mg/5 ml SCIROPPO,paracetamolo,sciroppo,120 mg/5 ml,N02BE01,GSK S.p.A.,200 ml sciroppo,true,false
+000000154,7872982595262,TACHIPIRINA 160 mg/5 ml SCIROPPO,paracetamolo,sciroppo,160 mg/5 ml,N02BE01,Astellas Pharma S.p.A.,150 ml sciroppo,true,false
+000000155,4958887947054,TACHIPIRINA 160 mg/5 ml SCIROPPO,paracetamolo,sciroppo,160 mg/5 ml,N02BE01,Sandoz S.p.A.,120 ml sciroppo,true,false
+000000156,6940974993097,TACHIPIRINA 160 mg/5 ml SCIROPPO,paracetamolo,sciroppo,160 mg/5 ml,N02BE01,Ibsa Farmaceutici Italia S.r.l.,200 ml sciroppo,true,false
+000000157,9623091307561,TACHIPIRINA 250 mg/5 ml SCIROPPO,paracetamolo,sciroppo,250 mg/5 ml,N02BE01,Roche S.p.A.,150 ml sciroppo,true,false
+000000158,3689702838578,TACHIPIRINA 250 mg/5 ml SCIROPPO,paracetamolo,sciroppo,250 mg/5 ml,N02BE01,Farmitalia S.r.l.,120 ml sciroppo,true,false
+000000159,2785854973349,TACHIPIRINA 250 mg/5 ml SCIROPPO,paracetamolo,sciroppo,250 mg/5 ml,N02BE01,Amgen S.r.l.,200 ml sciroppo,true,false
+000000160,4437575844191,EFFERALGAN BAMBINI 120 mg/5 ml SCIROPPO,paracetamolo,sciroppo,120 mg/5 ml,N02BE01,Biogen Italia S.r.l.,150 ml sciroppo,true,false
+000000161,6524041574732,EFFERALGAN BAMBINI 120 mg/5 ml SCIROPPO,paracetamolo,sciroppo,120 mg/5 ml,N02BE01,Abbvie S.r.l.,120 ml sciroppo,true,false
+000000162,4842199330836,EFFERALGAN BAMBINI 120 mg/5 ml SCIROPPO,paracetamolo,sciroppo,120 mg/5 ml,N02BE01,Boehringer Ingelheim Italia S.p.A.,200 ml sciroppo,true,false
+000000163,6571208267730,EFFERALGAN BAMBINI 160 mg/5 ml SCIROPPO,paracetamolo,sciroppo,160 mg/5 ml,N02BE01,Dompé Farmaceutici S.p.A.,150 ml sciroppo,true,false
+000000164,0193802620672,EFFERALGAN BAMBINI 160 mg/5 ml SCIROPPO,paracetamolo,sciroppo,160 mg/5 ml,N02BE01,MSD Italia S.r.l.,120 ml sciroppo,true,false
+000000165,4004991547885,EFFERALGAN BAMBINI 160 mg/5 ml SCIROPPO,paracetamolo,sciroppo,160 mg/5 ml,N02BE01,Fidia Farmaceutici S.p.A.,200 ml sciroppo,true,false
+000000166,2874315274207,EFFERALGAN BAMBINI 250 mg/5 ml SCIROPPO,paracetamolo,sciroppo,250 mg/5 ml,N02BE01,Sandoz S.p.A.,150 ml sciroppo,true,false
+000000167,9329668516120,EFFERALGAN BAMBINI 250 mg/5 ml SCIROPPO,paracetamolo,sciroppo,250 mg/5 ml,N02BE01,GSK S.p.A.,120 ml sciroppo,true,false
+000000168,3046374549902,EFFERALGAN BAMBINI 250 mg/5 ml SCIROPPO,paracetamolo,sciroppo,250 mg/5 ml,N02BE01,Recordati S.p.A.,200 ml sciroppo,true,false
+000000169,3017426841459,PARACETAMOLO EG 120 mg/5 ml SCIROPPO,paracetamolo,sciroppo,120 mg/5 ml,N02BE01,Astellas Pharma S.p.A.,150 ml sciroppo,true,false
+000000170,2727956878337,PARACETAMOLO EG 120 mg/5 ml SCIROPPO,paracetamolo,sciroppo,120 mg/5 ml,N02BE01,Bristol-Myers Squibb S.r.l.,120 ml sciroppo,true,false
+000000171,1878519108833,PARACETAMOLO EG 120 mg/5 ml SCIROPPO,paracetamolo,sciroppo,120 mg/5 ml,N02BE01,Lilly Italia S.p.A.,200 ml sciroppo,true,false
+000000172,2587139718702,PARACETAMOLO EG 160 mg/5 ml SCIROPPO,paracetamolo,sciroppo,160 mg/5 ml,N02BE01,Alfasigma S.p.A.,150 ml sciroppo,true,false
+000000173,6790874064034,PARACETAMOLO EG 160 mg/5 ml SCIROPPO,paracetamolo,sciroppo,160 mg/5 ml,N02BE01,Janssen-Cilag S.p.A.,120 ml sciroppo,true,false
+000000174,6518017046224,PARACETAMOLO EG 160 mg/5 ml SCIROPPO,paracetamolo,sciroppo,160 mg/5 ml,N02BE01,Almirall S.p.A.,200 ml sciroppo,true,false
+000000175,6766182512864,PARACETAMOLO EG 250 mg/5 ml SCIROPPO,paracetamolo,sciroppo,250 mg/5 ml,N02BE01,Farmitalia S.r.l.,150 ml sciroppo,true,false
+000000176,3004786863375,PARACETAMOLO EG 250 mg/5 ml SCIROPPO,paracetamolo,sciroppo,250 mg/5 ml,N02BE01,Zentiva Italia S.r.l.,120 ml sciroppo,true,false
+000000177,3106903311902,PARACETAMOLO EG 250 mg/5 ml SCIROPPO,paracetamolo,sciroppo,250 mg/5 ml,N02BE01,Neopharmed Gentili S.p.A.,200 ml sciroppo,true,false
+000000178,0306738302844,PARACETAMOLO TEVA 120 mg/5 ml SCIROPPO,paracetamolo,sciroppo,120 mg/5 ml,N02BE01,Boehringer Ingelheim Italia S.p.A.,150 ml sciroppo,true,false
+000000179,9599534283641,PARACETAMOLO TEVA 120 mg/5 ml SCIROPPO,paracetamolo,sciroppo,120 mg/5 ml,N02BE01,Chiesi Farmaceutici S.p.A.,120 ml sciroppo,true,false
+000000180,9268705685668,PARACETAMOLO TEVA 120 mg/5 ml SCIROPPO,paracetamolo,sciroppo,120 mg/5 ml,N02BE01,Roche S.p.A.,200 ml sciroppo,true,false
+000000181,2873342708662,PARACETAMOLO TEVA 160 mg/5 ml SCIROPPO,paracetamolo,sciroppo,160 mg/5 ml,N02BE01,Amgen S.r.l.,150 ml sciroppo,true,false
+000000182,6343517518304,PARACETAMOLO TEVA 160 mg/5 ml SCIROPPO,paracetamolo,sciroppo,160 mg/5 ml,N02BE01,Chiesi Farmaceutici S.p.A.,120 ml sciroppo,true,false
+000000183,9901398373541,PARACETAMOLO TEVA 160 mg/5 ml SCIROPPO,paracetamolo,sciroppo,160 mg/5 ml,N02BE01,Angelini Pharma S.r.l.,200 ml sciroppo,true,false
+000000184,3173936385460,PARACETAMOLO TEVA 250 mg/5 ml SCIROPPO,paracetamolo,sciroppo,250 mg/5 ml,N02BE01,Alfasigma S.p.A.,150 ml sciroppo,true,false
+000000185,5445877175355,PARACETAMOLO TEVA 250 mg/5 ml SCIROPPO,paracetamolo,sciroppo,250 mg/5 ml,N02BE01,Bracco S.p.A.,120 ml sciroppo,true,false
+000000186,9320489964237,PARACETAMOLO TEVA 250 mg/5 ml SCIROPPO,paracetamolo,sciroppo,250 mg/5 ml,N02BE01,Sandoz S.p.A.,200 ml sciroppo,true,false
+000000187,9378547772522,PANADOL BAMBINI 120 mg/5 ml SCIROPPO,paracetamolo,sciroppo,120 mg/5 ml,N02BE01,GSK S.p.A.,150 ml sciroppo,true,false
+000000188,7280801006231,PANADOL BAMBINI 120 mg/5 ml SCIROPPO,paracetamolo,sciroppo,120 mg/5 ml,N02BE01,Pfizer Italia S.r.l.,120 ml sciroppo,true,false
+000000189,0387509977003,PANADOL BAMBINI 120 mg/5 ml SCIROPPO,paracetamolo,sciroppo,120 mg/5 ml,N02BE01,Biogen Italia S.r.l.,200 ml sciroppo,true,false
+000000190,0084840862110,PANADOL BAMBINI 160 mg/5 ml SCIROPPO,paracetamolo,sciroppo,160 mg/5 ml,N02BE01,Farmitalia S.r.l.,150 ml sciroppo,true,false
+000000191,3984546156797,PANADOL BAMBINI 160 mg/5 ml SCIROPPO,paracetamolo,sciroppo,160 mg/5 ml,N02BE01,Servier Italia S.p.A.,120 ml sciroppo,true,false
+000000192,3410166687002,PANADOL BAMBINI 160 mg/5 ml SCIROPPO,paracetamolo,sciroppo,160 mg/5 ml,N02BE01,AstraZeneca S.p.A.,200 ml sciroppo,true,false
+000000193,6591803397403,PANADOL BAMBINI 250 mg/5 ml SCIROPPO,paracetamolo,sciroppo,250 mg/5 ml,N02BE01,Pfizer Italia S.r.l.,150 ml sciroppo,true,false
+000000194,4890250392613,PANADOL BAMBINI 250 mg/5 ml SCIROPPO,paracetamolo,sciroppo,250 mg/5 ml,N02BE01,Italfarmaco S.p.A.,120 ml sciroppo,true,false
+000000195,3968562185016,PANADOL BAMBINI 250 mg/5 ml SCIROPPO,paracetamolo,sciroppo,250 mg/5 ml,N02BE01,Pierre Fabre Italia S.p.A.,200 ml sciroppo,true,false
+000000196,1599965047735,TACHIPIRINA 125 mg SUPPOSTE,paracetamolo,supposte,125 mg,N02BE01,Zentiva Italia S.r.l.,10 supposte,true,false
+000000197,6629619431148,TACHIPIRINA 125 mg SUPPOSTE,paracetamolo,supposte,125 mg,N02BE01,Roche S.p.A.,6 supposte,true,false
+000000198,2655110475415,TACHIPIRINA 125 mg SUPPOSTE,paracetamolo,supposte,125 mg,N02BE01,GSK S.p.A.,12 supposte,true,false
+000000199,6788861015817,TACHIPIRINA 250 mg SUPPOSTE,paracetamolo,supposte,250 mg,N02BE01,Bristol-Myers Squibb S.r.l.,10 supposte,true,false
+000000200,5604661839822,TACHIPIRINA 250 mg SUPPOSTE,paracetamolo,supposte,250 mg,N02BE01,Mylan Italia S.r.l.,6 supposte,true,false
+000000201,4447212646477,TACHIPIRINA 250 mg SUPPOSTE,paracetamolo,supposte,250 mg,N02BE01,Pfizer Italia S.r.l.,12 supposte,true,false
+000000202,3799371240654,TACHIPIRINA 500 mg SUPPOSTE,paracetamolo,supposte,500 mg,N02BE01,Astellas Pharma S.p.A.,10 supposte,true,false
+000000203,5756924593757,TACHIPIRINA 500 mg SUPPOSTE,paracetamolo,supposte,500 mg,N02BE01,MSD Italia S.r.l.,6 supposte,true,false
+000000204,5479356465194,TACHIPIRINA 500 mg SUPPOSTE,paracetamolo,supposte,500 mg,N02BE01,Abbvie S.r.l.,12 supposte,true,false
+000000205,8280737416721,TACHIPIRINA 1000 mg SUPPOSTE,paracetamolo,supposte,1000 mg,N02BE01,Italfarmaco S.p.A.,10 supposte,true,false
+000000206,2661797968867,TACHIPIRINA 1000 mg SUPPOSTE,paracetamolo,supposte,1000 mg,N02BE01,Biogen Italia S.r.l.,6 supposte,true,false
+000000207,,TACHIPIRINA 1000 mg SUPPOSTE,paracetamolo,supposte,1000 mg,N02BE01,Aurobindo Pharma S.r.l.,12 supposte,true,false
+000000208,8911352909656,EFFERALGAN 125 mg SUPPOSTE,paracetamolo,supposte,125 mg,N02BE01,Pierre Fabre Italia S.p.A.,10 supposte,true,false
+000000209,1438889937565,EFFERALGAN 125 mg SUPPOSTE,paracetamolo,supposte,125 mg,N02BE01,Alfasigma S.p.A.,6 supposte,true,false
+000000210,9825071461120,EFFERALGAN 125 mg SUPPOSTE,paracetamolo,supposte,125 mg,N02BE01,Zentiva Italia S.r.l.,12 supposte,true,false
+000000211,7387571775142,EFFERALGAN 250 mg SUPPOSTE,paracetamolo,supposte,250 mg,N02BE01,Teva Italia S.r.l.,10 supposte,true,false
+000000212,1051238282583,EFFERALGAN 250 mg SUPPOSTE,paracetamolo,supposte,250 mg,N02BE01,Pierre Fabre Italia S.p.A.,6 supposte,true,false
+000000213,3622660937969,EFFERALGAN 250 mg SUPPOSTE,paracetamolo,supposte,250 mg,N02BE01,Mylan Italia S.r.l.,12 supposte,true,false
+000000214,,EFFERALGAN 500 mg SUPPOSTE,paracetamolo,supposte,500 mg,N02BE01,Takeda Italia S.p.A.,10 supposte,true,false
+000000215,1918255371471,EFFERALGAN 500 mg SUPPOSTE,paracetamolo,supposte,500 mg,N02BE01,Farmitalia S.r.l.,6 supposte,true,false
+000000216,5969691557925,EFFERALGAN 500 mg SUPPOSTE,paracetamolo,supposte,500 mg,N02BE01,Italfarmaco S.p.A.,12 supposte,true,false
+000000217,9125134125281,EFFERALGAN 1000 mg SUPPOSTE,paracetamolo,supposte,1000 mg,N02BE01,Mylan Italia S.r.l.,10 supposte,true,false
+000000218,2966278282747,EFFERALGAN 1000 mg SUPPOSTE,paracetamolo,supposte,1000 mg,N02BE01,GSK S.p.A.,6 supposte,true,false
+000000219,7905072368870,EFFERALGAN 1000 mg SUPPOSTE,paracetamolo,supposte,1000 mg,N02BE01,Almirall S.p.A.,12 supposte,true,false
+000000220,6772190340436,PARACETAMOLO EG 125 mg SUPPOSTE,paracetamolo,supposte,125 mg,N02BE01,Biogen Italia S.r.l.,10 supposte,true,false
+000000221,7978819148585,PARACETAMOLO EG 125 mg SUPPOSTE,paracetamolo,supposte,125 mg,N02BE01,Teva Italia S.r.l.,6 supposte,true,false
+000000222,7836134074517,PARACETAMOLO EG 125 mg SUPPOSTE,paracetamolo,supposte,125 mg,N02BE01,Neopharmed Gentili S.p.A.,12 supposte,true,false
+000000223,1339596292339,PARACETAMOLO EG 250 mg SUPPOSTE,paracetamolo,supposte,250 mg,N02BE01,EG S.p.A.,10 supposte,true,false
+000000224,8498254494812,PARACETAMOLO EG 250 mg SUPPOSTE,paracetamolo,supposte,250 mg,N02BE01,GSK S.p.A.,6 supposte,true,false
+000000225,6042232536722,PARACETAMOLO EG 250 mg SUPPOSTE,paracetamolo,supposte,250 mg,N02BE01,Lilly Italia S.p.A.,12 supposte,true,false
+000000226,6671168457759,PARACETAMOLO EG 500 mg SUPPOSTE,paracetamolo,supposte,500 mg,N02BE01,Janssen-Cilag S.p.A.,10 supposte,true,false
+000000227,,PARACETAMOLO EG 500 mg SUPPOSTE,paracetamolo,supposte,500 mg,N02BE01,Novartis Farma S.p.A.,6 supposte,true,false
+000000228,7518636374547,PARACETAMOLO EG 500 mg SUPPOSTE,paracetamolo,supposte,500 mg,N02BE01,Sandoz S.p.A.,12 supposte,true,false
+000000229,2975001701271,PARACETAMOLO EG 1000 mg SUPPOSTE,paracetamolo,supposte,1000 mg,N02BE01,Alfasigma S.p.A.,10 supposte,true,false
+000000230,,PARACETAMOLO EG 1000 mg SUPPOSTE,paracetamolo,supposte,1000 mg,N02BE01,Pierre Fabre Italia S.p.A.,6 supposte,true,false
+000000231,2424154152060,PARACETAMOLO EG 1000 mg SUPPOSTE,paracetamolo,supposte,1000 mg,N02BE01,Italfarmaco S.p.A.,12 supposte,true,false
+000000232,3611037129380,PARACETAMOLO TEVA 125 mg SUPPOSTE,paracetamolo,supposte,125 mg,N02BE01,Neopharmed Gentili S.p.A.,10 supposte,true,false
+000000233,,PARACETAMOLO TEVA 125 mg SUPPOSTE,paracetamolo,supposte,125 mg,N02BE01,Sandoz S.p.A.,6 supposte,true,false
+000000234,6271361115540,PARACETAMOLO TEVA 125 mg SUPPOSTE,paracetamolo,supposte,125 mg,N02BE01,GSK S.p.A.,12 supposte,true,false
+000000235,2218909275322,PARACETAMOLO TEVA 250 mg SUPPOSTE,paracetamolo,supposte,250 mg,N02BE01,Almirall S.p.A.,10 supposte,true,false
+000000236,7311219656524,PARACETAMOLO TEVA 250 mg SUPPOSTE,paracetamolo,supposte,250 mg,N02BE01,Servier Italia S.p.A.,6 supposte,true,false
+000000237,1389994043897,PARACETAMOLO TEVA 250 mg SUPPOSTE,paracetamolo,supposte,250 mg,N02BE01,Pharmos S.p.A.,12 supposte,true,false
+000000238,6403761379189,PARACETAMOLO TEVA 500 mg SUPPOSTE,paracetamolo,supposte,500 mg,N02BE01,Angelini Pharma S.r.l.,10 supposte,true,false
+000000239,5269658271094,PARACETAMOLO TEVA 500 mg SUPPOSTE,paracetamolo,supposte,500 mg,N02BE01,Pfizer Italia S.r.l.,6 supposte,true,false
+000000240,,PARACETAMOLO TEVA 500 mg SUPPOSTE,paracetamolo,supposte,500 mg,N02BE01,Takeda Italia S.p.A.,12 supposte,true,false
+000000241,,PARACETAMOLO TEVA 1000 mg SUPPOSTE,paracetamolo,supposte,1000 mg,N02BE01,EG S.p.A.,10 supposte,true,false
+000000242,6848666188922,PARACETAMOLO TEVA 1000 mg SUPPOSTE,paracetamolo,supposte,1000 mg,N02BE01,Chiesi Farmaceutici S.p.A.,6 supposte,true,false
+000000243,1832856914632,PARACETAMOLO TEVA 1000 mg SUPPOSTE,paracetamolo,supposte,1000 mg,N02BE01,EG S.p.A.,12 supposte,true,false
+000000244,6179904210205,TACHIPIRINA 500 mg BUSTINE,paracetamolo,bustina,500 mg,N02BE01,AstraZeneca S.p.A.,20 bustine,true,false
+000000245,5884252410566,TACHIPIRINA 500 mg BUSTINE,paracetamolo,bustina,500 mg,N02BE01,Chiesi Farmaceutici S.p.A.,10 bustine,true,false
+000000246,4917785079250,TACHIPIRINA 500 mg BUSTINE,paracetamolo,bustina,500 mg,N02BE01,AstraZeneca S.p.A.,30 bustine,true,false
+000000247,1913800030759,TACHIPIRINA 1000 mg BUSTINE,paracetamolo,bustina,1000 mg,N02BE01,Mylan Italia S.r.l.,20 bustine,true,false
+000000248,2086353654198,TACHIPIRINA 1000 mg BUSTINE,paracetamolo,bustina,1000 mg,N02BE01,Aurobindo Pharma S.r.l.,10 bustine,true,false
+000000249,0238061744513,TACHIPIRINA 1000 mg BUSTINE,paracetamolo,bustina,1000 mg,N02BE01,Amgen S.r.l.,30 bustine,true,false
+000000250,5349493759732,EFFERALGAN 500 mg BUSTINE,paracetamolo,bustina,500 mg,N02BE01,Biogen Italia S.r.l.,20 bustine,true,false
+000000251,3206038505068,EFFERALGAN 500 mg BUSTINE,paracetamolo,bustina,500 mg,N02BE01,Italfarmaco S.p.A.,10 bustine,true,false
+000000252,8367024103868,EFFERALGAN 500 mg BUSTINE,paracetamolo,bustina,500 mg,N02BE01,Aurobindo Pharma S.r.l.,30 bustine,true,false
+000000253,1918261990628,EFFERALGAN 1000 mg BUSTINE,paracetamolo,bustina,1000 mg,N02BE01,Servier Italia S.p.A.,20 bustine,true,false
+000000254,5655743132911,EFFERALGAN 1000 mg BUSTINE,paracetamolo,bustina,1000 mg,N02BE01,Roche S.p.A.,10 bustine,true,false
+000000255,7756185374742,EFFERALGAN 1000 mg BUSTINE,paracetamolo,bustina,1000 mg,N02BE01,Bayer S.p.A.,30 bustine,true,false
+000000256,4903521356808,PARACETAMOLO EG 500 mg BUSTINE,paracetamolo,bustina,500 mg,N02BE01,Italfarmaco S.p.A.,20 bustine,true,false
+000000257,2067883171218,PARACETAMOLO EG 500 mg BUSTINE,paracetamolo,bustina,500 mg,N02BE01,Angelini Pharma S.r.l.,10 bustine,true,false
+000000258,3236519941016,PARACETAMOLO EG 500 mg BUSTINE,paracetamolo,bustina,500 mg,N02BE01,Abbvie S.r.l.,30 bustine,true,false
+000000259,7215107029660,PARACETAMOLO EG 1000 mg BUSTINE,paracetamolo,bustina,1000 mg,N02BE01,Fidia Farmaceutici S.p.A.,20 bustine,true,false
+000000260,,PARACETAMOLO EG 1000 mg BUSTINE,paracetamolo,bustina,1000 mg,N02BE01,Pierre Fabre Italia S.p.A.,10 bustine,true,false
+000000261,3244720999344,PARACETAMOLO EG 1000 mg BUSTINE,paracetamolo,bustina,1000 mg,N02BE01,Fidia Farmaceutici S.p.A.,30 bustine,true,false
+000000262,8701462638382,PARACETAMOLO SANDOZ 500 mg BUSTINE,paracetamolo,bustina,500 mg,N02BE01,Menarini Group,20 bustine,true,false
+000000263,5787598564200,PARACETAMOLO SANDOZ 500 mg BUSTINE,paracetamolo,bustina,500 mg,N02BE01,Bracco S.p.A.,10 bustine,true,false
+000000264,0407859321339,PARACETAMOLO SANDOZ 500 mg BUSTINE,paracetamolo,bustina,500 mg,N02BE01,Chiesi Farmaceutici S.p.A.,30 bustine,true,false
+000000265,0396522395596,PARACETAMOLO SANDOZ 1000 mg BUSTINE,paracetamolo,bustina,1000 mg,N02BE01,Menarini Group,20 bustine,true,false
+000000266,5992937842707,PARACETAMOLO SANDOZ 1000 mg BUSTINE,paracetamolo,bustina,1000 mg,N02BE01,Novartis Farma S.p.A.,10 bustine,true,false
+000000267,9308705932529,PARACETAMOLO SANDOZ 1000 mg BUSTINE,paracetamolo,bustina,1000 mg,N02BE01,Bracco S.p.A.,30 bustine,true,false
+000000268,2921851569158,BRUFEN 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Italfarmaco S.p.A.,24 compresse,true,false
+000000269,2675289539268,BRUFEN 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Italfarmaco S.p.A.,20 compresse,true,false
+000000270,4220969029591,BRUFEN 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Boehringer Ingelheim Italia S.p.A.,30 compresse,true,false
+000000271,1725135521570,BRUFEN 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Angelini Pharma S.r.l.,12 compresse,true,false
+000000272,3154100676263,BRUFEN 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Fidia Farmaceutici S.p.A.,24 compresse,true,false
+000000273,5861793271047,BRUFEN 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Menarini Group,20 compresse,true,false
+000000274,1152621815996,BRUFEN 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Ibsa Farmaceutici Italia S.r.l.,30 compresse,true,false
+000000275,6296201533681,BRUFEN 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Biogen Italia S.r.l.,12 compresse,true,false
+000000276,4431069872059,BRUFEN 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Angelini Pharma S.r.l.,24 compresse,true,false
+000000277,4973103241716,BRUFEN 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Italfarmaco S.p.A.,20 compresse,true,false
+000000278,7741862565278,BRUFEN 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Teva Italia S.r.l.,30 compresse,true,false
+000000279,7434902115860,BRUFEN 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Janssen-Cilag S.p.A.,12 compresse,true,false
+000000280,0686879374161,MOMENT 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Teva Italia S.r.l.,24 compresse,true,false
+000000281,8992172233206,MOMENT 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Pierre Fabre Italia S.p.A.,20 compresse,true,false
+000000282,6329451168683,MOMENT 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Bracco S.p.A.,30 compresse,true,false
+000000283,8709986162291,MOMENT 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Janssen-Cilag S.p.A.,12 compresse,true,false
+000000284,1191485646797,MOMENT 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Bristol-Myers Squibb S.r.l.,24 compresse,true,false
+000000285,2462996065308,MOMENT 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Ibsa Farmaceutici Italia S.r.l.,20 compresse,true,false
+000000286,5054447132478,MOMENT 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Bracco S.p.A.,30 compresse,true,false
+000000287,6913736785087,MOMENT 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,AstraZeneca S.p.A.,12 compresse,true,false
+000000288,8628902330302,MOMENT 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Alfasigma S.p.A.,24 compresse,true,false
+000000289,5345786103572,MOMENT 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Bristol-Myers Squibb S.r.l.,20 compresse,true,false
+000000290,7985524140605,MOMENT 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,AstraZeneca S.p.A.,30 compresse,true,false
+000000291,3333468007227,MOMENT 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Bristol-Myers Squibb S.r.l.,12 compresse,true,false
+000000292,3494466574378,NUROFEN 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Italfarmaco S.p.A.,24 compresse,true,false
+000000293,9691085899446,NUROFEN 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Sanofi S.r.l.,20 compresse,true,false
+000000294,5454443283097,NUROFEN 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Viatris Italia S.r.l.,30 compresse,true,false
+000000295,2074466609938,NUROFEN 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Sandoz S.p.A.,12 compresse,true,false
+000000296,3875842824179,NUROFEN 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,GSK S.p.A.,24 compresse,true,false
+000000297,8251353465547,NUROFEN 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Janssen-Cilag S.p.A.,20 compresse,true,false
+000000298,1709991738167,NUROFEN 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Farmitalia S.r.l.,30 compresse,true,false
+000000299,0223569725218,NUROFEN 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Fidia Farmaceutici S.p.A.,12 compresse,true,false
+000000300,2500743292710,NUROFEN 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,GSK S.p.A.,24 compresse,true,false
+000000301,6667600835056,NUROFEN 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Farmitalia S.r.l.,20 compresse,true,false
+000000302,0335421689429,NUROFEN 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Pfizer Italia S.r.l.,30 compresse,true,false
+000000303,4478985625758,NUROFEN 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Abbvie S.r.l.,12 compresse,true,false
+000000304,6033230982154,IBUPROFENE EG 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Teva Italia S.r.l.,24 compresse,true,false
+000000305,4890901001673,IBUPROFENE EG 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Mylan Italia S.r.l.,20 compresse,true,false
+000000306,4723046184997,IBUPROFENE EG 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,GSK S.p.A.,30 compresse,true,false
+000000307,1891411739349,IBUPROFENE EG 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Farmitalia S.r.l.,12 compresse,true,false
+000000308,5642087375302,IBUPROFENE EG 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Angelini Pharma S.r.l.,24 compresse,true,false
+000000309,1972181143748,IBUPROFENE EG 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Recordati S.p.A.,20 compresse,true,false
+000000310,1204556110025,IBUPROFENE EG 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,AstraZeneca S.p.A.,30 compresse,true,false
+000000311,7941552166741,IBUPROFENE EG 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Mylan Italia S.r.l.,12 compresse,true,false
+000000312,7621202169796,IBUPROFENE EG 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Neopharmed Gentili S.p.A.,24 compresse,true,false
+000000313,6590277167017,IBUPROFENE EG 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Recordati S.p.A.,20 compresse,true,false
+000000314,0899358891633,IBUPROFENE EG 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Ibsa Farmaceutici Italia S.r.l.,30 compresse,true,false
+000000315,6289002877214,IBUPROFENE EG 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Fidia Farmaceutici S.p.A.,12 compresse,true,false
+000000316,5408386631774,IBUPROFENE TEVA 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Lilly Italia S.p.A.,24 compresse,true,false
+000000317,7751701660880,IBUPROFENE TEVA 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Angelini Pharma S.r.l.,20 compresse,true,false
+000000318,9948837550378,IBUPROFENE TEVA 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Sandoz S.p.A.,30 compresse,true,false
+000000319,9975711305540,IBUPROFENE TEVA 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Amgen S.r.l.,12 compresse,true,false
+000000320,1027261493319,IBUPROFENE TEVA 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Viatris Italia S.r.l.,24 compresse,true,false
+000000321,3516091779826,IBUPROFENE TEVA 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Fidia Farmaceutici S.p.A.,20 compresse,true,false
+000000322,,IBUPROFENE TEVA 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,EG S.p.A.,30 compresse,true,false
+000000323,6978292216994,IBUPROFENE TEVA 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Bracco S.p.A.,12 compresse,true,false
+000000324,6693465472266,IBUPROFENE TEVA 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Bristol-Myers Squibb S.r.l.,24 compresse,true,false
+000000325,8485833394526,IBUPROFENE TEVA 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,MSD Italia S.r.l.,20 compresse,true,false
+000000326,5158799684606,IBUPROFENE TEVA 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Farmitalia S.r.l.,30 compresse,true,false
+000000327,6200342442047,IBUPROFENE TEVA 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Takeda Italia S.p.A.,12 compresse,true,false
+000000328,0571983863840,IBUPROFENE SANDOZ 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,EG S.p.A.,24 compresse,true,false
+000000329,6658004397356,IBUPROFENE SANDOZ 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Janssen-Cilag S.p.A.,20 compresse,true,false
+000000330,9334721228162,IBUPROFENE SANDOZ 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Teva Italia S.r.l.,30 compresse,true,false
+000000331,8422940572027,IBUPROFENE SANDOZ 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Bracco S.p.A.,12 compresse,true,false
+000000332,9479851583283,IBUPROFENE SANDOZ 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Pfizer Italia S.r.l.,24 compresse,true,false
+000000333,2688615335557,IBUPROFENE SANDOZ 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Dompé Farmaceutici S.p.A.,20 compresse,true,false
+000000334,9878015739939,IBUPROFENE SANDOZ 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Teva Italia S.r.l.,30 compresse,true,false
+000000335,5616484085881,IBUPROFENE SANDOZ 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Neopharmed Gentili S.p.A.,12 compresse,true,false
+000000336,4358112880130,IBUPROFENE SANDOZ 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Takeda Italia S.p.A.,24 compresse,true,false
+000000337,6138612075018,IBUPROFENE SANDOZ 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Pfizer Italia S.r.l.,20 compresse,true,false
+000000338,4819346676659,IBUPROFENE SANDOZ 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Menarini Group,30 compresse,true,false
+000000339,1809190158145,IBUPROFENE SANDOZ 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Italfarmaco S.p.A.,12 compresse,true,false
+000000340,4766072832685,IBUPROFENE MYLAN 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Dompé Farmaceutici S.p.A.,24 compresse,true,false
+000000341,2450882100998,IBUPROFENE MYLAN 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Viatris Italia S.r.l.,20 compresse,true,false
+000000342,1435368222396,IBUPROFENE MYLAN 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Recordati S.p.A.,30 compresse,true,false
+000000343,2908781414130,IBUPROFENE MYLAN 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Janssen-Cilag S.p.A.,12 compresse,true,false
+000000344,5523149135778,IBUPROFENE MYLAN 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Sandoz S.p.A.,24 compresse,true,false
+000000345,4929955620537,IBUPROFENE MYLAN 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Boehringer Ingelheim Italia S.p.A.,20 compresse,true,false
+000000346,6452577754789,IBUPROFENE MYLAN 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Sanofi S.r.l.,30 compresse,true,false
+000000347,9142834110805,IBUPROFENE MYLAN 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Janssen-Cilag S.p.A.,12 compresse,true,false
+000000348,9308488725639,IBUPROFENE MYLAN 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Janssen-Cilag S.p.A.,24 compresse,true,false
+000000349,4278816580399,IBUPROFENE MYLAN 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,AstraZeneca S.p.A.,20 compresse,true,false
+000000350,2722992750371,IBUPROFENE MYLAN 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Boehringer Ingelheim Italia S.p.A.,30 compresse,true,false
+000000351,5303856770055,IBUPROFENE MYLAN 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Sanofi S.r.l.,12 compresse,true,false
+000000352,8449892665911,IBUPROFENE DOC 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Farmitalia S.r.l.,24 compresse,true,false
+000000353,3865577908275,IBUPROFENE DOC 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,AstraZeneca S.p.A.,20 compresse,true,false
+000000354,8432225913650,IBUPROFENE DOC 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Bayer S.p.A.,30 compresse,true,false
+000000355,7739260302991,IBUPROFENE DOC 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,AstraZeneca S.p.A.,12 compresse,true,false
+000000356,8092024286999,IBUPROFENE DOC 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Menarini Group,24 compresse,true,false
+000000357,4137977236920,IBUPROFENE DOC 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Janssen-Cilag S.p.A.,20 compresse,true,false
+000000358,2984257991367,IBUPROFENE DOC 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Mylan Italia S.r.l.,30 compresse,true,false
+000000359,0388629127996,IBUPROFENE DOC 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Teva Italia S.r.l.,12 compresse,true,false
+000000360,8811729806864,IBUPROFENE DOC 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Aurobindo Pharma S.r.l.,24 compresse,true,false
+000000361,8637659916240,IBUPROFENE DOC 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Ibsa Farmaceutici Italia S.r.l.,20 compresse,true,false
+000000362,1498643009815,IBUPROFENE DOC 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Farmitalia S.r.l.,30 compresse,true,false
+000000363,,IBUPROFENE DOC 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Takeda Italia S.p.A.,12 compresse,true,false
+000000364,5651269448697,SPIDIFEN 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Aurobindo Pharma S.r.l.,24 compresse,true,false
+000000365,6368872588748,SPIDIFEN 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Italfarmaco S.p.A.,20 compresse,true,false
+000000366,6213721386580,SPIDIFEN 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Astellas Pharma S.p.A.,30 compresse,true,false
+000000367,0260127961145,SPIDIFEN 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Boehringer Ingelheim Italia S.p.A.,12 compresse,true,false
+000000368,9066984902779,SPIDIFEN 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Angelini Pharma S.r.l.,24 compresse,true,false
+000000369,8430988392057,SPIDIFEN 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Servier Italia S.p.A.,20 compresse,true,false
+000000370,2146566938017,SPIDIFEN 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Novartis Farma S.p.A.,30 compresse,true,false
+000000371,8955439376900,SPIDIFEN 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Recordati S.p.A.,12 compresse,true,false
+000000372,8181845184895,SPIDIFEN 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Recordati S.p.A.,24 compresse,true,false
+000000373,6973577907147,SPIDIFEN 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Pfizer Italia S.r.l.,20 compresse,true,false
+000000374,3356588043418,SPIDIFEN 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Viatris Italia S.r.l.,30 compresse,true,false
+000000375,5182755394230,SPIDIFEN 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Fidia Farmaceutici S.p.A.,12 compresse,true,false
+000000376,3343333952118,ANTALGIL 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Novartis Farma S.p.A.,24 compresse,true,false
+000000377,7908075957942,ANTALGIL 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Fidia Farmaceutici S.p.A.,20 compresse,true,false
+000000378,8463920867801,ANTALGIL 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Pharmos S.p.A.,30 compresse,true,false
+000000379,2718750036917,ANTALGIL 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Bracco S.p.A.,12 compresse,true,false
+000000380,4284347955278,ANTALGIL 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Pierre Fabre Italia S.p.A.,24 compresse,true,false
+000000381,5564729293143,ANTALGIL 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Servier Italia S.p.A.,20 compresse,true,false
+000000382,6322702672885,ANTALGIL 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Bracco S.p.A.,30 compresse,true,false
+000000383,4489061203470,ANTALGIL 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Sanofi S.r.l.,12 compresse,true,false
+000000384,5455884506158,ANTALGIL 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Bristol-Myers Squibb S.r.l.,24 compresse,true,false
+000000385,9824558771691,ANTALGIL 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Dompé Farmaceutici S.p.A.,20 compresse,true,false
+000000386,2256996112533,ANTALGIL 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Bracco S.p.A.,30 compresse,true,false
+000000387,4496475987629,ANTALGIL 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,MSD Italia S.r.l.,12 compresse,true,false
+000000388,2341326111789,IBUPROFENE ZENTIVA 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,EG S.p.A.,24 compresse,true,false
+000000389,,IBUPROFENE ZENTIVA 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Viatris Italia S.r.l.,20 compresse,true,false
+000000390,1149216433475,IBUPROFENE ZENTIVA 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,GSK S.p.A.,30 compresse,true,false
+000000391,2005577848725,IBUPROFENE ZENTIVA 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Biogen Italia S.r.l.,12 compresse,true,false
+000000392,9796884578315,IBUPROFENE ZENTIVA 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Neopharmed Gentili S.p.A.,24 compresse,true,false
+000000393,6424008254786,IBUPROFENE ZENTIVA 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Angelini Pharma S.r.l.,20 compresse,true,false
+000000394,7740649308534,IBUPROFENE ZENTIVA 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Almirall S.p.A.,30 compresse,true,false
+000000395,6632663416382,IBUPROFENE ZENTIVA 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Astellas Pharma S.p.A.,12 compresse,true,false
+000000396,4484631224176,IBUPROFENE ZENTIVA 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Astellas Pharma S.p.A.,24 compresse,true,false
+000000397,9735020802143,IBUPROFENE ZENTIVA 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Chiesi Farmaceutici S.p.A.,20 compresse,true,false
+000000398,7031207356471,IBUPROFENE ZENTIVA 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Aurobindo Pharma S.r.l.,30 compresse,true,false
+000000399,0512046187237,IBUPROFENE ZENTIVA 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Recordati S.p.A.,12 compresse,true,false
+000000400,0136730371834,IBUPROFENE AUROBINDO 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Ibsa Farmaceutici Italia S.r.l.,24 compresse,true,false
+000000401,4520881474357,IBUPROFENE AUROBINDO 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,EG S.p.A.,20 compresse,true,false
+000000402,3136502491637,IBUPROFENE AUROBINDO 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,Angelini Pharma S.r.l.,30 compresse,true,false
+000000403,9792513271954,IBUPROFENE AUROBINDO 200 mg COMPRESSE,ibuprofene,compressa,200 mg,M01AE01,EG S.p.A.,12 compresse,true,false
+000000404,2812735857303,IBUPROFENE AUROBINDO 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Mylan Italia S.r.l.,24 compresse,true,false
+000000405,2407784873925,IBUPROFENE AUROBINDO 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Biogen Italia S.r.l.,20 compresse,true,false
+000000406,7498218274482,IBUPROFENE AUROBINDO 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Aurobindo Pharma S.r.l.,30 compresse,true,false
+000000407,8620959351866,IBUPROFENE AUROBINDO 400 mg COMPRESSE,ibuprofene,compressa,400 mg,M01AE01,Abbvie S.r.l.,12 compresse,true,false
+000000408,7829456511815,IBUPROFENE AUROBINDO 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Teva Italia S.r.l.,24 compresse,true,false
+000000409,2203173109671,IBUPROFENE AUROBINDO 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Farmitalia S.r.l.,20 compresse,true,false
+000000410,9405391037177,IBUPROFENE AUROBINDO 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,EG S.p.A.,30 compresse,true,false
+000000411,6509480141387,IBUPROFENE AUROBINDO 600 mg COMPRESSE,ibuprofene,compressa,600 mg,M01AE01,Sanofi S.r.l.,12 compresse,true,false
+000000412,3863383928869,BRUFEN 400 mg GRANULATO,ibuprofene,granulato,400 mg,M01AE01,Sanofi S.r.l.,20 bustine,true,false
+000000413,9576122868527,BRUFEN 400 mg GRANULATO,ibuprofene,granulato,400 mg,M01AE01,Biogen Italia S.r.l.,10 bustine,true,false
+000000414,7558556659393,BRUFEN 400 mg GRANULATO,ibuprofene,granulato,400 mg,M01AE01,Biogen Italia S.r.l.,30 bustine,true,false
+000000415,8457760049084,BRUFEN 600 mg GRANULATO,ibuprofene,granulato,600 mg,M01AE01,GSK S.p.A.,20 bustine,true,false
+000000416,4043350488896,BRUFEN 600 mg GRANULATO,ibuprofene,granulato,600 mg,M01AE01,Lilly Italia S.p.A.,10 bustine,true,false
+000000417,0752245933444,BRUFEN 600 mg GRANULATO,ibuprofene,granulato,600 mg,M01AE01,Novartis Farma S.p.A.,30 bustine,true,false
+000000418,9315727919407,NUROFEN 400 mg GRANULATO,ibuprofene,granulato,400 mg,M01AE01,Lilly Italia S.p.A.,20 bustine,true,false
+000000419,0556613906043,NUROFEN 400 mg GRANULATO,ibuprofene,granulato,400 mg,M01AE01,Farmitalia S.r.l.,10 bustine,true,false
+000000420,,NUROFEN 400 mg GRANULATO,ibuprofene,granulato,400 mg,M01AE01,Biogen Italia S.r.l.,30 bustine,true,false
+000000421,5832067998137,NUROFEN 600 mg GRANULATO,ibuprofene,granulato,600 mg,M01AE01,Pierre Fabre Italia S.p.A.,20 bustine,true,false
+000000422,6225179086417,NUROFEN 600 mg GRANULATO,ibuprofene,granulato,600 mg,M01AE01,Viatris Italia S.r.l.,10 bustine,true,false
+000000423,2278376938984,NUROFEN 600 mg GRANULATO,ibuprofene,granulato,600 mg,M01AE01,Servier Italia S.p.A.,30 bustine,true,false
+000000424,4659116655350,MOMENT GRANULATO 400 mg GRANULATO,ibuprofene,granulato,400 mg,M01AE01,Zentiva Italia S.r.l.,20 bustine,true,false
+000000425,0425979270337,MOMENT GRANULATO 400 mg GRANULATO,ibuprofene,granulato,400 mg,M01AE01,Aurobindo Pharma S.r.l.,10 bustine,true,false
+000000426,1103924051475,MOMENT GRANULATO 400 mg GRANULATO,ibuprofene,granulato,400 mg,M01AE01,Ibsa Farmaceutici Italia S.r.l.,30 bustine,true,false
+000000427,,MOMENT GRANULATO 600 mg GRANULATO,ibuprofene,granulato,600 mg,M01AE01,Takeda Italia S.p.A.,20 bustine,true,false
+000000428,3388487920699,MOMENT GRANULATO 600 mg GRANULATO,ibuprofene,granulato,600 mg,M01AE01,Farmitalia S.r.l.,10 bustine,true,false
+000000429,,MOMENT GRANULATO 600 mg GRANULATO,ibuprofene,granulato,600 mg,M01AE01,AstraZeneca S.p.A.,30 bustine,true,false
+000000430,3940701645100,IBUPROFENE EG 400 mg GRANULATO,ibuprofene,granulato,400 mg,M01AE01,Dompé Farmaceutici S.p.A.,20 bustine,true,false
+000000431,6368157981233,IBUPROFENE EG 400 mg GRANULATO,ibuprofene,granulato,400 mg,M01AE01,Pharmos S.p.A.,10 bustine,true,false
+000000432,8003845762050,IBUPROFENE EG 400 mg GRANULATO,ibuprofene,granulato,400 mg,M01AE01,Zentiva Italia S.r.l.,30 bustine,true,false
+000000433,4384046084320,IBUPROFENE EG 600 mg GRANULATO,ibuprofene,granulato,600 mg,M01AE01,Sandoz S.p.A.,20 bustine,true,false
+000000434,2168936392649,IBUPROFENE EG 600 mg GRANULATO,ibuprofene,granulato,600 mg,M01AE01,Bristol-Myers Squibb S.r.l.,10 bustine,true,false
+000000435,8232983248267,IBUPROFENE EG 600 mg GRANULATO,ibuprofene,granulato,600 mg,M01AE01,Roche S.p.A.,30 bustine,true,false
+000000436,9251881252052,SPIDIFEN 400 mg GRANULATO,ibuprofene,granulato,400 mg,M01AE01,Almirall S.p.A.,20 bustine,true,false
+000000437,4742312209943,SPIDIFEN 400 mg GRANULATO,ibuprofene,granulato,400 mg,M01AE01,Bristol-Myers Squibb S.r.l.,10 bustine,true,false
+000000438,3933051728975,SPIDIFEN 400 mg GRANULATO,ibuprofene,granulato,400 mg,M01AE01,Aurobindo Pharma S.r.l.,30 bustine,true,false
+000000439,6772233060468,SPIDIFEN 600 mg GRANULATO,ibuprofene,granulato,600 mg,M01AE01,Boehringer Ingelheim Italia S.p.A.,20 bustine,true,false
+000000440,3312797573665,SPIDIFEN 600 mg GRANULATO,ibuprofene,granulato,600 mg,M01AE01,Teva Italia S.r.l.,10 bustine,true,false
+000000441,6569998808172,SPIDIFEN 600 mg GRANULATO,ibuprofene,granulato,600 mg,M01AE01,Alfasigma S.p.A.,30 bustine,true,false
+000000442,0388608680344,DOLGIT 5% GEL,ibuprofene,gel,5%,M02AA13,Neopharmed Gentili S.p.A.,50 g gel,true,false
+000000443,4472649082772,DOLGIT 5% GEL,ibuprofene,gel,5%,M02AA13,Novartis Farma S.p.A.,100 g gel,true,false
+000000444,1298266570279,DOLGIT 5% GEL,ibuprofene,gel,5%,M02AA13,Janssen-Cilag S.p.A.,30 g gel,true,false
+000000445,3714521117518,DOLGIT 10% GEL,ibuprofene,gel,10%,M02AA13,Farmitalia S.r.l.,50 g gel,true,false
+000000446,8926860259223,DOLGIT 10% GEL,ibuprofene,gel,10%,M02AA13,Roche S.p.A.,100 g gel,true,false
+000000447,0644742123094,DOLGIT 10% GEL,ibuprofene,gel,10%,M02AA13,Recordati S.p.A.,30 g gel,true,false
+000000448,,IBUPROFENE EG GEL 5% GEL,ibuprofene,gel,5%,M02AA13,Fidia Farmaceutici S.p.A.,50 g gel,true,false
+000000449,8097339776715,IBUPROFENE EG GEL 5% GEL,ibuprofene,gel,5%,M02AA13,Bristol-Myers Squibb S.r.l.,100 g gel,true,false
+000000450,3849830220502,IBUPROFENE EG GEL 5% GEL,ibuprofene,gel,5%,M02AA13,Roche S.p.A.,30 g gel,true,false
+000000451,9945101622496,IBUPROFENE EG GEL 10% GEL,ibuprofene,gel,10%,M02AA13,Bristol-Myers Squibb S.r.l.,50 g gel,true,false
+000000452,8279501455615,IBUPROFENE EG GEL 10% GEL,ibuprofene,gel,10%,M02AA13,Pierre Fabre Italia S.p.A.,100 g gel,true,false
+000000453,1472145868330,IBUPROFENE EG GEL 10% GEL,ibuprofene,gel,10%,M02AA13,Astellas Pharma S.p.A.,30 g gel,true,false
+000000454,9817946954899,NUROFEN GEL 5% GEL,ibuprofene,gel,5%,M02AA13,Astellas Pharma S.p.A.,50 g gel,true,false
+000000455,2997877293438,NUROFEN GEL 5% GEL,ibuprofene,gel,5%,M02AA13,Angelini Pharma S.r.l.,100 g gel,true,false
+000000456,7139660558309,NUROFEN GEL 5% GEL,ibuprofene,gel,5%,M02AA13,Abbvie S.r.l.,30 g gel,true,false
+000000457,4144885015561,NUROFEN GEL 10% GEL,ibuprofene,gel,10%,M02AA13,Lilly Italia S.p.A.,50 g gel,true,false
+000000458,0235577027277,NUROFEN GEL 10% GEL,ibuprofene,gel,10%,M02AA13,Biogen Italia S.r.l.,100 g gel,true,false
+000000459,7608495880393,NUROFEN GEL 10% GEL,ibuprofene,gel,10%,M02AA13,Sandoz S.p.A.,30 g gel,true,false
+000000460,5124056829967,IBUPROFENE TEVA GEL 5% GEL,ibuprofene,gel,5%,M02AA13,MSD Italia S.r.l.,50 g gel,true,false
+000000461,4504617357435,IBUPROFENE TEVA GEL 5% GEL,ibuprofene,gel,5%,M02AA13,Farmitalia S.r.l.,100 g gel,true,false
+000000462,1503178078233,IBUPROFENE TEVA GEL 5% GEL,ibuprofene,gel,5%,M02AA13,Sandoz S.p.A.,30 g gel,true,false
+000000463,8452182307682,IBUPROFENE TEVA GEL 10% GEL,ibuprofene,gel,10%,M02AA13,Bayer S.p.A.,50 g gel,true,false
+000000464,,IBUPROFENE TEVA GEL 10% GEL,ibuprofene,gel,10%,M02AA13,Teva Italia S.r.l.,100 g gel,true,false
+000000465,9157018409439,IBUPROFENE TEVA GEL 10% GEL,ibuprofene,gel,10%,M02AA13,Bracco S.p.A.,30 g gel,true,false
+000000466,4485714224106,MAALOX 500 mg COMPRESSE,carbonato di calcio,compressa,500 mg,A02AC01,Astellas Pharma S.p.A.,40 compresse,true,false
+000000467,1385854249324,MAALOX 500 mg COMPRESSE,carbonato di calcio,compressa,500 mg,A02AC01,Pfizer Italia S.r.l.,60 compresse,true,false
+000000468,5870207016013,MAALOX 500 mg COMPRESSE,carbonato di calcio,compressa,500 mg,A02AC01,Pierre Fabre Italia S.p.A.,36 compresse,true,false
+000000469,9979545381794,MAALOX 750 mg COMPRESSE,carbonato di calcio,compressa,750 mg,A02AC01,GSK S.p.A.,40 compresse,true,false
+000000470,7174773329453,MAALOX 750 mg COMPRESSE,carbonato di calcio,compressa,750 mg,A02AC01,Viatris Italia S.r.l.,60 compresse,true,false
+000000471,5577017157720,MAALOX 750 mg COMPRESSE,carbonato di calcio,compressa,750 mg,A02AC01,Dompé Farmaceutici S.p.A.,36 compresse,true,false
+000000472,9928161581484,MAALOX 680 mg COMPRESSE,carbonato di calcio,compressa,680 mg,A02AC01,Alfasigma S.p.A.,40 compresse,true,false
+000000473,6393827615392,MAALOX 680 mg COMPRESSE,carbonato di calcio,compressa,680 mg,A02AC01,Pierre Fabre Italia S.p.A.,60 compresse,true,false
+000000474,6958321971995,MAALOX 680 mg COMPRESSE,carbonato di calcio,compressa,680 mg,A02AC01,Alfasigma S.p.A.,36 compresse,true,false
+000000475,1724619196570,RENNIE 500 mg COMPRESSE,carbonato di calcio,compressa,500 mg,A02AC01,EG S.p.A.,40 compresse,true,false
+000000476,2902278469979,RENNIE 500 mg COMPRESSE,carbonato di calcio,compressa,500 mg,A02AC01,Abbvie S.r.l.,60 compresse,true,false
+000000477,5494651909860,RENNIE 500 mg COMPRESSE,carbonato di calcio,compressa,500 mg,A02AC01,GSK S.p.A.,36 compresse,true,false
+000000478,0580085140360,RENNIE 750 mg COMPRESSE,carbonato di calcio,compressa,750 mg,A02AC01,Janssen-Cilag S.p.A.,40 compresse,true,false
+000000479,5666683272384,RENNIE 750 mg COMPRESSE,carbonato di calcio,compressa,750 mg,A02AC01,Mylan Italia S.r.l.,60 compresse,true,false
+000000480,5624220102761,RENNIE 750 mg COMPRESSE,carbonato di calcio,compressa,750 mg,A02AC01,GSK S.p.A.,36 compresse,true,false
+000000481,6796927868765,RENNIE 680 mg COMPRESSE,carbonato di calcio,compressa,680 mg,A02AC01,Zentiva Italia S.r.l.,40 compresse,true,false
+000000482,6909738468950,RENNIE 680 mg COMPRESSE,carbonato di calcio,compressa,680 mg,A02AC01,Teva Italia S.r.l.,60 compresse,true,false
+000000483,9751971284784,RENNIE 680 mg COMPRESSE,carbonato di calcio,compressa,680 mg,A02AC01,Novartis Farma S.p.A.,36 compresse,true,false
+000000484,9137189490580,GAVISCON ANTIACIDO 500 mg COMPRESSE,carbonato di calcio,compressa,500 mg,A02AC01,Angelini Pharma S.r.l.,40 compresse,true,false
+000000485,8795654420947,GAVISCON ANTIACIDO 500 mg COMPRESSE,carbonato di calcio,compressa,500 mg,A02AC01,Lilly Italia S.p.A.,60 compresse,true,false
+000000486,7929049047124,GAVISCON ANTIACIDO 500 mg COMPRESSE,carbonato di calcio,compressa,500 mg,A02AC01,Pharmos S.p.A.,36 compresse,true,false
+000000487,4429444019298,GAVISCON ANTIACIDO 750 mg COMPRESSE,carbonato di calcio,compressa,750 mg,A02AC01,Roche S.p.A.,40 compresse,true,false
+000000488,5243728051298,GAVISCON ANTIACIDO 750 mg COMPRESSE,carbonato di calcio,compressa,750 mg,A02AC01,Roche S.p.A.,60 compresse,true,false
+000000489,6637239504104,GAVISCON ANTIACIDO 750 mg COMPRESSE,carbonato di calcio,compressa,750 mg,A02AC01,AstraZeneca S.p.A.,36 compresse,true,false
+000000490,7478366742866,GAVISCON ANTIACIDO 680 mg COMPRESSE,carbonato di calcio,compressa,680 mg,A02AC01,Angelini Pharma S.r.l.,40 compresse,true,false
+000000491,7658018569458,GAVISCON ANTIACIDO 680 mg COMPRESSE,carbonato di calcio,compressa,680 mg,A02AC01,Chiesi Farmaceutici S.p.A.,60 compresse,true,false
+000000492,1496739385256,GAVISCON ANTIACIDO 680 mg COMPRESSE,carbonato di calcio,compressa,680 mg,A02AC01,Amgen S.r.l.,36 compresse,true,false
+000000493,,CALCIO CARBONATO EG 500 mg COMPRESSE,carbonato di calcio,compressa,500 mg,A02AC01,Angelini Pharma S.r.l.,40 compresse,true,false
+000000494,0618175344302,CALCIO CARBONATO EG 500 mg COMPRESSE,carbonato di calcio,compressa,500 mg,A02AC01,Menarini Group,60 compresse,true,false
+000000495,0939111926926,CALCIO CARBONATO EG 500 mg COMPRESSE,carbonato di calcio,compressa,500 mg,A02AC01,Bayer S.p.A.,36 compresse,true,false
+000000496,4471746542141,CALCIO CARBONATO EG 750 mg COMPRESSE,carbonato di calcio,compressa,750 mg,A02AC01,EG S.p.A.,40 compresse,true,false
+000000497,5044271739622,CALCIO CARBONATO EG 750 mg COMPRESSE,carbonato di calcio,compressa,750 mg,A02AC01,Fidia Farmaceutici S.p.A.,60 compresse,true,false
+000000498,8639174101194,CALCIO CARBONATO EG 750 mg COMPRESSE,carbonato di calcio,compressa,750 mg,A02AC01,Recordati S.p.A.,36 compresse,true,false
+000000499,0720064256907,CALCIO CARBONATO EG 680 mg COMPRESSE,carbonato di calcio,compressa,680 mg,A02AC01,Pharmos S.p.A.,40 compresse,true,false
+000000500,7766183067195,CALCIO CARBONATO EG 680 mg COMPRESSE,carbonato di calcio,compressa,680 mg,A02AC01,Biogen Italia S.r.l.,60 compresse,true,false
+000000501,5546015851749,CALCIO CARBONATO EG 680 mg COMPRESSE,carbonato di calcio,compressa,680 mg,A02AC01,Abbvie S.r.l.,36 compresse,true,false
+000000502,0634615717321,MAALOX SOSPENSIONE ORALE,idrossido di alluminio + idrossido di magnesio,soluzione iniettabile,200 mg/5 ml + 195 mg/5 ml,A02AD,Teva Italia S.r.l.,200 ml sospensione,true,false
+000000503,9376184787008,MAALOX SOSPENSIONE ORALE,idrossido di alluminio + idrossido di magnesio,soluzione iniettabile,200 mg/5 ml + 195 mg/5 ml,A02AD,Sandoz S.p.A.,250 ml sospensione,true,false
+000000504,0613878293100,GELUSIL SOSPENSIONE ORALE,idrossido di alluminio + idrossido di magnesio,soluzione iniettabile,200 mg/5 ml + 195 mg/5 ml,A02AD,Roche S.p.A.,200 ml sospensione,true,false
+000000505,0790320204171,GELUSIL SOSPENSIONE ORALE,idrossido di alluminio + idrossido di magnesio,soluzione iniettabile,200 mg/5 ml + 195 mg/5 ml,A02AD,Astellas Pharma S.p.A.,250 ml sospensione,true,false
+000000506,9111799313651,ANTIACIDO TEVA SOSPENSIONE ORALE,idrossido di alluminio + idrossido di magnesio,soluzione iniettabile,200 mg/5 ml + 195 mg/5 ml,A02AD,Viatris Italia S.r.l.,200 ml sospensione,true,false
+000000507,9825309251141,ANTIACIDO TEVA SOSPENSIONE ORALE,idrossido di alluminio + idrossido di magnesio,soluzione iniettabile,200 mg/5 ml + 195 mg/5 ml,A02AD,Roche S.p.A.,250 ml sospensione,true,false
+000000508,2582739021962,GAVISCON 500 mg BUSTINE,alginato di sodio,bustina,500 mg,A02BX02,AstraZeneca S.p.A.,24 bustine,true,false
+000000509,,GAVISCON 500 mg BUSTINE,alginato di sodio,bustina,500 mg,A02BX02,Fidia Farmaceutici S.p.A.,12 bustine,true,false
+000000510,0219467232484,GAVISCON ADVANCE 500 mg BUSTINE,alginato di sodio,bustina,500 mg,A02BX02,Neopharmed Gentili S.p.A.,24 bustine,true,false
+000000511,2909279145604,GAVISCON ADVANCE 500 mg BUSTINE,alginato di sodio,bustina,500 mg,A02BX02,Amgen S.r.l.,12 bustine,true,false
+000000512,1819588373401,CLARITIN 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,Abbvie S.r.l.,7 compresse,true,false
+000000513,2772200543646,CLARITIN 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,Sandoz S.p.A.,10 compresse,true,false
+000000514,7010822078111,CLARITIN 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,Servier Italia S.p.A.,30 compresse,true,false
+000000515,9956353153133,LORATADINA EG 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,Almirall S.p.A.,7 compresse,true,false
+000000516,6317970623974,LORATADINA EG 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,MSD Italia S.r.l.,10 compresse,true,false
+000000517,2735435209046,LORATADINA EG 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,GSK S.p.A.,30 compresse,true,false
+000000518,7762534929297,LORATADINA TEVA 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,Amgen S.r.l.,7 compresse,true,false
+000000519,1687397740635,LORATADINA TEVA 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,Servier Italia S.p.A.,10 compresse,true,false
+000000520,9392906007803,LORATADINA TEVA 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,Pierre Fabre Italia S.p.A.,30 compresse,true,false
+000000521,7177318063256,LORATADINA SANDOZ 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,Dompé Farmaceutici S.p.A.,7 compresse,true,false
+000000522,1074279907727,LORATADINA SANDOZ 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,Viatris Italia S.r.l.,10 compresse,true,false
+000000523,5701658046499,LORATADINA SANDOZ 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,Biogen Italia S.r.l.,30 compresse,true,false
+000000524,3195085016576,LORATADINA MYLAN 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,Astellas Pharma S.p.A.,7 compresse,true,false
+000000525,,LORATADINA MYLAN 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,Aurobindo Pharma S.r.l.,10 compresse,true,false
+000000526,8183253817938,LORATADINA MYLAN 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,Boehringer Ingelheim Italia S.p.A.,30 compresse,true,false
+000000527,4864015577881,FRISTAMIN 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,Bayer S.p.A.,7 compresse,true,false
+000000528,8847951371160,FRISTAMIN 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,MSD Italia S.r.l.,10 compresse,true,false
+000000529,1124127238043,FRISTAMIN 10 mg COMPRESSE,loratadina,compressa,10 mg,R06AX13,Almirall S.p.A.,30 compresse,true,false
+000000530,8275670431030,ZIRTEC 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,Farmitalia S.r.l.,7 compresse,true,false
+000000531,6955798877492,ZIRTEC 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,GSK S.p.A.,14 compresse,true,false
+000000532,4243754025479,ZIRTEC 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,AstraZeneca S.p.A.,30 compresse,true,false
+000000533,2842222310592,CETIRIZINA EG 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,GSK S.p.A.,7 compresse,true,false
+000000534,5238055257826,CETIRIZINA EG 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,Biogen Italia S.r.l.,14 compresse,true,false
+000000535,0672752088546,CETIRIZINA EG 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,Ibsa Farmaceutici Italia S.r.l.,30 compresse,true,false
+000000536,9297517028141,CETIRIZINA TEVA 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,Menarini Group,7 compresse,true,false
+000000537,3751509398347,CETIRIZINA TEVA 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,Abbvie S.r.l.,14 compresse,true,false
+000000538,,CETIRIZINA TEVA 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,Biogen Italia S.r.l.,30 compresse,true,false
+000000539,1863759980561,CETIRIZINA SANDOZ 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,Roche S.p.A.,7 compresse,true,false
+000000540,6565045547810,CETIRIZINA SANDOZ 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,Takeda Italia S.p.A.,14 compresse,true,false
+000000541,7674266299121,CETIRIZINA SANDOZ 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,Takeda Italia S.p.A.,30 compresse,true,false
+000000542,8519610646284,CETIRIZINA MYLAN 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,Alfasigma S.p.A.,7 compresse,true,false
+000000543,2326487049478,CETIRIZINA MYLAN 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,Amgen S.r.l.,14 compresse,true,false
+000000544,3002447146270,CETIRIZINA MYLAN 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,Servier Italia S.p.A.,30 compresse,true,false
+000000545,,REACTINE 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,Chiesi Farmaceutici S.p.A.,7 compresse,true,false
+000000546,1959796471589,REACTINE 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,Lilly Italia S.p.A.,14 compresse,true,false
+000000547,,REACTINE 10 mg COMPRESSE,cetirizina cloridrato,compressa,10 mg,R06AE07,Recordati S.p.A.,30 compresse,true,false
+000000548,0257252045659,AERIUS 5 mg COMPRESSE,desloratadina,compressa,5 mg,R06AX27,EG S.p.A.,7 compresse,true,false
+000000549,8183219285542,AERIUS 5 mg COMPRESSE,desloratadina,compressa,5 mg,R06AX27,Chiesi Farmaceutici S.p.A.,10 compresse,true,false
+000000550,5189520284574,AERIUS 5 mg COMPRESSE,desloratadina,compressa,5 mg,R06AX27,Almirall S.p.A.,20 compresse,true,false
+000000551,2132833898887,AERIUS 5 mg COMPRESSE,desloratadina,compressa,5 mg,R06AX27,Bayer S.p.A.,30 compresse,true,false
+000000552,1120754527987,DESLORATADINA EG 5 mg COMPRESSE,desloratadina,compressa,5 mg,R06AX27,Sandoz S.p.A.,7 compresse,true,false
+000000553,4013223423217,DESLORATADINA EG 5 mg COMPRESSE,desloratadina,compressa,5 mg,R06AX27,Pierre Fabre Italia S.p.A.,10 compresse,true,false
+000000554,1107603108900,DESLORATADINA EG 5 mg COMPRESSE,desloratadina,compressa,5 mg,R06AX27,Ibsa Farmaceutici Italia S.r.l.,20 compresse,true,false
+000000555,4014011939323,DESLORATADINA EG 5 mg COMPRESSE,desloratadina,compressa,5 mg,R06AX27,Zentiva Italia S.r.l.,30 compresse,true,false
+000000556,,DESLORATADINA TEVA 5 mg COMPRESSE,desloratadina,compressa,5 mg,R06AX27,Roche S.p.A.,7 compresse,true,false
+000000557,4955289389116,DESLORATADINA TEVA 5 mg COMPRESSE,desloratadina,compressa,5 mg,R06AX27,Janssen-Cilag S.p.A.,10 compresse,true,false
+000000558,8334280138750,DESLORATADINA TEVA 5 mg COMPRESSE,desloratadina,compressa,5 mg,R06AX27,Janssen-Cilag S.p.A.,20 compresse,true,false
+000000559,1256638361511,DESLORATADINA TEVA 5 mg COMPRESSE,desloratadina,compressa,5 mg,R06AX27,Alfasigma S.p.A.,30 compresse,true,false
+000000560,2754801571648,NEOCLARITYN 5 mg COMPRESSE,desloratadina,compressa,5 mg,R06AX27,Alfasigma S.p.A.,7 compresse,true,false
+000000561,4738646317522,NEOCLARITYN 5 mg COMPRESSE,desloratadina,compressa,5 mg,R06AX27,Angelini Pharma S.r.l.,10 compresse,true,false
+000000562,7167811266919,NEOCLARITYN 5 mg COMPRESSE,desloratadina,compressa,5 mg,R06AX27,AstraZeneca S.p.A.,20 compresse,true,false
+000000563,3539613674997,NEOCLARITYN 5 mg COMPRESSE,desloratadina,compressa,5 mg,R06AX27,Chiesi Farmaceutici S.p.A.,30 compresse,true,false
+000000564,6579678427111,CEBION 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Recordati S.p.A.,20 compresse,true,false
+000000565,3201017026954,CEBION 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Roche S.p.A.,10 compresse,true,false
+000000566,9118773477842,CEBION 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Biogen Italia S.r.l.,30 compresse,true,false
+000000567,8800616756771,CEBION 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Teva Italia S.r.l.,20 compresse,true,false
+000000568,,CEBION 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Amgen S.r.l.,10 compresse,true,false
+000000569,4276246719785,CEBION 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Biogen Italia S.r.l.,30 compresse,true,false
+000000570,7828064796959,CEBION 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Dompé Farmaceutici S.p.A.,20 compresse,true,false
+000000571,0902559056166,CEBION 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Zentiva Italia S.r.l.,10 compresse,true,false
+000000572,6503334911416,CEBION 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Sandoz S.p.A.,30 compresse,true,false
+000000573,8507698640799,REDOXON 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Menarini Group,20 compresse,true,false
+000000574,6965917135785,REDOXON 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Sandoz S.p.A.,10 compresse,true,false
+000000575,4563718344041,REDOXON 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Lilly Italia S.p.A.,30 compresse,true,false
+000000576,3919195419870,REDOXON 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Pierre Fabre Italia S.p.A.,20 compresse,true,false
+000000577,1484685366498,REDOXON 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Pharmos S.p.A.,10 compresse,true,false
+000000578,8208297374893,REDOXON 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Pierre Fabre Italia S.p.A.,30 compresse,true,false
+000000579,0835723246653,REDOXON 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Pfizer Italia S.r.l.,20 compresse,true,false
+000000580,6442493631233,REDOXON 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Menarini Group,10 compresse,true,false
+000000581,4778660324205,REDOXON 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Recordati S.p.A.,30 compresse,true,false
+000000582,4820700159411,VITAMINA C EG 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Almirall S.p.A.,20 compresse,true,false
+000000583,1623198189846,VITAMINA C EG 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Fidia Farmaceutici S.p.A.,10 compresse,true,false
+000000584,3915596363217,VITAMINA C EG 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,MSD Italia S.r.l.,30 compresse,true,false
+000000585,4764907851580,VITAMINA C EG 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Pierre Fabre Italia S.p.A.,20 compresse,true,false
+000000586,3425754090034,VITAMINA C EG 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Recordati S.p.A.,10 compresse,true,false
+000000587,4518376064411,VITAMINA C EG 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Servier Italia S.p.A.,30 compresse,true,false
+000000588,2756041776562,VITAMINA C EG 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Sanofi S.r.l.,20 compresse,true,false
+000000589,4815698570027,VITAMINA C EG 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Neopharmed Gentili S.p.A.,10 compresse,true,false
+000000590,2063459112388,VITAMINA C EG 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,GSK S.p.A.,30 compresse,true,false
+000000591,6577242954315,VITAMINA C SANDOZ 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Almirall S.p.A.,20 compresse,true,false
+000000592,6693008931731,VITAMINA C SANDOZ 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Recordati S.p.A.,10 compresse,true,false
+000000593,2069694215297,VITAMINA C SANDOZ 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Bayer S.p.A.,30 compresse,true,false
+000000594,,VITAMINA C SANDOZ 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Farmitalia S.r.l.,20 compresse,true,false
+000000595,7713334476269,VITAMINA C SANDOZ 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Takeda Italia S.p.A.,10 compresse,true,false
+000000596,4362620443978,VITAMINA C SANDOZ 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Servier Italia S.p.A.,30 compresse,true,false
+000000597,7107256366942,VITAMINA C SANDOZ 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Pfizer Italia S.r.l.,20 compresse,true,false
+000000598,0053759900480,VITAMINA C SANDOZ 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Astellas Pharma S.p.A.,10 compresse,true,false
+000000599,6528092428754,VITAMINA C SANDOZ 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Alfasigma S.p.A.,30 compresse,true,false
+000000600,5862415027455,VITAMINA C TEVA 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Pierre Fabre Italia S.p.A.,20 compresse,true,false
+000000601,4948562572879,VITAMINA C TEVA 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,EG S.p.A.,10 compresse,true,false
+000000602,0320742761701,VITAMINA C TEVA 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Neopharmed Gentili S.p.A.,30 compresse,true,false
+000000603,8777121513420,VITAMINA C TEVA 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,AstraZeneca S.p.A.,20 compresse,true,false
+000000604,4993908926137,VITAMINA C TEVA 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Fidia Farmaceutici S.p.A.,10 compresse,true,false
+000000605,5041659152011,VITAMINA C TEVA 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Alfasigma S.p.A.,30 compresse,true,false
+000000606,7749050975922,VITAMINA C TEVA 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Takeda Italia S.p.A.,20 compresse,true,false
+000000607,4501896164235,VITAMINA C TEVA 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Viatris Italia S.r.l.,10 compresse,true,false
+000000608,3266421476498,VITAMINA C TEVA 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,GSK S.p.A.,30 compresse,true,false
+000000609,1583776749964,BION3 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Novartis Farma S.p.A.,20 compresse,true,false
+000000610,5926610857320,BION3 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Fidia Farmaceutici S.p.A.,10 compresse,true,false
+000000611,8147617422435,BION3 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Farmitalia S.r.l.,30 compresse,true,false
+000000612,9081081866175,BION3 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Lilly Italia S.p.A.,20 compresse,true,false
+000000613,5491801722607,BION3 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Novartis Farma S.p.A.,10 compresse,true,false
+000000614,4597794523212,BION3 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Bristol-Myers Squibb S.r.l.,30 compresse,true,false
+000000615,1680061027766,BION3 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Bristol-Myers Squibb S.r.l.,20 compresse,true,false
+000000616,4995641220312,BION3 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Menarini Group,10 compresse,true,false
+000000617,3037236831471,BION3 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Roche S.p.A.,30 compresse,true,false
+000000618,0122777079338,PHARMAVIT C 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Dompé Farmaceutici S.p.A.,20 compresse,true,false
+000000619,6050166799847,PHARMAVIT C 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Teva Italia S.r.l.,10 compresse,true,false
+000000620,7899730806951,PHARMAVIT C 500 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,500 mg,A11GA01,Amgen S.r.l.,30 compresse,true,false
+000000621,6717957602433,PHARMAVIT C 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Ibsa Farmaceutici Italia S.r.l.,20 compresse,true,false
+000000622,3839597246655,PHARMAVIT C 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Ibsa Farmaceutici Italia S.r.l.,10 compresse,true,false
+000000623,2934172232977,PHARMAVIT C 1000 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,1000 mg,A11GA01,Sanofi S.r.l.,30 compresse,true,false
+000000624,7433800545229,PHARMAVIT C 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Pharmos S.p.A.,20 compresse,true,false
+000000625,,PHARMAVIT C 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Pfizer Italia S.r.l.,10 compresse,true,false
+000000626,1931837455086,PHARMAVIT C 200 mg COMPRESSE EFFERVESCENTI,acido ascorbico,compressa,200 mg,A11GA01,Chiesi Farmaceutici S.p.A.,30 compresse,true,false
+000000627,8910771199181,IMODIUM 2 mg CAPSULE,loperamide cloridrato,capsula,2 mg,A07DA03,Teva Italia S.r.l.,12 capsule,true,false
+000000628,2135247871255,IMODIUM 2 mg CAPSULE,loperamide cloridrato,capsula,2 mg,A07DA03,Sandoz S.p.A.,20 capsule,true,false
+000000629,1376037548211,IMODIUM 2 mg CAPSULE,loperamide cloridrato,capsula,2 mg,A07DA03,Chiesi Farmaceutici S.p.A.,8 capsule,true,false
+000000630,6532863266674,LOPERAMIDE EG 2 mg CAPSULE,loperamide cloridrato,capsula,2 mg,A07DA03,Farmitalia S.r.l.,12 capsule,true,false
+000000631,5072081155622,LOPERAMIDE EG 2 mg CAPSULE,loperamide cloridrato,capsula,2 mg,A07DA03,Pierre Fabre Italia S.p.A.,20 capsule,true,false
+000000632,0290846684551,LOPERAMIDE EG 2 mg CAPSULE,loperamide cloridrato,capsula,2 mg,A07DA03,Angelini Pharma S.r.l.,8 capsule,true,false
+000000633,8926738997561,LOPERAMIDE TEVA 2 mg CAPSULE,loperamide cloridrato,capsula,2 mg,A07DA03,Abbvie S.r.l.,12 capsule,true,false
+000000634,1085628843184,LOPERAMIDE TEVA 2 mg CAPSULE,loperamide cloridrato,capsula,2 mg,A07DA03,Amgen S.r.l.,20 capsule,true,false
+000000635,5200894346818,LOPERAMIDE TEVA 2 mg CAPSULE,loperamide cloridrato,capsula,2 mg,A07DA03,EG S.p.A.,8 capsule,true,false
+000000636,4851017490751,DISSENTEN 2 mg CAPSULE,loperamide cloridrato,capsula,2 mg,A07DA03,Servier Italia S.p.A.,12 capsule,true,false
+000000637,9989354492680,DISSENTEN 2 mg CAPSULE,loperamide cloridrato,capsula,2 mg,A07DA03,Servier Italia S.p.A.,20 capsule,true,false
+000000638,8935712661107,DISSENTEN 2 mg CAPSULE,loperamide cloridrato,capsula,2 mg,A07DA03,Pierre Fabre Italia S.p.A.,8 capsule,true,false
+000000639,7371586988642,DULCOLAX 5 mg COMPRESSE,bisacodile,compressa,5 mg,A06AB02,Janssen-Cilag S.p.A.,30 compresse,true,false
+000000640,6776228277282,DULCOLAX 5 mg COMPRESSE,bisacodile,compressa,5 mg,A06AB02,Farmitalia S.r.l.,20 compresse,true,false
+000000641,3770285196114,DULCOLAX 5 mg COMPRESSE,bisacodile,compressa,5 mg,A06AB02,Aurobindo Pharma S.r.l.,10 compresse,true,false
+000000642,0821545447026,BISACODILE EG 5 mg COMPRESSE,bisacodile,compressa,5 mg,A06AB02,Roche S.p.A.,30 compresse,true,false
+000000643,6044327018519,BISACODILE EG 5 mg COMPRESSE,bisacodile,compressa,5 mg,A06AB02,Teva Italia S.r.l.,20 compresse,true,false
+000000644,9497567922875,BISACODILE EG 5 mg COMPRESSE,bisacodile,compressa,5 mg,A06AB02,Neopharmed Gentili S.p.A.,10 compresse,true,false
+000000645,2519966365804,BISACODILE TEVA 5 mg COMPRESSE,bisacodile,compressa,5 mg,A06AB02,Neopharmed Gentili S.p.A.,30 compresse,true,false
+000000646,1209481813980,BISACODILE TEVA 5 mg COMPRESSE,bisacodile,compressa,5 mg,A06AB02,Lilly Italia S.p.A.,20 compresse,true,false
+000000647,9837801820435,BISACODILE TEVA 5 mg COMPRESSE,bisacodile,compressa,5 mg,A06AB02,Servier Italia S.p.A.,10 compresse,true,false
+000000648,9718956907052,AGELAX 5 mg COMPRESSE,bisacodile,compressa,5 mg,A06AB02,Pierre Fabre Italia S.p.A.,30 compresse,true,false
+000000649,0856411182428,AGELAX 5 mg COMPRESSE,bisacodile,compressa,5 mg,A06AB02,MSD Italia S.r.l.,20 compresse,true,false
+000000650,1246209520041,AGELAX 5 mg COMPRESSE,bisacodile,compressa,5 mg,A06AB02,Mylan Italia S.r.l.,10 compresse,true,false
+000000651,2654610339937,RINAZINA 0.1% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.1%,R01AA07,Fidia Farmaceutici S.p.A.,10 ml spray,true,false
+000000652,8614057861709,RINAZINA 0.1% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.1%,R01AA07,Almirall S.p.A.,15 ml spray,true,false
+000000653,0489138249671,RINAZINA 0.1% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.1%,R01AA07,Novartis Farma S.p.A.,20 ml spray,true,false
+000000654,8325823868708,RINAZINA 0.05% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.05%,R01AA07,Angelini Pharma S.r.l.,10 ml spray,true,false
+000000655,9420074946539,RINAZINA 0.05% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.05%,R01AA07,Janssen-Cilag S.p.A.,15 ml spray,true,false
+000000656,4028914161286,RINAZINA 0.05% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.05%,R01AA07,Chiesi Farmaceutici S.p.A.,20 ml spray,true,false
+000000657,3985547435539,VICKS SINEX 0.1% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.1%,R01AA07,Alfasigma S.p.A.,10 ml spray,true,false
+000000658,5020970026874,VICKS SINEX 0.1% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.1%,R01AA07,Viatris Italia S.r.l.,15 ml spray,true,false
+000000659,1807156956200,VICKS SINEX 0.1% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.1%,R01AA07,Bayer S.p.A.,20 ml spray,true,false
+000000660,3703045319430,VICKS SINEX 0.05% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.05%,R01AA07,Boehringer Ingelheim Italia S.p.A.,10 ml spray,true,false
+000000661,5047930361493,VICKS SINEX 0.05% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.05%,R01AA07,Pharmos S.p.A.,15 ml spray,true,false
+000000662,8399921921245,VICKS SINEX 0.05% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.05%,R01AA07,Lilly Italia S.p.A.,20 ml spray,true,false
+000000663,8430894870601,XILOMETAZOLINA EG 0.1% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.1%,R01AA07,Bracco S.p.A.,10 ml spray,true,false
+000000664,6418775803049,XILOMETAZOLINA EG 0.1% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.1%,R01AA07,Almirall S.p.A.,15 ml spray,true,false
+000000665,5063519036132,XILOMETAZOLINA EG 0.1% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.1%,R01AA07,Abbvie S.r.l.,20 ml spray,true,false
+000000666,4110760954317,XILOMETAZOLINA EG 0.05% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.05%,R01AA07,Ibsa Farmaceutici Italia S.r.l.,10 ml spray,true,false
+000000667,5058319971790,XILOMETAZOLINA EG 0.05% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.05%,R01AA07,Bayer S.p.A.,15 ml spray,true,false
+000000668,0065120704962,XILOMETAZOLINA EG 0.05% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.05%,R01AA07,Pfizer Italia S.r.l.,20 ml spray,true,false
+000000669,0804661963991,OTRIVIN 0.1% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.1%,R01AA07,Angelini Pharma S.r.l.,10 ml spray,true,false
+000000670,7699150785931,OTRIVIN 0.1% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.1%,R01AA07,Sanofi S.r.l.,15 ml spray,true,false
+000000671,9193928456798,OTRIVIN 0.1% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.1%,R01AA07,Neopharmed Gentili S.p.A.,20 ml spray,true,false
+000000672,2002496854981,OTRIVIN 0.05% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.05%,R01AA07,Roche S.p.A.,10 ml spray,true,false
+000000673,4954508920383,OTRIVIN 0.05% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.05%,R01AA07,Amgen S.r.l.,15 ml spray,true,false
+000000674,6533315377955,OTRIVIN 0.05% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.05%,R01AA07,Janssen-Cilag S.p.A.,20 ml spray,true,false
+000000675,5946521707309,NEORINAZINA 0.1% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.1%,R01AA07,Boehringer Ingelheim Italia S.p.A.,10 ml spray,true,false
+000000676,7933756362050,NEORINAZINA 0.1% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.1%,R01AA07,Angelini Pharma S.r.l.,15 ml spray,true,false
+000000677,0812473950030,NEORINAZINA 0.1% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.1%,R01AA07,Abbvie S.r.l.,20 ml spray,true,false
+000000678,3425832302417,NEORINAZINA 0.05% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.05%,R01AA07,Menarini Group,10 ml spray,true,false
+000000679,2615347355287,NEORINAZINA 0.05% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.05%,R01AA07,Astellas Pharma S.p.A.,15 ml spray,true,false
+000000680,1122338655963,NEORINAZINA 0.05% SPRAY NASALE,xilometazolina cloridrato,spray nasale,0.05%,R01AA07,Servier Italia S.p.A.,20 ml spray,true,false
+000000681,9938425304285,NASIVIN 0.05% SPRAY NASALE,ossimetazolina cloridrato,spray nasale,0.05%,R01AA05,Janssen-Cilag S.p.A.,10 ml spray,true,false
+000000682,3179128685783,NASIVIN 0.05% SPRAY NASALE,ossimetazolina cloridrato,spray nasale,0.05%,R01AA05,Alfasigma S.p.A.,15 ml spray,true,false
+000000683,5877749690336,NASIVIN 0.025% SPRAY NASALE,ossimetazolina cloridrato,spray nasale,0.025%,R01AA05,Abbvie S.r.l.,10 ml spray,true,false
+000000684,3634669254817,NASIVIN 0.025% SPRAY NASALE,ossimetazolina cloridrato,spray nasale,0.025%,R01AA05,GSK S.p.A.,15 ml spray,true,false
+000000685,4785390789563,AFRIN 0.05% SPRAY NASALE,ossimetazolina cloridrato,spray nasale,0.05%,R01AA05,Neopharmed Gentili S.p.A.,10 ml spray,true,false
+000000686,6575460273416,AFRIN 0.05% SPRAY NASALE,ossimetazolina cloridrato,spray nasale,0.05%,R01AA05,Zentiva Italia S.r.l.,15 ml spray,true,false
+000000687,4888143111502,AFRIN 0.025% SPRAY NASALE,ossimetazolina cloridrato,spray nasale,0.025%,R01AA05,Biogen Italia S.r.l.,10 ml spray,true,false
+000000688,3544439284046,AFRIN 0.025% SPRAY NASALE,ossimetazolina cloridrato,spray nasale,0.025%,R01AA05,Dompé Farmaceutici S.p.A.,15 ml spray,true,false
+000000689,6690782633370,OSSIMETAZOLINA EG 0.05% SPRAY NASALE,ossimetazolina cloridrato,spray nasale,0.05%,R01AA05,Boehringer Ingelheim Italia S.p.A.,10 ml spray,true,false
+000000690,8775153663779,OSSIMETAZOLINA EG 0.05% SPRAY NASALE,ossimetazolina cloridrato,spray nasale,0.05%,R01AA05,Amgen S.r.l.,15 ml spray,true,false
+000000691,,OSSIMETAZOLINA EG 0.025% SPRAY NASALE,ossimetazolina cloridrato,spray nasale,0.025%,R01AA05,GSK S.p.A.,10 ml spray,true,false
+000000692,2407553666840,OSSIMETAZOLINA EG 0.025% SPRAY NASALE,ossimetazolina cloridrato,spray nasale,0.025%,R01AA05,Bracco S.p.A.,15 ml spray,true,false
+000000693,9022599996633,HYABAK COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.15%,S01XA,Viatris Italia S.r.l.,10 ml collirio,true,false
+000000694,6371597412182,HYABAK COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.15%,S01XA,MSD Italia S.r.l.,5 ml collirio,true,false
+000000695,,HYABAK COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.15%,S01XA,Bristol-Myers Squibb S.r.l.,15 ml collirio,true,false
+000000696,2316433481704,HYABAK COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.18%,S01XA,Aurobindo Pharma S.r.l.,10 ml collirio,true,false
+000000697,2566212867162,HYABAK COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.18%,S01XA,Takeda Italia S.p.A.,5 ml collirio,true,false
+000000698,3467299493871,HYABAK COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.18%,S01XA,Chiesi Farmaceutici S.p.A.,15 ml collirio,true,false
+000000699,2716938597779,HYABAK COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.1%,S01XA,Lilly Italia S.p.A.,10 ml collirio,true,false
+000000700,,HYABAK COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.1%,S01XA,Novartis Farma S.p.A.,5 ml collirio,true,false
+000000701,7546926329670,HYABAK COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.1%,S01XA,Mylan Italia S.r.l.,15 ml collirio,true,false
+000000702,2916032484139,VISMED COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.15%,S01XA,Fidia Farmaceutici S.p.A.,10 ml collirio,true,false
+000000703,8151185672437,VISMED COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.15%,S01XA,Pharmos S.p.A.,5 ml collirio,true,false
+000000704,,VISMED COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.15%,S01XA,Menarini Group,15 ml collirio,true,false
+000000705,7656360041257,VISMED COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.18%,S01XA,Alfasigma S.p.A.,10 ml collirio,true,false
+000000706,1183727422092,VISMED COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.18%,S01XA,Sanofi S.r.l.,5 ml collirio,true,false
+000000707,1862104275239,VISMED COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.18%,S01XA,Teva Italia S.r.l.,15 ml collirio,true,false
+000000708,8370816470901,VISMED COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.1%,S01XA,EG S.p.A.,10 ml collirio,true,false
+000000709,3353310600536,VISMED COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.1%,S01XA,Pfizer Italia S.r.l.,5 ml collirio,true,false
+000000710,1220681558396,VISMED COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.1%,S01XA,Takeda Italia S.p.A.,15 ml collirio,true,false
+000000711,6613315520657,OCUSAN COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.15%,S01XA,Angelini Pharma S.r.l.,10 ml collirio,true,false
+000000712,7314950136492,OCUSAN COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.15%,S01XA,Fidia Farmaceutici S.p.A.,5 ml collirio,true,false
+000000713,1892419562526,OCUSAN COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.15%,S01XA,Bracco S.p.A.,15 ml collirio,true,false
+000000714,7150997683892,OCUSAN COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.18%,S01XA,Angelini Pharma S.r.l.,10 ml collirio,true,false
+000000715,9143639102576,OCUSAN COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.18%,S01XA,Dompé Farmaceutici S.p.A.,5 ml collirio,true,false
+000000716,6303975245082,OCUSAN COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.18%,S01XA,Almirall S.p.A.,15 ml collirio,true,false
+000000717,4035533803398,OCUSAN COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.1%,S01XA,Mylan Italia S.r.l.,10 ml collirio,true,false
+000000718,2701713023215,OCUSAN COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.1%,S01XA,MSD Italia S.r.l.,5 ml collirio,true,false
+000000719,3381674233626,OCUSAN COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.1%,S01XA,Bristol-Myers Squibb S.r.l.,15 ml collirio,true,false
+000000720,4973471566275,THEALOZ COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.15%,S01XA,Neopharmed Gentili S.p.A.,10 ml collirio,true,false
+000000721,9627066149828,THEALOZ COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.15%,S01XA,Amgen S.r.l.,5 ml collirio,true,false
+000000722,4674746897154,THEALOZ COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.15%,S01XA,GSK S.p.A.,15 ml collirio,true,false
+000000723,3230085766653,THEALOZ COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.18%,S01XA,Mylan Italia S.r.l.,10 ml collirio,true,false
+000000724,9160169236458,THEALOZ COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.18%,S01XA,Pharmos S.p.A.,5 ml collirio,true,false
+000000725,5066337050243,THEALOZ COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.18%,S01XA,Bristol-Myers Squibb S.r.l.,15 ml collirio,true,false
+000000726,2439920116696,THEALOZ COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.1%,S01XA,Novartis Farma S.p.A.,10 ml collirio,true,false
+000000727,3626448869466,THEALOZ COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.1%,S01XA,Novartis Farma S.p.A.,5 ml collirio,true,false
+000000728,9524364027011,THEALOZ COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.1%,S01XA,Pfizer Italia S.r.l.,15 ml collirio,true,false
+000000729,6864622522371,JAODROPS COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.15%,S01XA,MSD Italia S.r.l.,10 ml collirio,true,false
+000000730,1793230234671,JAODROPS COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.15%,S01XA,Astellas Pharma S.p.A.,5 ml collirio,true,false
+000000731,2141614150939,JAODROPS COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.15%,S01XA,Ibsa Farmaceutici Italia S.r.l.,15 ml collirio,true,false
+000000732,1004090138062,JAODROPS COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.18%,S01XA,Bristol-Myers Squibb S.r.l.,10 ml collirio,true,false
+000000733,4775965555358,JAODROPS COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.18%,S01XA,Viatris Italia S.r.l.,5 ml collirio,true,false
+000000734,0551076209182,JAODROPS COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.18%,S01XA,Chiesi Farmaceutici S.p.A.,15 ml collirio,true,false
+000000735,3579786305052,JAODROPS COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.1%,S01XA,Teva Italia S.r.l.,10 ml collirio,true,false
+000000736,5739769156714,JAODROPS COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.1%,S01XA,Mylan Italia S.r.l.,5 ml collirio,true,false
+000000737,3289802714873,JAODROPS COLLIRIO SOLUZIONE,sodio ialuronato,collirio,0.1%,S01XA,AstraZeneca S.p.A.,15 ml collirio,true,false
+000000738,1783332116029,CANESTEN 1% CREMA,clotrimazolo,crema,1%,D01AC01,Bracco S.p.A.,30 g crema,true,false
+000000739,4347128715390,CANESTEN 1% CREMA,clotrimazolo,crema,1%,D01AC01,Bristol-Myers Squibb S.r.l.,20 g crema,true,false
+000000740,5668633414110,CANESTEN 1% CREMA,clotrimazolo,crema,1%,D01AC01,Novartis Farma S.p.A.,50 g crema,true,false
+000000741,9319525690407,CLOTRIMAZOLO EG 1% CREMA,clotrimazolo,crema,1%,D01AC01,Janssen-Cilag S.p.A.,30 g crema,true,false
+000000742,6655289931602,CLOTRIMAZOLO EG 1% CREMA,clotrimazolo,crema,1%,D01AC01,Biogen Italia S.r.l.,20 g crema,true,false
+000000743,5243772942092,CLOTRIMAZOLO EG 1% CREMA,clotrimazolo,crema,1%,D01AC01,Bracco S.p.A.,50 g crema,true,false
+000000744,1497374605235,MICOTEN 1% CREMA,clotrimazolo,crema,1%,D01AC01,Boehringer Ingelheim Italia S.p.A.,30 g crema,true,false
+000000745,0276420865677,MICOTEN 1% CREMA,clotrimazolo,crema,1%,D01AC01,Zentiva Italia S.r.l.,20 g crema,true,false
+000000746,6184438612593,MICOTEN 1% CREMA,clotrimazolo,crema,1%,D01AC01,EG S.p.A.,50 g crema,true,false
+000000747,4729277423331,CLOTRIMAZOLO TEVA 1% CREMA,clotrimazolo,crema,1%,D01AC01,Angelini Pharma S.r.l.,30 g crema,true,false
+000000748,9126620157205,CLOTRIMAZOLO TEVA 1% CREMA,clotrimazolo,crema,1%,D01AC01,Bayer S.p.A.,20 g crema,true,false
+000000749,5962630136748,CLOTRIMAZOLO TEVA 1% CREMA,clotrimazolo,crema,1%,D01AC01,Bristol-Myers Squibb S.r.l.,50 g crema,true,false
+000000750,6176475011118,CORSODYL 1% CREMA,clorexidina gluconato,crema,1%,D08AC02,Fidia Farmaceutici S.p.A.,30 g crema,true,false
+000000751,8309997419263,CORSODYL 1% CREMA,clorexidina gluconato,crema,1%,D08AC02,Ibsa Farmaceutici Italia S.r.l.,50 g crema,true,false
+000000752,6492151826068,CORSODYL 2% CREMA,clorexidina gluconato,crema,2%,D08AC02,Amgen S.r.l.,30 g crema,true,false
+000000753,8718981312921,CORSODYL 2% CREMA,clorexidina gluconato,crema,2%,D08AC02,Angelini Pharma S.r.l.,50 g crema,true,false
+000000754,5102932184010,CLOREXIDINA EG 1% CREMA,clorexidina gluconato,crema,1%,D08AC02,Bayer S.p.A.,30 g crema,true,false
+000000755,5826034084879,CLOREXIDINA EG 1% CREMA,clorexidina gluconato,crema,1%,D08AC02,GSK S.p.A.,50 g crema,true,false
+000000756,5859883103033,CLOREXIDINA EG 2% CREMA,clorexidina gluconato,crema,2%,D08AC02,Roche S.p.A.,30 g crema,true,false
+000000757,3298395429613,CLOREXIDINA EG 2% CREMA,clorexidina gluconato,crema,2%,D08AC02,Amgen S.r.l.,50 g crema,true,false
+000000758,6267146283146,HIBIDENT 1% CREMA,clorexidina gluconato,crema,1%,D08AC02,Abbvie S.r.l.,30 g crema,true,false
+000000759,9892625660933,HIBIDENT 1% CREMA,clorexidina gluconato,crema,1%,D08AC02,Pfizer Italia S.r.l.,50 g crema,true,false
+000000760,8186151554233,HIBIDENT 2% CREMA,clorexidina gluconato,crema,2%,D08AC02,Chiesi Farmaceutici S.p.A.,30 g crema,true,false
+000000761,,HIBIDENT 2% CREMA,clorexidina gluconato,crema,2%,D08AC02,Mylan Italia S.r.l.,50 g crema,true,false
+000000762,3611284971855,FASTUM GEL 2.5% GEL,ketoprofene,gel,2.5%,M02AA10,Lilly Italia S.p.A.,50 g gel,true,false
+000000763,8491025625880,FASTUM GEL 2.5% GEL,ketoprofene,gel,2.5%,M02AA10,Bristol-Myers Squibb S.r.l.,100 g gel,true,false
+000000764,6792408222699,FASTUM GEL 2.5% GEL,ketoprofene,gel,2.5%,M02AA10,Chiesi Farmaceutici S.p.A.,30 g gel,true,false
+000000765,5396727578447,KETOPROFENE EG GEL 2.5% GEL,ketoprofene,gel,2.5%,M02AA10,Pierre Fabre Italia S.p.A.,50 g gel,true,false
+000000766,3414651113120,KETOPROFENE EG GEL 2.5% GEL,ketoprofene,gel,2.5%,M02AA10,Lilly Italia S.p.A.,100 g gel,true,false
+000000767,4870682778810,KETOPROFENE EG GEL 2.5% GEL,ketoprofene,gel,2.5%,M02AA10,Viatris Italia S.r.l.,30 g gel,true,false
+000000768,,KETOPROFENE TEVA GEL 2.5% GEL,ketoprofene,gel,2.5%,M02AA10,Abbvie S.r.l.,50 g gel,true,false
+000000769,0685389097287,KETOPROFENE TEVA GEL 2.5% GEL,ketoprofene,gel,2.5%,M02AA10,Boehringer Ingelheim Italia S.p.A.,100 g gel,true,false
+000000770,5285067625150,KETOPROFENE TEVA GEL 2.5% GEL,ketoprofene,gel,2.5%,M02AA10,Servier Italia S.p.A.,30 g gel,true,false
+000000771,1447443096341,FLECTOR GEL 2.5% GEL,ketoprofene,gel,2.5%,M02AA10,Pharmos S.p.A.,50 g gel,true,false
+000000772,0797050975456,FLECTOR GEL 2.5% GEL,ketoprofene,gel,2.5%,M02AA10,Sanofi S.r.l.,100 g gel,true,false
+000000773,,FLECTOR GEL 2.5% GEL,ketoprofene,gel,2.5%,M02AA10,MSD Italia S.r.l.,30 g gel,true,false
+000000774,0167318826170,OKI GEL 2.5% GEL,ketoprofene,gel,2.5%,M02AA10,Angelini Pharma S.r.l.,50 g gel,true,false
+000000775,4376545628419,OKI GEL 2.5% GEL,ketoprofene,gel,2.5%,M02AA10,Neopharmed Gentili S.p.A.,100 g gel,true,false
+000000776,7225605313406,OKI GEL 2.5% GEL,ketoprofene,gel,2.5%,M02AA10,GSK S.p.A.,30 g gel,true,false
+000000777,5023741678722,VOLTAREN EMULGEL 1% GEL,diclofenac sodico,gel,1%,M02AA15,Bracco S.p.A.,50 g gel,true,false
+000000778,6862110225803,VOLTAREN EMULGEL 1% GEL,diclofenac sodico,gel,1%,M02AA15,Servier Italia S.p.A.,100 g gel,true,false
+000000779,5690674471630,VOLTAREN EMULGEL 1% GEL,diclofenac sodico,gel,1%,M02AA15,Astellas Pharma S.p.A.,30 g gel,true,false
+000000780,8234143637188,VOLTAREN EMULGEL 2% GEL,diclofenac sodico,gel,2%,M02AA15,Astellas Pharma S.p.A.,50 g gel,true,false
+000000781,9231260432602,VOLTAREN EMULGEL 2% GEL,diclofenac sodico,gel,2%,M02AA15,Astellas Pharma S.p.A.,100 g gel,true,false
+000000782,0668433567080,VOLTAREN EMULGEL 2% GEL,diclofenac sodico,gel,2%,M02AA15,Pierre Fabre Italia S.p.A.,30 g gel,true,false
+000000783,4145456350203,DICLOFENAC EG GEL 1% GEL,diclofenac sodico,gel,1%,M02AA15,Angelini Pharma S.r.l.,50 g gel,true,false
+000000784,5347491624755,DICLOFENAC EG GEL 1% GEL,diclofenac sodico,gel,1%,M02AA15,Sandoz S.p.A.,100 g gel,true,false
+000000785,1082555989534,DICLOFENAC EG GEL 1% GEL,diclofenac sodico,gel,1%,M02AA15,Chiesi Farmaceutici S.p.A.,30 g gel,true,false
+000000786,6112910933713,DICLOFENAC EG GEL 2% GEL,diclofenac sodico,gel,2%,M02AA15,Pfizer Italia S.r.l.,50 g gel,true,false
+000000787,9547382023681,DICLOFENAC EG GEL 2% GEL,diclofenac sodico,gel,2%,M02AA15,Recordati S.p.A.,100 g gel,true,false
+000000788,8557161768802,DICLOFENAC EG GEL 2% GEL,diclofenac sodico,gel,2%,M02AA15,AstraZeneca S.p.A.,30 g gel,true,false
+000000789,2409036788124,DICLOFENAC TEVA GEL 1% GEL,diclofenac sodico,gel,1%,M02AA15,Neopharmed Gentili S.p.A.,50 g gel,true,false
+000000790,6866943202932,DICLOFENAC TEVA GEL 1% GEL,diclofenac sodico,gel,1%,M02AA15,Janssen-Cilag S.p.A.,100 g gel,true,false
+000000791,8788443448123,DICLOFENAC TEVA GEL 1% GEL,diclofenac sodico,gel,1%,M02AA15,Boehringer Ingelheim Italia S.p.A.,30 g gel,true,false
+000000792,,DICLOFENAC TEVA GEL 2% GEL,diclofenac sodico,gel,2%,M02AA15,Servier Italia S.p.A.,50 g gel,true,false
+000000793,2424033810593,DICLOFENAC TEVA GEL 2% GEL,diclofenac sodico,gel,2%,M02AA15,Aurobindo Pharma S.r.l.,100 g gel,true,false
+000000794,8426945005344,DICLOFENAC TEVA GEL 2% GEL,diclofenac sodico,gel,2%,M02AA15,MSD Italia S.r.l.,30 g gel,true,false
+000000795,0891649837351,DICLOREUM GEL 1% GEL,diclofenac sodico,gel,1%,M02AA15,Chiesi Farmaceutici S.p.A.,50 g gel,true,false
+000000796,6273652717273,DICLOREUM GEL 1% GEL,diclofenac sodico,gel,1%,M02AA15,MSD Italia S.r.l.,100 g gel,true,false
+000000797,2397240422692,DICLOREUM GEL 1% GEL,diclofenac sodico,gel,1%,M02AA15,Abbvie S.r.l.,30 g gel,true,false
+000000798,1637618209168,DICLOREUM GEL 2% GEL,diclofenac sodico,gel,2%,M02AA15,Mylan Italia S.r.l.,50 g gel,true,false
+000000799,,DICLOREUM GEL 2% GEL,diclofenac sodico,gel,2%,M02AA15,Angelini Pharma S.r.l.,100 g gel,true,false
+000000800,0231429001853,DICLOREUM GEL 2% GEL,diclofenac sodico,gel,2%,M02AA15,Novartis Farma S.p.A.,30 g gel,true,false
+000000801,7972457230848,MAGNE B6 300 mg BUSTINE,magnesio solfato,bustina,300 mg,A12CC,Biogen Italia S.r.l.,20 bustine,true,false
+000000802,0184186203032,MAGNE B6 300 mg BUSTINE,magnesio solfato,bustina,300 mg,A12CC,Pierre Fabre Italia S.p.A.,30 bustine,true,false
+000000803,5436172131450,MAGNE B6 300 mg BUSTINE,magnesio solfato,bustina,300 mg,A12CC,Pfizer Italia S.r.l.,10 bustine,true,false
+000000804,1510922685920,MAGNE B6 400 mg BUSTINE,magnesio solfato,bustina,400 mg,A12CC,Pierre Fabre Italia S.p.A.,20 bustine,true,false
+000000805,4945147541022,MAGNE B6 400 mg BUSTINE,magnesio solfato,bustina,400 mg,A12CC,Roche S.p.A.,30 bustine,true,false
+000000806,6771196421521,MAGNE B6 400 mg BUSTINE,magnesio solfato,bustina,400 mg,A12CC,MSD Italia S.r.l.,10 bustine,true,false
+000000807,5576769523661,MAGNE B6 500 mg BUSTINE,magnesio solfato,bustina,500 mg,A12CC,Amgen S.r.l.,20 bustine,true,false
+000000808,8788361968932,MAGNE B6 500 mg BUSTINE,magnesio solfato,bustina,500 mg,A12CC,Novartis Farma S.p.A.,30 bustine,true,false
+000000809,0305872105526,MAGNE B6 500 mg BUSTINE,magnesio solfato,bustina,500 mg,A12CC,Dompé Farmaceutici S.p.A.,10 bustine,true,false
+000000810,8633302126066,MAGNESIO EG 300 mg BUSTINE,magnesio solfato,bustina,300 mg,A12CC,Aurobindo Pharma S.r.l.,20 bustine,true,false
+000000811,1917920252138,MAGNESIO EG 300 mg BUSTINE,magnesio solfato,bustina,300 mg,A12CC,Pfizer Italia S.r.l.,30 bustine,true,false
+000000812,,MAGNESIO EG 300 mg BUSTINE,magnesio solfato,bustina,300 mg,A12CC,Almirall S.p.A.,10 bustine,true,false
+000000813,2728476570411,MAGNESIO EG 400 mg BUSTINE,magnesio solfato,bustina,400 mg,A12CC,Roche S.p.A.,20 bustine,true,false
+000000814,0928206678499,MAGNESIO EG 400 mg BUSTINE,magnesio solfato,bustina,400 mg,A12CC,Pharmos S.p.A.,30 bustine,true,false
+000000815,3624186236908,MAGNESIO EG 400 mg BUSTINE,magnesio solfato,bustina,400 mg,A12CC,Boehringer Ingelheim Italia S.p.A.,10 bustine,true,false
+000000816,8917756620562,MAGNESIO EG 500 mg BUSTINE,magnesio solfato,bustina,500 mg,A12CC,Abbvie S.r.l.,20 bustine,true,false
+000000817,1159503428114,MAGNESIO EG 500 mg BUSTINE,magnesio solfato,bustina,500 mg,A12CC,Takeda Italia S.p.A.,30 bustine,true,false
+000000818,4383034199091,MAGNESIO EG 500 mg BUSTINE,magnesio solfato,bustina,500 mg,A12CC,Ibsa Farmaceutici Italia S.r.l.,10 bustine,true,false
+000000819,,MAGNESIO TEVA 300 mg BUSTINE,magnesio solfato,bustina,300 mg,A12CC,Bracco S.p.A.,20 bustine,true,false
+000000820,4054683565215,MAGNESIO TEVA 300 mg BUSTINE,magnesio solfato,bustina,300 mg,A12CC,Sandoz S.p.A.,30 bustine,true,false
+000000821,8182096790422,MAGNESIO TEVA 300 mg BUSTINE,magnesio solfato,bustina,300 mg,A12CC,Roche S.p.A.,10 bustine,true,false
+000000822,1133228898575,MAGNESIO TEVA 400 mg BUSTINE,magnesio solfato,bustina,400 mg,A12CC,GSK S.p.A.,20 bustine,true,false
+000000823,5960633991296,MAGNESIO TEVA 400 mg BUSTINE,magnesio solfato,bustina,400 mg,A12CC,Fidia Farmaceutici S.p.A.,30 bustine,true,false
+000000824,0248171752421,MAGNESIO TEVA 400 mg BUSTINE,magnesio solfato,bustina,400 mg,A12CC,Pfizer Italia S.r.l.,10 bustine,true,false
+000000825,5511274747218,MAGNESIO TEVA 500 mg BUSTINE,magnesio solfato,bustina,500 mg,A12CC,Lilly Italia S.p.A.,20 bustine,true,false
+000000826,5466927589557,MAGNESIO TEVA 500 mg BUSTINE,magnesio solfato,bustina,500 mg,A12CC,Novartis Farma S.p.A.,30 bustine,true,false
+000000827,8740903802142,MAGNESIO TEVA 500 mg BUSTINE,magnesio solfato,bustina,500 mg,A12CC,Mylan Italia S.r.l.,10 bustine,true,false
+000000828,6136715778713,MAGNESIO SANDOZ 300 mg BUSTINE,magnesio solfato,bustina,300 mg,A12CC,Novartis Farma S.p.A.,20 bustine,true,false
+000000829,1663651559731,MAGNESIO SANDOZ 300 mg BUSTINE,magnesio solfato,bustina,300 mg,A12CC,Ibsa Farmaceutici Italia S.r.l.,30 bustine,true,false
+000000830,7082723590962,MAGNESIO SANDOZ 300 mg BUSTINE,magnesio solfato,bustina,300 mg,A12CC,EG S.p.A.,10 bustine,true,false
+000000831,5673030644213,MAGNESIO SANDOZ 400 mg BUSTINE,magnesio solfato,bustina,400 mg,A12CC,Roche S.p.A.,20 bustine,true,false
+000000832,6147683420160,MAGNESIO SANDOZ 400 mg BUSTINE,magnesio solfato,bustina,400 mg,A12CC,Sandoz S.p.A.,30 bustine,true,false
+000000833,4235677826592,MAGNESIO SANDOZ 400 mg BUSTINE,magnesio solfato,bustina,400 mg,A12CC,Mylan Italia S.r.l.,10 bustine,true,false
+000000834,8931992550278,MAGNESIO SANDOZ 500 mg BUSTINE,magnesio solfato,bustina,500 mg,A12CC,Roche S.p.A.,20 bustine,true,false
+000000835,5164807279108,MAGNESIO SANDOZ 500 mg BUSTINE,magnesio solfato,bustina,500 mg,A12CC,Takeda Italia S.p.A.,30 bustine,true,false
+000000836,3682963533909,MAGNESIO SANDOZ 500 mg BUSTINE,magnesio solfato,bustina,500 mg,A12CC,Aurobindo Pharma S.r.l.,10 bustine,true,false
+000000837,0448177665583,MAGNESIO SUPREME 300 mg BUSTINE,magnesio solfato,bustina,300 mg,A12CC,Pierre Fabre Italia S.p.A.,20 bustine,true,false
+000000838,5127652892861,MAGNESIO SUPREME 300 mg BUSTINE,magnesio solfato,bustina,300 mg,A12CC,Mylan Italia S.r.l.,30 bustine,true,false
+000000839,6491111096176,MAGNESIO SUPREME 300 mg BUSTINE,magnesio solfato,bustina,300 mg,A12CC,Astellas Pharma S.p.A.,10 bustine,true,false
+000000840,1789046337866,MAGNESIO SUPREME 400 mg BUSTINE,magnesio solfato,bustina,400 mg,A12CC,Bayer S.p.A.,20 bustine,true,false
+000000841,7157660538442,MAGNESIO SUPREME 400 mg BUSTINE,magnesio solfato,bustina,400 mg,A12CC,Recordati S.p.A.,30 bustine,true,false
+000000842,6306000258958,MAGNESIO SUPREME 400 mg BUSTINE,magnesio solfato,bustina,400 mg,A12CC,Sandoz S.p.A.,10 bustine,true,false
+000000843,9638639609625,MAGNESIO SUPREME 500 mg BUSTINE,magnesio solfato,bustina,500 mg,A12CC,Mylan Italia S.r.l.,20 bustine,true,false
+000000844,2658263128191,MAGNESIO SUPREME 500 mg BUSTINE,magnesio solfato,bustina,500 mg,A12CC,Viatris Italia S.r.l.,30 bustine,true,false
+000000845,4825311060927,MAGNESIO SUPREME 500 mg BUSTINE,magnesio solfato,bustina,500 mg,A12CC,Menarini Group,10 bustine,true,false
+000000846,8196027523348,CIRCADIN 1 mg COMPRESSE,melatonina,compressa,1 mg,N05CH01,Abbvie S.r.l.,30 compresse,true,false
+000000847,3640412091172,CIRCADIN 1 mg COMPRESSE,melatonina,compressa,1 mg,N05CH01,Bristol-Myers Squibb S.r.l.,60 compresse,true,false
+000000848,2442117536177,CIRCADIN 1 mg COMPRESSE,melatonina,compressa,1 mg,N05CH01,Menarini Group,20 compresse,true,false
+000000849,7136657224025,CIRCADIN 2 mg COMPRESSE,melatonina,compressa,2 mg,N05CH01,Lilly Italia S.p.A.,30 compresse,true,false
+000000850,0155799802844,CIRCADIN 2 mg COMPRESSE,melatonina,compressa,2 mg,N05CH01,Bayer S.p.A.,60 compresse,true,false
+000000851,0808823513055,CIRCADIN 2 mg COMPRESSE,melatonina,compressa,2 mg,N05CH01,GSK S.p.A.,20 compresse,true,false
+000000852,2447315847766,CIRCADIN 5 mg COMPRESSE,melatonina,compressa,5 mg,N05CH01,Pharmos S.p.A.,30 compresse,true,false
+000000853,3423461994232,CIRCADIN 5 mg COMPRESSE,melatonina,compressa,5 mg,N05CH01,Fidia Farmaceutici S.p.A.,60 compresse,true,false
+000000854,7694591966390,CIRCADIN 5 mg COMPRESSE,melatonina,compressa,5 mg,N05CH01,Zentiva Italia S.r.l.,20 compresse,true,false
+000000855,1720849649855,MELATONINA EG 1 mg COMPRESSE,melatonina,compressa,1 mg,N05CH01,Viatris Italia S.r.l.,30 compresse,true,false
+000000856,,MELATONINA EG 1 mg COMPRESSE,melatonina,compressa,1 mg,N05CH01,MSD Italia S.r.l.,60 compresse,true,false
+000000857,6253135525106,MELATONINA EG 1 mg COMPRESSE,melatonina,compressa,1 mg,N05CH01,Bracco S.p.A.,20 compresse,true,false
+000000858,5379538164931,MELATONINA EG 2 mg COMPRESSE,melatonina,compressa,2 mg,N05CH01,Farmitalia S.r.l.,30 compresse,true,false
+000000859,8491966553303,MELATONINA EG 2 mg COMPRESSE,melatonina,compressa,2 mg,N05CH01,Fidia Farmaceutici S.p.A.,60 compresse,true,false
+000000860,4611729596390,MELATONINA EG 2 mg COMPRESSE,melatonina,compressa,2 mg,N05CH01,Menarini Group,20 compresse,true,false
+000000861,9074260880505,MELATONINA EG 5 mg COMPRESSE,melatonina,compressa,5 mg,N05CH01,Pfizer Italia S.r.l.,30 compresse,true,false
+000000862,6445561857900,MELATONINA EG 5 mg COMPRESSE,melatonina,compressa,5 mg,N05CH01,Viatris Italia S.r.l.,60 compresse,true,false
+000000863,7715910300210,MELATONINA EG 5 mg COMPRESSE,melatonina,compressa,5 mg,N05CH01,Bracco S.p.A.,20 compresse,true,false
+000000864,6321358004019,MELATONINA TEVA 1 mg COMPRESSE,melatonina,compressa,1 mg,N05CH01,EG S.p.A.,30 compresse,true,false
+000000865,1459642297122,MELATONINA TEVA 1 mg COMPRESSE,melatonina,compressa,1 mg,N05CH01,Bracco S.p.A.,60 compresse,true,false
+000000866,9671883977454,MELATONINA TEVA 1 mg COMPRESSE,melatonina,compressa,1 mg,N05CH01,Ibsa Farmaceutici Italia S.r.l.,20 compresse,true,false
+000000867,4415833117034,MELATONINA TEVA 2 mg COMPRESSE,melatonina,compressa,2 mg,N05CH01,Angelini Pharma S.r.l.,30 compresse,true,false
+000000868,7637153988546,MELATONINA TEVA 2 mg COMPRESSE,melatonina,compressa,2 mg,N05CH01,Alfasigma S.p.A.,60 compresse,true,false
+000000869,8123567983639,MELATONINA TEVA 2 mg COMPRESSE,melatonina,compressa,2 mg,N05CH01,Pfizer Italia S.r.l.,20 compresse,true,false
+000000870,2491271130721,MELATONINA TEVA 5 mg COMPRESSE,melatonina,compressa,5 mg,N05CH01,Chiesi Farmaceutici S.p.A.,30 compresse,true,false
+000000871,,MELATONINA TEVA 5 mg COMPRESSE,melatonina,compressa,5 mg,N05CH01,Farmitalia S.r.l.,60 compresse,true,false
+000000872,4181563268680,MELATONINA TEVA 5 mg COMPRESSE,melatonina,compressa,5 mg,N05CH01,Sandoz S.p.A.,20 compresse,true,false
+000000873,4510663436291,MELATONINA SANDOZ 1 mg COMPRESSE,melatonina,compressa,1 mg,N05CH01,Chiesi Farmaceutici S.p.A.,30 compresse,true,false
+000000874,7861031310093,MELATONINA SANDOZ 1 mg COMPRESSE,melatonina,compressa,1 mg,N05CH01,Chiesi Farmaceutici S.p.A.,60 compresse,true,false
+000000875,8143966613470,MELATONINA SANDOZ 1 mg COMPRESSE,melatonina,compressa,1 mg,N05CH01,Takeda Italia S.p.A.,20 compresse,true,false
+000000876,3549401289746,MELATONINA SANDOZ 2 mg COMPRESSE,melatonina,compressa,2 mg,N05CH01,Servier Italia S.p.A.,30 compresse,true,false
+000000877,1225720765025,MELATONINA SANDOZ 2 mg COMPRESSE,melatonina,compressa,2 mg,N05CH01,Recordati S.p.A.,60 compresse,true,false
+000000878,2095790737104,MELATONINA SANDOZ 2 mg COMPRESSE,melatonina,compressa,2 mg,N05CH01,Menarini Group,20 compresse,true,false
+000000879,4388221145776,MELATONINA SANDOZ 5 mg COMPRESSE,melatonina,compressa,5 mg,N05CH01,Zentiva Italia S.r.l.,30 compresse,true,false
+000000880,4745705458973,MELATONINA SANDOZ 5 mg COMPRESSE,melatonina,compressa,5 mg,N05CH01,Bayer S.p.A.,60 compresse,true,false
+000000881,8026325703961,MELATONINA SANDOZ 5 mg COMPRESSE,melatonina,compressa,5 mg,N05CH01,Aurobindo Pharma S.r.l.,20 compresse,true,false
+000000882,1361487824558,SLENYTO 1 mg COMPRESSE,melatonina,compressa,1 mg,N05CH01,Viatris Italia S.r.l.,30 compresse,true,false
+000000883,4430985916793,SLENYTO 1 mg COMPRESSE,melatonina,compressa,1 mg,N05CH01,Zentiva Italia S.r.l.,60 compresse,true,false
+000000884,0727284982470,SLENYTO 1 mg COMPRESSE,melatonina,compressa,1 mg,N05CH01,Dompé Farmaceutici S.p.A.,20 compresse,true,false
+000000885,4070349107407,SLENYTO 2 mg COMPRESSE,melatonina,compressa,2 mg,N05CH01,Pierre Fabre Italia S.p.A.,30 compresse,true,false
+000000886,0042548821426,SLENYTO 2 mg COMPRESSE,melatonina,compressa,2 mg,N05CH01,Abbvie S.r.l.,60 compresse,true,false
+000000887,1430753666144,SLENYTO 2 mg COMPRESSE,melatonina,compressa,2 mg,N05CH01,Italfarmaco S.p.A.,20 compresse,true,false
+000000888,2965923426833,SLENYTO 5 mg COMPRESSE,melatonina,compressa,5 mg,N05CH01,Italfarmaco S.p.A.,30 compresse,true,false
+000000889,4978266128751,SLENYTO 5 mg COMPRESSE,melatonina,compressa,5 mg,N05CH01,Pharmos S.p.A.,60 compresse,true,false
+000000890,5756766708067,SLENYTO 5 mg COMPRESSE,melatonina,compressa,5 mg,N05CH01,Novartis Farma S.p.A.,20 compresse,true,false
+000000891,9439852989408,AUGMENTIN 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,Viatris Italia S.r.l.,12 compresse,false,true
+000000892,0787010415917,AUGMENTIN 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,Dompé Farmaceutici S.p.A.,14 compresse,false,true
+000000893,5019803828723,AUGMENTIN 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,Boehringer Ingelheim Italia S.p.A.,21 compresse,false,true
+000000894,2440793110292,AUGMENTIN 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Bayer S.p.A.,12 compresse,false,true
+000000895,3317087601462,AUGMENTIN 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Ibsa Farmaceutici Italia S.r.l.,14 compresse,false,true
+000000896,3849791620229,AUGMENTIN 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Servier Italia S.p.A.,21 compresse,false,true
+000000897,8377441975467,AUGMENTIN 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,Mylan Italia S.r.l.,12 compresse,false,true
+000000898,1766204719603,AUGMENTIN 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,Janssen-Cilag S.p.A.,14 compresse,false,true
+000000899,9705277402588,AUGMENTIN 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,Pharmos S.p.A.,21 compresse,false,true
+000000900,8681225957243,AMOXICILLINA EG 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,Italfarmaco S.p.A.,12 compresse,false,true
+000000901,1767929884256,AMOXICILLINA EG 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,Janssen-Cilag S.p.A.,14 compresse,false,true
+000000902,5996100231176,AMOXICILLINA EG 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,Ibsa Farmaceutici Italia S.r.l.,21 compresse,false,true
+000000903,3312661094104,AMOXICILLINA EG 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Pfizer Italia S.r.l.,12 compresse,false,true
+000000904,5902517629833,AMOXICILLINA EG 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Abbvie S.r.l.,14 compresse,false,true
+000000905,7433268319011,AMOXICILLINA EG 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Takeda Italia S.p.A.,21 compresse,false,true
+000000906,,AMOXICILLINA EG 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,GSK S.p.A.,12 compresse,false,true
+000000907,5698152873396,AMOXICILLINA EG 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,Ibsa Farmaceutici Italia S.r.l.,14 compresse,false,true
+000000908,5982176619123,AMOXICILLINA EG 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,Farmitalia S.r.l.,21 compresse,false,true
+000000909,1730985034460,AMOXICILLINA TEVA 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,Zentiva Italia S.r.l.,12 compresse,false,true
+000000910,2418938984695,AMOXICILLINA TEVA 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,EG S.p.A.,14 compresse,false,true
+000000911,1974005643502,AMOXICILLINA TEVA 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,GSK S.p.A.,21 compresse,false,true
+000000912,5037199051693,AMOXICILLINA TEVA 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Astellas Pharma S.p.A.,12 compresse,false,true
+000000913,8724010783563,AMOXICILLINA TEVA 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Ibsa Farmaceutici Italia S.r.l.,14 compresse,false,true
+000000914,3000389608702,AMOXICILLINA TEVA 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Mylan Italia S.r.l.,21 compresse,false,true
+000000915,2668217195537,AMOXICILLINA TEVA 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,Sandoz S.p.A.,12 compresse,false,true
+000000916,0331903689000,AMOXICILLINA TEVA 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,Servier Italia S.p.A.,14 compresse,false,true
+000000917,1027240559340,AMOXICILLINA TEVA 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,GSK S.p.A.,21 compresse,false,true
+000000918,7111483753741,AMOXICILLINA SANDOZ 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,Aurobindo Pharma S.r.l.,12 compresse,false,true
+000000919,4384588105699,AMOXICILLINA SANDOZ 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,Fidia Farmaceutici S.p.A.,14 compresse,false,true
+000000920,3283483152030,AMOXICILLINA SANDOZ 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,Neopharmed Gentili S.p.A.,21 compresse,false,true
+000000921,7107044964107,AMOXICILLINA SANDOZ 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Chiesi Farmaceutici S.p.A.,12 compresse,false,true
+000000922,6706670336268,AMOXICILLINA SANDOZ 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Biogen Italia S.r.l.,14 compresse,false,true
+000000923,4085095493056,AMOXICILLINA SANDOZ 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Astellas Pharma S.p.A.,21 compresse,false,true
+000000924,6018648769986,AMOXICILLINA SANDOZ 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,Recordati S.p.A.,12 compresse,false,true
+000000925,6732044138459,AMOXICILLINA SANDOZ 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,Lilly Italia S.p.A.,14 compresse,false,true
+000000926,9454490149540,AMOXICILLINA SANDOZ 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,MSD Italia S.r.l.,21 compresse,false,true
+000000927,0707057836094,ZIMOX 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,Novartis Farma S.p.A.,12 compresse,false,true
+000000928,9851724447234,ZIMOX 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,MSD Italia S.r.l.,14 compresse,false,true
+000000929,9031028795082,ZIMOX 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,Boehringer Ingelheim Italia S.p.A.,21 compresse,false,true
+000000930,4405809351180,ZIMOX 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Neopharmed Gentili S.p.A.,12 compresse,false,true
+000000931,1335956164209,ZIMOX 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Bracco S.p.A.,14 compresse,false,true
+000000932,5565749025042,ZIMOX 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Roche S.p.A.,21 compresse,false,true
+000000933,0193588953698,ZIMOX 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,Teva Italia S.r.l.,12 compresse,false,true
+000000934,2611398986814,ZIMOX 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,Farmitalia S.r.l.,14 compresse,false,true
+000000935,9788754394354,ZIMOX 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,Servier Italia S.p.A.,21 compresse,false,true
+000000936,5375137651582,VELAMOX 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,Pharmos S.p.A.,12 compresse,false,true
+000000937,5793763928364,VELAMOX 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,Janssen-Cilag S.p.A.,14 compresse,false,true
+000000938,9445511668294,VELAMOX 500 mg COMPRESSE,amoxicillina,compressa,500 mg,J01CA04,Fidia Farmaceutici S.p.A.,21 compresse,false,true
+000000939,3270216487125,VELAMOX 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Teva Italia S.r.l.,12 compresse,false,true
+000000940,0212886652680,VELAMOX 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Servier Italia S.p.A.,14 compresse,false,true
+000000941,1559991015764,VELAMOX 875 mg COMPRESSE,amoxicillina,compressa,875 mg,J01CA04,Neopharmed Gentili S.p.A.,21 compresse,false,true
+000000942,6472298120991,VELAMOX 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,Aurobindo Pharma S.r.l.,12 compresse,false,true
+000000943,7657289413477,VELAMOX 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,Sandoz S.p.A.,14 compresse,false,true
+000000944,,VELAMOX 1000 mg COMPRESSE,amoxicillina,compressa,1000 mg,J01CA04,Farmitalia S.r.l.,21 compresse,false,true
+000000945,9864565220362,AUGMENTIN 875 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,875 mg + 125 mg,J01CR02,Farmitalia S.r.l.,14 compresse,false,true
+000000946,9515421447736,AUGMENTIN 875 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,875 mg + 125 mg,J01CR02,AstraZeneca S.p.A.,12 compresse,false,true
+000000947,4913421388205,AUGMENTIN 875 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,875 mg + 125 mg,J01CR02,Bristol-Myers Squibb S.r.l.,10 compresse,false,true
+000000948,8830705349676,AUGMENTIN 500 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,500 mg + 125 mg,J01CR02,Farmitalia S.r.l.,14 compresse,false,true
+000000949,7411767412419,AUGMENTIN 500 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,500 mg + 125 mg,J01CR02,Zentiva Italia S.r.l.,12 compresse,false,true
+000000950,3152854781509,AUGMENTIN 500 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,500 mg + 125 mg,J01CR02,Pierre Fabre Italia S.p.A.,10 compresse,false,true
+000000951,8538003296332,AUGMENTIN 1000 mg + 62.5 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,1000 mg + 62.5 mg,J01CR02,Recordati S.p.A.,14 compresse,false,true
+000000952,7274231830610,AUGMENTIN 1000 mg + 62.5 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,1000 mg + 62.5 mg,J01CR02,Fidia Farmaceutici S.p.A.,12 compresse,false,true
+000000953,3206496935780,AUGMENTIN 1000 mg + 62.5 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,1000 mg + 62.5 mg,J01CR02,MSD Italia S.r.l.,10 compresse,false,true
+000000954,3477695874136,CLAVULIN 875 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,875 mg + 125 mg,J01CR02,Bayer S.p.A.,14 compresse,false,true
+000000955,4675361275150,CLAVULIN 875 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,875 mg + 125 mg,J01CR02,Viatris Italia S.r.l.,12 compresse,false,true
+000000956,7796304483603,CLAVULIN 875 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,875 mg + 125 mg,J01CR02,Amgen S.r.l.,10 compresse,false,true
+000000957,4566766404736,CLAVULIN 500 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,500 mg + 125 mg,J01CR02,Sandoz S.p.A.,14 compresse,false,true
+000000958,0476392831995,CLAVULIN 500 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,500 mg + 125 mg,J01CR02,Sandoz S.p.A.,12 compresse,false,true
+000000959,8006155810831,CLAVULIN 500 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,500 mg + 125 mg,J01CR02,Aurobindo Pharma S.r.l.,10 compresse,false,true
+000000960,2863425563837,CLAVULIN 1000 mg + 62.5 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,1000 mg + 62.5 mg,J01CR02,Angelini Pharma S.r.l.,14 compresse,false,true
+000000961,,CLAVULIN 1000 mg + 62.5 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,1000 mg + 62.5 mg,J01CR02,Menarini Group,12 compresse,false,true
+000000962,8186702440336,CLAVULIN 1000 mg + 62.5 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,1000 mg + 62.5 mg,J01CR02,Teva Italia S.r.l.,10 compresse,false,true
+000000963,1662411186002,AMOXICILLINA ACIDO CLAVULANICO EG 875 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,875 mg + 125 mg,J01CR02,Biogen Italia S.r.l.,14 compresse,false,true
+000000964,2196394568047,AMOXICILLINA ACIDO CLAVULANICO EG 875 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,875 mg + 125 mg,J01CR02,Chiesi Farmaceutici S.p.A.,12 compresse,false,true
+000000965,1497646136849,AMOXICILLINA ACIDO CLAVULANICO EG 875 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,875 mg + 125 mg,J01CR02,Ibsa Farmaceutici Italia S.r.l.,10 compresse,false,true
+000000966,8836076581738,AMOXICILLINA ACIDO CLAVULANICO EG 500 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,500 mg + 125 mg,J01CR02,Lilly Italia S.p.A.,14 compresse,false,true
+000000967,6375791452111,AMOXICILLINA ACIDO CLAVULANICO EG 500 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,500 mg + 125 mg,J01CR02,Amgen S.r.l.,12 compresse,false,true
+000000968,7931269789302,AMOXICILLINA ACIDO CLAVULANICO EG 500 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,500 mg + 125 mg,J01CR02,Fidia Farmaceutici S.p.A.,10 compresse,false,true
+000000969,4520599604381,AMOXICILLINA ACIDO CLAVULANICO EG 1000 mg + 62.5 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,1000 mg + 62.5 mg,J01CR02,Fidia Farmaceutici S.p.A.,14 compresse,false,true
+000000970,5357788116160,AMOXICILLINA ACIDO CLAVULANICO EG 1000 mg + 62.5 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,1000 mg + 62.5 mg,J01CR02,GSK S.p.A.,12 compresse,false,true
+000000971,2812371067289,AMOXICILLINA ACIDO CLAVULANICO EG 1000 mg + 62.5 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,1000 mg + 62.5 mg,J01CR02,Fidia Farmaceutici S.p.A.,10 compresse,false,true
+000000972,8660416448593,AMOXICILLINA ACIDO CLAVULANICO TEVA 875 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,875 mg + 125 mg,J01CR02,Aurobindo Pharma S.r.l.,14 compresse,false,true
+000000973,2248395894776,AMOXICILLINA ACIDO CLAVULANICO TEVA 875 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,875 mg + 125 mg,J01CR02,Takeda Italia S.p.A.,12 compresse,false,true
+000000974,2287056227102,AMOXICILLINA ACIDO CLAVULANICO TEVA 875 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,875 mg + 125 mg,J01CR02,Italfarmaco S.p.A.,10 compresse,false,true
+000000975,3187510979211,AMOXICILLINA ACIDO CLAVULANICO TEVA 500 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,500 mg + 125 mg,J01CR02,Zentiva Italia S.r.l.,14 compresse,false,true
+000000976,3503446945968,AMOXICILLINA ACIDO CLAVULANICO TEVA 500 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,500 mg + 125 mg,J01CR02,Recordati S.p.A.,12 compresse,false,true
+000000977,3192134249121,AMOXICILLINA ACIDO CLAVULANICO TEVA 500 mg + 125 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,500 mg + 125 mg,J01CR02,Farmitalia S.r.l.,10 compresse,false,true
+000000978,6599949732034,AMOXICILLINA ACIDO CLAVULANICO TEVA 1000 mg + 62.5 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,1000 mg + 62.5 mg,J01CR02,Takeda Italia S.p.A.,14 compresse,false,true
+000000979,9222705102877,AMOXICILLINA ACIDO CLAVULANICO TEVA 1000 mg + 62.5 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,1000 mg + 62.5 mg,J01CR02,Pierre Fabre Italia S.p.A.,12 compresse,false,true
+000000980,5481386667547,AMOXICILLINA ACIDO CLAVULANICO TEVA 1000 mg + 62.5 mg COMPRESSE,amoxicillina + acido clavulanico,compressa,1000 mg + 62.5 mg,J01CR02,Farmitalia S.r.l.,10 compresse,false,true
+000000981,1932426877418,ZITROMAX 250 mg CAPSULE,azitromicina,capsula,250 mg,J01FA10,Amgen S.r.l.,6 capsule,false,true
+000000982,5205756398363,ZITROMAX 250 mg CAPSULE,azitromicina,capsula,250 mg,J01FA10,Aurobindo Pharma S.r.l.,3 capsule,false,true
+000000983,0375830945150,ZITROMAX 250 mg CAPSULE,azitromicina,capsula,250 mg,J01FA10,Recordati S.p.A.,5 capsule,false,true
+000000984,0940476044095,ZITROMAX 500 mg CAPSULE,azitromicina,capsula,500 mg,J01FA10,Menarini Group,6 capsule,false,true
+000000985,7977278105092,ZITROMAX 500 mg CAPSULE,azitromicina,capsula,500 mg,J01FA10,Roche S.p.A.,3 capsule,false,true
+000000986,2216107051847,ZITROMAX 500 mg CAPSULE,azitromicina,capsula,500 mg,J01FA10,Abbvie S.r.l.,5 capsule,false,true
+000000987,0552958066015,AZITROMICINA EG 250 mg CAPSULE,azitromicina,capsula,250 mg,J01FA10,Abbvie S.r.l.,6 capsule,false,true
+000000988,8241270493860,AZITROMICINA EG 250 mg CAPSULE,azitromicina,capsula,250 mg,J01FA10,MSD Italia S.r.l.,3 capsule,false,true
+000000989,0448515791974,AZITROMICINA EG 250 mg CAPSULE,azitromicina,capsula,250 mg,J01FA10,Novartis Farma S.p.A.,5 capsule,false,true
+000000990,1212590203573,AZITROMICINA EG 500 mg CAPSULE,azitromicina,capsula,500 mg,J01FA10,Novartis Farma S.p.A.,6 capsule,false,true
+000000991,3432406424291,AZITROMICINA EG 500 mg CAPSULE,azitromicina,capsula,500 mg,J01FA10,Bracco S.p.A.,3 capsule,false,true
+000000992,3432447417597,AZITROMICINA EG 500 mg CAPSULE,azitromicina,capsula,500 mg,J01FA10,Aurobindo Pharma S.r.l.,5 capsule,false,true
+000000993,8720962893657,AZITROMICINA TEVA 250 mg CAPSULE,azitromicina,capsula,250 mg,J01FA10,Dompé Farmaceutici S.p.A.,6 capsule,false,true
+000000994,8841834374019,AZITROMICINA TEVA 250 mg CAPSULE,azitromicina,capsula,250 mg,J01FA10,Farmitalia S.r.l.,3 capsule,false,true
+000000995,2727955969050,AZITROMICINA TEVA 250 mg CAPSULE,azitromicina,capsula,250 mg,J01FA10,Sanofi S.r.l.,5 capsule,false,true
+000000996,0267551254270,AZITROMICINA TEVA 500 mg CAPSULE,azitromicina,capsula,500 mg,J01FA10,Biogen Italia S.r.l.,6 capsule,false,true
+000000997,0797996673454,AZITROMICINA TEVA 500 mg CAPSULE,azitromicina,capsula,500 mg,J01FA10,Bristol-Myers Squibb S.r.l.,3 capsule,false,true
+000000998,6403816649694,AZITROMICINA TEVA 500 mg CAPSULE,azitromicina,capsula,500 mg,J01FA10,Menarini Group,5 capsule,false,true
+000000999,2498392250147,AZITROMICINA SANDOZ 250 mg CAPSULE,azitromicina,capsula,250 mg,J01FA10,Roche S.p.A.,6 capsule,false,true
+000001000,7627023244124,AZITROMICINA SANDOZ 250 mg CAPSULE,azitromicina,capsula,250 mg,J01FA10,Servier Italia S.p.A.,3 capsule,false,true

@@ -1,0 +1,68 @@
+schema: archetipo/plan/v2
+spec_code: US-009
+body: "# US-009: Registrazione scadenza, quantità disponibile e posizione — Piano di Implementazione\n\n**Generato da:** Team ARchetipo Planning\n**Data:** 2026-06-17\n\n---\n\n## Spec\n\n**Epica:** EP-002 — Inventario Farmaci\n**Priorità:** HIGH | **Punti:** 2\n**Bloccato da:** US-007 (stato REVIEW — precondizione soddisfatta)\n\n**User Story**\nIn qualità di Giulia (caregiver di famiglia), voglio registrare la data di scadenza, la quantità disponibile e la posizione di ogni farmaco nell'inventario, così da sapere sempre cosa ho, quanto me ne resta e dove trovarlo.\n\n**Criteri di Accettazione**\n- [ ] Il form di aggiunta/modifica include: data di scadenza (date picker, obbligatoria), quantità/dosi disponibili (numero) e posizione (testo libero, opzionale)\n- [ ] I dati salvati sono mostrati nella scheda di dettaglio del farmaco\n- [ ] Modificare uno qualsiasi dei campi aggiorna immediatamente la scheda del farmaco\n- [ ] La data di scadenza è validata (non accetta date già passate come nuova scadenza)\n\n---\n\n## Soluzione Tecnica\n\nLo `MedicineFormPage` introdotto da US-007 contiene già i campi scadenza/quantità/posizione ma con scadenza opzionale, salva con un semplice insert e torna alla home: mancano la **scheda di dettaglio**, il **flusso di modifica** e la **validazione della scadenza**. US-009 chiude questi gap evolvendo il form esistente, aggiungendo una pagina di dettaglio read-only e centralizzando l'accesso ai dati in un repository di inventario, senza modificare lo schema DB (la tabella `medications` ha già `expires_at date`, `quantity`, `unit`, `location`).\n\n- **Validazione di dominio pura e testabile:** una funzione in `src/domain/medicationExpiry.ts` rende la scadenza obbligatoria e rifiuta date antecedenti a oggi (confronto su date locali, non timestamp), riusabile sia dal form sia dai test unitari senza dipendere da React o Supabase.\n- **Repository inventario:** `src/features/inventory/medicationsRepo.ts` incapsula `getMedicationById`, `updateMedication` e l'insert con `.select().single()` per ottenere l'id del record creato; le pagine non parlano più direttamente con `supabase.from('medications')`, riducendo la duplicazione e semplificando i mock nei test.\n- **Scheda di dettaglio (nuova UI):** `MedicineDetailPage` su rotta `/medicine/:id` legge il farmaco e mostra scadenza (con indicatore di stato OK / in scadenza / scaduto), quantità+unità e posizione, seguendo il mockup `docs/mockups/US-009/medicine-detail.html`; un pulsante \"Modifica\" porta al form in modalità edit.\n- **Form unificato add/edit:** `MedicineFormPage` accetta il parametro di rotta `:id` (rotta `/medicine/:id/edit`): in modalità edit precarica i valori e fa `update`, in modalità new fa `insert`; in entrambi i casi applica la validazione e, al salvataggio, naviga alla scheda di dettaglio del farmaco, così la modifica è immediatamente visibile (soddisfa il criterio di aggiornamento immediato).\n- **Routing:** `App.tsx` espone `/medicine/:id` e `/medicine/:id/edit` come rotte protette, accanto alla `/medicine/new` esistente.\n\n---\n\n## Strategia di Test\n\nLa strategia segue lo stack già in uso (Vitest + React Testing Library + Playwright) e l'approccio di mock di Supabase consolidato in US-007, coprendo la logica di validazione in isolamento, le pagine a livello di componente e i flussi utente end-to-end.\n\n- **Unit (Vitest):** validazione scadenza — data passata rifiutata, data odierna accettata, data futura accettata, valore vuoto rifiutato (obbligatorietà); mappatura/normalizzazione dei valori del form.\n- **Unit/Integrazione repository (Vitest):** `getMedicationById`, `updateMedication` e insert-con-select con client supabase-js mockato, verificando query per id e propagazione degli errori.\n- **Componente (RTL):** la scheda di dettaglio mostra scadenza, quantità+unità e posizione del farmaco caricato; il form in modalità edit precompila i campi, blocca il salvataggio con scadenza passata o vuota mostrando il messaggio d'errore, e al salvataggio valido naviga alla scheda; il salvataggio in modalità new naviga alla scheda del farmaco creato.\n\n### Test E2E — Simulazione Utente\n\n**Framework:** Playwright (già configurato in `playwright.config.ts`)\n**Registrazione video:** Abilitata per tutti gli scenari, output in `docs/test-results/US-009/`\n\n| Scenario | Descrizione del flusso utente |\n|---|---|\n| Aggiunta con dettagli completi | Giulia apre il form farmaco, inserisce scadenza futura, quantità e posizione \"Armadietto bagno\", salva e atterra sulla scheda di dettaglio dove vede tutte e tre le informazioni |\n| Modifica immediata | Dalla scheda di dettaglio Giulia apre \"Modifica\", cambia quantità e posizione, salva e vede la scheda aggiornata con i nuovi valori |\n| Validazione scadenza passata | Giulia tenta di salvare con una data di scadenza già passata (o senza scadenza) e vede un messaggio d'errore chiaro, il salvataggio è bloccato |\n\nL'infrastruttura e2e riusa il pattern di mock auth/Supabase via `addInitScript` + `page.route()` di US-007, aggiungendo lo stub delle chiamate `medications` (GET per id, PATCH per update, POST con select per insert). La registrazione video viene attivata per gli scenari US-009 (es. `test.use({ video: 'on' })`) con `outputDir` su `docs/test-results/US-009/`.\n\n---\n\n> \U0001F3A8 I mockup per questa spec sono disponibili in `docs/mockups/US-009/`\n\n_Piano generato tramite ARchetipo Planning — 2026-06-17_"
+tasks:
+  - id: TASK-01
+    title: Validazione scadenza di dominio (pura)
+    description: Creare src/domain/medicationExpiry.ts con funzioni pure che rendono la scadenza obbligatoria e rifiutano date antecedenti a oggi (confronto su date locali), restituendo esito ed eventuale messaggio d'errore localizzato.
+    type: Impl
+    status: TODO
+  - id: TASK-02
+    title: Unit test validazione scadenza
+    description: 'Test Vitest per i casi: data passata rifiutata, data odierna accettata, data futura accettata, valore vuoto rifiutato (obbligatorietà).'
+    type: Test
+    status: TODO
+    dependencies:
+      - TASK-01
+  - id: TASK-03
+    title: Repository inventario (get/update/insert)
+    description: Creare src/features/inventory/medicationsRepo.ts con getMedicationById, updateMedication e insert con .select().single() per ottenere l'id del record creato, incapsulando l'accesso a supabase.from('medications').
+    type: Impl
+    status: TODO
+  - id: TASK-04
+    title: Unit test repository inventario
+    description: 'Test Vitest con supabase-js mockato per getMedicationById, updateMedication e insert-con-select: query per id corretta e propagazione degli errori.'
+    type: Test
+    status: TODO
+    dependencies:
+      - TASK-03
+  - id: TASK-05
+    title: Scheda di dettaglio farmaco (MedicineDetailPage)
+    description: Implementare src/features/inventory/MedicineDetailPage.tsx (rotta /medicine/:id) che carica il farmaco via repository e mostra scadenza con indicatore di stato, quantità+unità e posizione, con pulsante "Modifica", seguendo il mockup docs/mockups/US-009/medicine-detail.html.
+    type: Impl
+    status: TODO
+    dependencies:
+      - TASK-03
+  - id: TASK-06
+    title: Form unificato add/edit con scadenza validata
+    description: 'Evolvere MedicineFormPage per supportare la modalità edit (rotta /medicine/:id/edit): precaricare i valori e fare update, rendere la scadenza obbligatoria applicando la validazione di TASK-01, e al salvataggio (sia new sia edit) navigare alla scheda di dettaglio del farmaco. Aggiungere le rotte /medicine/:id e /medicine/:id/edit in App.tsx.'
+    type: Impl
+    status: TODO
+    dependencies:
+      - TASK-01
+      - TASK-03
+      - TASK-05
+  - id: TASK-07
+    title: Component test dettaglio e form add/edit
+    description: 'Test RTL: la scheda mostra scadenza/quantità/posizione; il form edit precompila e blocca il salvataggio con scadenza passata o vuota mostrando l''errore; salvataggio valido (new ed edit) naviga alla scheda. Repository e client mockati.'
+    type: Test
+    status: TODO
+    dependencies:
+      - TASK-05
+      - TASK-06
+  - id: TASK-08
+    title: Config video Playwright e mock medications per e2e US-009
+    description: Abilitare la registrazione video con output in docs/test-results/US-009/ e predisporre lo stub delle chiamate medications (GET per id, PATCH update, POST insert con select) riusando il pattern di mock auth/Supabase di US-007.
+    type: Impl
+    status: TODO
+    dependencies:
+      - TASK-05
+      - TASK-06
+  - id: TASK-09
+    title: Test e2e flussi US-009 con video
+    description: 'Scenari Playwright con video: aggiunta con scadenza+quantità+posizione → scheda mostra i tre dati; modifica di un campo → scheda aggiornata immediatamente; tentativo con scadenza passata → errore e salvataggio bloccato.'
+    type: Test
+    status: TODO
+    dependencies:
+      - TASK-07
+      - TASK-08

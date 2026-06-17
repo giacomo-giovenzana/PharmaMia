@@ -1,0 +1,32 @@
+schema: archetipo/spec/v2
+code: US-021
+title: Accettazione o rifiuto di una richiesta di prestito ricevuta
+epic:
+  code: EP-006
+  title: Anti-Spreco e Prestito
+priority: MEDIUM
+points: 2
+status: TODO
+blocked_by:
+  - US-020
+scope: MVP
+body: |-
+  #### US-021: Accettazione o rifiuto di una richiesta di prestito ricevuta
+
+  **Epica:** EP-006 | **Priorità:** MEDIUM | **Punti:** 2 | **Stato:** TODO
+  **Bloccato da:** US-020
+
+  **User Story**
+  In qualità di Giulia (caregiver di famiglia),
+  voglio accettare o rifiutare le richieste di prestito farmaci che ricevo dalla mia rete,
+  così da restare in controllo dei miei farmaci e decidere liberamente cosa condividere.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, Giulia riceve una notifica di richiesta di prestito, apre la lista "Richieste ricevute", vede la richiesta con farmaco e quantità, e accetta o rifiuta con un tap; il richiedente riceve una notifica dell'esito e la scorta viene scalata solo dopo l'accettazione esplicita.
+
+  **Criteri di Accettazione**
+  - [ ] L'utente vede una lista delle richieste di prestito ricevute con farmaco, quantità e mittente
+  - [ ] L'utente può accettare una richiesta: la quantità richiesta viene scalata dal suo inventario
+  - [ ] L'utente può rifiutare una richiesta senza modifiche al suo inventario
+  - [ ] Il richiedente riceve una notifica dell'esito (accettazione o rifiuto)
+  - [ ] Le richieste pendenti scadono automaticamente dopo 48 ore se non gestite

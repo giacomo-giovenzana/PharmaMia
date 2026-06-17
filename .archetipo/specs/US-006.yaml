@@ -1,0 +1,31 @@
+schema: archetipo/spec/v2
+code: US-006
+title: Configurazione preferenze di notifica
+epic:
+  code: EP-001
+  title: Autenticazione e Account
+priority: MEDIUM
+points: 2
+status: TODO
+blocked_by:
+  - US-004
+scope: MVP
+body: |-
+  #### US-006: Configurazione preferenze di notifica
+
+  **Epica:** EP-001 | **Priorità:** MEDIUM | **Punti:** 2 | **Stato:** TODO
+  **Bloccato da:** US-004
+
+  **User Story**
+  In qualità di Marco (paziente cronico),
+  voglio configurare quali avvisi ricevere, i canali preferiti e gli orari di silenzio,
+  così da ricevere solo le notifiche utili senza essere disturbato.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, Marco apre le impostazioni, disabilita gli avvisi di scadenza e imposta un orario silenzioso notturno; le notifiche successive rispettano la sua configurazione.
+
+  **Criteri di Accettazione**
+  - [ ] L'utente può abilitare/disabilitare le notifiche di scadenza imminente, scorte basse e promemoria dosi
+  - [ ] L'utente può configurare le soglie di anticipo per scadenza e scorte basse
+  - [ ] Le preferenze sono salvate per utente e applicate al motore di notifiche
+  - [ ] Le modifiche alle preferenze hanno effetto immediato senza richiedere logout/login

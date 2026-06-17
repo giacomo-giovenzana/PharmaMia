@@ -1,0 +1,30 @@
+schema: archetipo/spec/v2
+code: US-002
+title: Setup Supabase locale e schema database iniziale
+epic:
+  code: EP-000
+  title: Foundation del Progetto
+priority: HIGH
+points: 3
+status: REVIEW
+scope: MVP
+body: |-
+  #### US-002: Setup Supabase locale e schema database iniziale
+
+  **Epica:** EP-000 | **Priorità:** HIGH | **Punti:** 3 | **Stato:** TODO
+  **Bloccato da:** -
+
+  **User Story**
+  In qualità di sviluppatore del team,
+  voglio Supabase CLI configurato localmente con le migration iniziali e il seed del database farmaci AIFA,
+  così da sviluppare e testare le funzionalità con uno stack backend completo senza dipendere dall'ambiente cloud.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, un developer esegue `supabase start` e vede Postgres + Auth attivi in locale; le migration creano le tabelle principali del dominio (farmaci, household, terapie); il seed carica il dataset AIFA e una query restituisce farmaci ricercabili per AIC/EAN.
+
+  **Criteri di Accettazione**
+  - [ ] Supabase CLI è configurato e `supabase start` avvia correttamente l'ambiente locale (Postgres, Auth, Studio)
+  - [ ] Le migration iniziali creano le tabelle core del dominio con i tipi corretti
+  - [ ] Il seed importa il dataset AIFA: lookup per AIC e EAN funziona su almeno 1000 farmaci di esempio
+  - [ ] Le Row-Level Security policy di base sono definite nelle migration
+  - [ ] Il client `supabase-js` è integrato nel progetto con tipi generati dallo schema

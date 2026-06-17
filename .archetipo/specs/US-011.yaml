@@ -1,0 +1,30 @@
+schema: archetipo/spec/v2
+code: US-011
+title: Dashboard farmaci (in scadenza, scaduti, scorte basse)
+epic:
+  code: EP-003
+  title: Scadenze e Scorte
+priority: HIGH
+points: 3
+status: TODO
+scope: MVP
+body: |-
+  #### US-011: Dashboard farmaci (in scadenza, scaduti, scorte basse)
+
+  **Epica:** EP-003 | **Priorità:** HIGH | **Punti:** 3 | **Stato:** TODO
+  **Bloccato da:** -
+
+  **User Story**
+  In qualità di Giulia (caregiver di famiglia),
+  voglio vedere una dashboard che mostri a colpo d'occhio i farmaci in scadenza, già scaduti e con scorte basse,
+  così da intervenire prima di trovarmi senza un farmaco necessario o di sprecare confezioni scadute.
+
+  **Dimostra**
+  Dopo aver implementato questa spec, Giulia apre la dashboard e vede tre sezioni distinte — "In scadenza", "Scaduti" e "Scorte basse" — ciascuna con i farmaci pertinenti ordinati per urgenza; cliccando su un farmaco accede direttamente alla sua scheda.
+
+  **Criteri di Accettazione**
+  - [ ] La dashboard mostra tre sezioni: farmaci in scadenza entro la soglia configurata, farmaci già scaduti, farmaci con scorte sotto soglia
+  - [ ] Ogni elemento mostra nome del farmaco, data di scadenza o scorta residua e indicatore di urgenza
+  - [ ] I farmaci sono ordinati per urgenza (scadenza più vicina prima, scorta più bassa prima)
+  - [ ] La dashboard si aggiorna in tempo reale quando l'inventario cambia
+  - [ ] Se non ci sono farmaci critici in una sezione, viene mostrato uno stato vuoto con messaggio chiaro

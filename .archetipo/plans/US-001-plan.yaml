@@ -1,0 +1,130 @@
+schema: archetipo/plan/v2
+spec_code: US-001
+body: |-
+  # US-001: Scaffold del progetto React PWA e ambiente di sviluppo — Piano di Implementazione
+
+  **Generato da:** ARchetipo Planning Team
+  **Data:** 2026-06-17
+
+  ---
+
+  ## Spec
+
+  **Epica:** EP-000 — Foundation del Progetto
+  **Priorità:** HIGH | **Punti:** 3
+
+  **User Story**
+  In qualità di sviluppatore del team,
+  voglio un ambiente di sviluppo locale funzionante con scaffold React + Vite + TypeScript e suite di test configurata,
+  così da avviare immediatamente lo sviluppo delle funzionalità senza configurazioni manuali.
+
+  **Criteri di Accettazione**
+  - [ ] Il progetto React 18 + Vite 5 + TypeScript 5 è scaffoldato con struttura feature-based conforme all'architettura definita nel PRD
+  - [ ] Vitest, React Testing Library e Playwright sono configurati con almeno un test di esempio funzionante per ogni layer
+  - [ ] ESLint e type-check TypeScript passano senza errori sul codice iniziale
+  - [ ] Il manifest PWA e il service worker di base sono configurati: la PWA è installabile localmente
+  - [ ] Il file `.env.example` documenta le variabili d'ambiente necessarie (chiavi Supabase, VAPID)
+
+  ---
+
+  ## Soluzione Tecnica
+
+  Inizia con `pnpm create vite pharmamia-mvp --template react-ts` e adegua immediatamente la struttura alle convenzioni architetturali del PRD (feature-based layout, supabase/, tests/). Tutto il tooling viene configurato in una sequenza lineare senza dipendenze esterne.
+
+  - **Scaffold:** `pnpm create vite pharmamia-mvp --template react-ts` (React 18, Vite 5, TS 5). Configurare `tsconfig.json` con `strict: true`, `baseUrl: "src"` e path aliases (`@features/*`, `@shared/*`, `@domain/*`) per rendere gli import delle spec successive consistenti fin dall'inizio.
+  - **Feature-based layout:** creare le directory `src/features/{inventory,scanning,therapy,household,lending,notifications,auth}/`, `src/shared/`, `src/domain/`, `src/pwa/`, `supabase/{migrations,functions,seed}/`, `tests/` come da PRD. Mantenere un `App.tsx` minimale nel root che funge da entry point.
+  - **Testing stack:** Vitest + jsdom per unit e component test (integrato in vite.config.ts, nessuna config Jest separata); React Testing Library + `@testing-library/jest-dom` per i component test; Playwright per gli e2e. Script: `pnpm test` (Vitest watch/run), `pnpm test:e2e` (Playwright), `pnpm type-check` (tsc --noEmit).
+  - **PWA:** `vite-plugin-pwa` (Workbox) configurato con manifest completo (name: "PharmaMia", short_name: "PharmaMia", icons 192x192 e 512x512, start_url: "/", display: "standalone", theme_color) e strategia di pre-caching delle risorse statiche. L'app deve risultare installabile su Chrome/Edge su localhost.
+  - **ESLint:** `@typescript-eslint/parser` + `@typescript-eslint/eslint-plugin` + `eslint-plugin-react` + `eslint-plugin-react-hooks`. Script `pnpm lint` deve passare clean sul codice di scaffold.
+  - **Variabili d'ambiente:** `.env.example` con `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`, `VITE_VAPID_PUBLIC_KEY` (client-side) e `VAPID_PRIVATE_KEY` (server-side, Edge Functions), ciascuna con commento descrittivo. `.env` aggiunto a `.gitignore`.
+
+  ---
+
+  ## Strategia di Test
+
+  Lo scopo è verificare che l'ambiente funzioni correttamente su una macchina pulita — non testare logica applicativa (ancora inesistente), ma certificare che ogni layer del testing stack sia operativo.
+
+  - **Unit (Vitest):** un test su una funzione stub in `src/domain/` (es. `formatExpiryDate`) che valida la configurazione Vitest + TypeScript strict.
+  - **Component (React Testing Library):** un test su `App.tsx` che verifica il rendering del componente root senza errori.
+  - **E2E (Playwright):** uno scenario smoke che apre `http://localhost:5173`, verifica il caricamento della pagina e la presenza dell'heading principale. Video recording abilitato, output salvato in `docs/test-results/US-001/`.
+
+  ### Test E2E — Simulazione Utente
+
+  **Framework:** Playwright (esplicitamente richiesto dai criteri di accettazione)
+  **Video recording:** Abilitato per tutti gli scenari, video salvati in `docs/test-results/US-001/`
+
+  | Scenario | Descrizione del flusso utente |
+  |---|---|
+  | Smoke — app avviata | Lo sviluppatore apre `http://localhost:5173`: la pagina si carica in meno di 3s, il titolo dell'app è visibile nel DOM. |
+  | PWA installabile | Lo sviluppatore apre l'app su Chrome/Edge: il manifest è servito correttamente (`/manifest.webmanifest` risponde 200), il service worker si registra senza errori nella console. |
+
+  ---
+
+  _Piano generato via ARchetipo Planning — 2026-06-17_
+tasks:
+  - id: TASK-01
+    title: Inizializzare il progetto Vite + React 18 + TypeScript 5 con pnpm
+    description: 'Eseguire `pnpm create vite pharmamia-mvp --template react-ts`. Configurare tsconfig.json con strict: true, baseUrl: "src" e path aliases (@features/*, @shared/*, @domain/*). Verificare che `pnpm install && pnpm dev` avvii l''app su localhost:5173.'
+    type: Impl
+    status: DONE
+    ref: TASK-01
+  - id: TASK-02
+    title: Strutturare il progetto con layout feature-based conforme al PRD
+    description: Creare le directory src/features/{inventory,scanning,therapy,household,lending,notifications,auth}/, src/shared/, src/domain/, src/pwa/, supabase/{migrations,functions,seed}/, tests/. Mantenere App.tsx minimale come entry point e aggiornare gli import.
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-01
+    ref: TASK-02
+  - id: TASK-03
+    title: Configurare Vitest e React Testing Library con test di esempio
+    description: Installare vitest, @testing-library/react, @testing-library/jest-dom e jsdom. Configurare Vitest in vite.config.ts con environment jsdom. Aggiungere script `test` in package.json. Creare un test unit stub in src/domain/ e un test RTL su App.tsx — entrambi devono passare con `pnpm test`.
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-02
+    ref: TASK-03
+  - id: TASK-04
+    title: Configurare ESLint con TypeScript strict e garantire clean pass
+    description: Installare eslint, @typescript-eslint/parser, @typescript-eslint/eslint-plugin, eslint-plugin-react, eslint-plugin-react-hooks. Aggiungere script `lint` e `type-check` (tsc --noEmit). Verificare che entrambi passino senza errori sul codice di scaffold.
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-02
+    ref: TASK-04
+  - id: TASK-05
+    title: Configurare PWA con vite-plugin-pwa (manifest + service worker Workbox)
+    description: 'Installare vite-plugin-pwa. Configurare il manifest PWA (name, short_name, icons 192x192/512x512, start_url: "/", display: standalone, theme_color) e la strategia Workbox di pre-caching. Aggiungere le icone placeholder in public/. Verificare installabilità su Chrome/Edge localhost.'
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-02
+    ref: TASK-05
+  - id: TASK-06
+    title: Creare .env.example con le variabili d'ambiente necessarie
+    description: Documentare VITE_SUPABASE_URL, VITE_SUPABASE_PUBLISHABLE_KEY, VITE_VAPID_PUBLIC_KEY e VAPID_PRIVATE_KEY con commenti descrittivi. Verificare che .env sia nel .gitignore. Aggiungere note sul reperimento delle chiavi VAPID (npx web-push generate-vapid-keys).
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-01
+    ref: TASK-06
+  - id: TASK-07
+    title: Configurare Playwright con test e2e smoke e video recording
+    description: 'Installare @playwright/test ed eseguire `npx playwright install --with-deps chromium`. Creare playwright.config.ts con baseURL http://localhost:5173, video: ''on'', outputDir docs/test-results/US-001/. Aggiungere script `test:e2e`. Scrivere due scenari smoke (caricamento app, manifest PWA) — entrambi devono passare.'
+    type: Impl
+    status: DONE
+    dependencies:
+      - TASK-03
+    ref: TASK-07
+  - id: TASK-08
+    title: Verifica finale di tutti i criteri di accettazione US-001
+    description: 'Eseguire in sequenza: `pnpm install && pnpm dev` (app avviata), `pnpm test` (Vitest clean), `pnpm lint && pnpm type-check` (nessun errore), `pnpm test:e2e` (Playwright green). Verificare manualmente installabilità PWA su Chrome. Documentare i comandi chiave nel README.'
+    type: Test
+    status: DONE
+    dependencies:
+      - TASK-03
+      - TASK-04
+      - TASK-05
+      - TASK-06
+      - TASK-07
+    ref: TASK-08

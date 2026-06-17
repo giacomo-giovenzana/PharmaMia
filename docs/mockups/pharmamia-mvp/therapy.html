@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PharmaMia – Terapie</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.day-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 12px 20px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.day-tabs::-webkit-scrollbar { display: none; }
+
+.day-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: var(--r-lg);
+  min-width: 52px;
+  cursor: pointer;
+  background: var(--c-surface);
+  border: 1.5px solid var(--c-border);
+  transition: all .15s;
+}
+
+.day-tab.active {
+  background: var(--c-primary);
+  border-color: var(--c-primary);
+  box-shadow: var(--sh-primary);
+}
+
+.day-tab-name {
+  font-size: .62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--c-text-3);
+}
+
+.day-tab-num {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--c-text);
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.day-tab.active .day-tab-name,
+.day-tab.active .day-tab-num { color: #fff; }
+
+.day-tab .dose-dot-row {
+  display: flex;
+  gap: 3px;
+  margin-top: 5px;
+}
+
+.dose-dot {
+  width: 5px; height: 5px;
+  border-radius: var(--r-full);
+  background: var(--c-border);
+}
+
+.dose-dot.done    { background: var(--c-ok); }
+.dose-dot.pending { background: var(--c-warning); }
+.day-tab.active .dose-dot { background: rgba(255,255,255,.4); }
+.day-tab.active .dose-dot.done { background: rgba(255,255,255,.9); }
+
+/* Today's doses */
+.dose-section {
+  margin: 16px 20px 0;
+  background: var(--c-surface);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+}
+
+.dose-section-header {
+  padding: 14px 16px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dose-time-icon {
+  width: 32px; height: 32px;
+  border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.dose-time-label {
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--c-text);
+}
+
+.dose-time-sub {
+  font-size: .72rem;
+  color: var(--c-text-3);
+}
+
+.dose-row {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--c-border);
+}
+
+.dose-row-icon {
+  width: 36px; height: 36px;
+  border-radius: var(--r-md);
+  background: var(--c-primary-lt);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  color: var(--c-primary);
+}
+
+.dose-row-info { flex: 1; min-width: 0; }
+
+.dose-row-name {
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--c-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dose-row-detail {
+  font-size: .72rem;
+  color: var(--c-text-3);
+  margin-top: 2px;
+}
+
+/* Adherence chart */
+.adherence-chart {
+  display: flex;
+  gap: 3px;
+  align-items: flex-end;
+  height: 48px;
+}
+
+.bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.bar-fill {
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+  background: var(--c-primary-lt);
+  transition: height .3s ease;
+}
+
+.bar-fill.full  { background: var(--c-ok); }
+.bar-fill.part  { background: var(--c-warning); }
+.bar-fill.miss  { background: var(--c-danger-lt); }
+.bar-fill.today { background: var(--c-primary); }
+
+.bar-label {
+  font-size: .58rem;
+  color: var(--c-text-3);
+  font-weight: 600;
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<div class="phone">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <span class="topbar-title">Terapie</span>
+    <div class="topbar-actions">
+      <button class="topbar-icon-btn" style="background:var(--c-primary);color:#fff" onclick="alert('Nuovo piano terapeutico')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="12" y1="5" x2="12" y2="19"/>
+          <line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- WEEK DAYS -->
+  <div class="day-tabs">
+    <div class="day-tab">
+      <span class="day-tab-name">Lun</span>
+      <span class="day-tab-num">11</span>
+      <div class="dose-dot-row">
+        <span class="dose-dot done"></span>
+        <span class="dose-dot done"></span>
+      </div>
+    </div>
+    <div class="day-tab">
+      <span class="day-tab-name">Mar</span>
+      <span class="day-tab-num">12</span>
+      <div class="dose-dot-row">
+        <span class="dose-dot done"></span>
+        <span class="dose-dot done"></span>
+      </div>
+    </div>
+    <div class="day-tab">
+      <span class="day-tab-name">Mer</span>
+      <span class="day-tab-num">13</span>
+      <div class="dose-dot-row">
+        <span class="dose-dot done"></span>
+        <span class="dose-dot pending"></span>
+      </div>
+    </div>
+    <div class="day-tab">
+      <span class="day-tab-name">Gio</span>
+      <span class="day-tab-num">14</span>
+      <div class="dose-dot-row">
+        <span class="dose-dot done"></span>
+        <span class="dose-dot done"></span>
+      </div>
+    </div>
+    <div class="day-tab">
+      <span class="day-tab-name">Ven</span>
+      <span class="day-tab-num">15</span>
+      <div class="dose-dot-row">
+        <span class="dose-dot done"></span>
+        <span class="dose-dot done"></span>
+      </div>
+    </div>
+    <div class="day-tab">
+      <span class="day-tab-name">Sab</span>
+      <span class="day-tab-num">16</span>
+      <div class="dose-dot-row">
+        <span class="dose-dot done"></span>
+        <span class="dose-dot done"></span>
+      </div>
+    </div>
+    <div class="day-tab active">
+      <span class="day-tab-name">Dom</span>
+      <span class="day-tab-num">17</span>
+      <div class="dose-dot-row">
+        <span class="dose-dot done"></span>
+        <span class="dose-dot pending"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN -->
+  <div class="screen">
+
+    <div style="padding:14px 20px 0">
+      <div style="font-size:.78rem;font-weight:700;color:var(--c-text-3);text-transform:uppercase;letter-spacing:.05em">Mercoledì 17 giugno · Oggi</div>
+    </div>
+
+    <!-- MATTINA -->
+    <div class="dose-section fade-up fade-up-1" style="margin-top:12px">
+      <div class="dose-section-header">
+        <div class="dose-time-icon" style="background:#FEF4E3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5A62B" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+          </svg>
+        </div>
+        <div>
+          <div class="dose-time-label">Mattina</div>
+          <div class="dose-time-sub">08:00</div>
+        </div>
+        <div style="margin-left:auto">
+          <span class="badge badge-ok">1/1 presa</span>
+        </div>
+      </div>
+
+      <div class="dose-row">
+        <div class="dose-row-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+        </div>
+        <div class="dose-row-info">
+          <div class="dose-row-name">Amlodipina 5 mg</div>
+          <div class="dose-row-detail">1 compressa · antiipertensivo · scorte: 12 gg</div>
+        </div>
+        <button class="dose-btn done">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Presa
+        </button>
+      </div>
+    </div>
+
+    <!-- SERA -->
+    <div class="dose-section fade-up fade-up-2">
+      <div class="dose-section-header">
+        <div class="dose-time-icon" style="background:var(--c-purple-lt)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-purple)" stroke-width="2" stroke-linecap="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="dose-time-label">Sera</div>
+          <div class="dose-time-sub">21:00</div>
+        </div>
+        <div style="margin-left:auto">
+          <span class="badge badge-warning">In attesa</span>
+        </div>
+      </div>
+
+      <div class="dose-row">
+        <div class="dose-row-icon" style="background:var(--c-warning-lt);color:var(--c-warning)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+        </div>
+        <div class="dose-row-info">
+          <div class="dose-row-name">Atorvastatina 20 mg</div>
+          <div class="dose-row-detail">1 compressa · statina · ⚠ scorte: 8 gg</div>
+        </div>
+        <button class="dose-btn pending" id="atorBtn" onclick="confirmDose(this)">
+          Conferma
+        </button>
+      </div>
+    </div>
+
+    <!-- PIANI ATTIVI -->
+    <div class="section" style="padding-top:20px;padding-bottom:0">
+      <div class="section-header">
+        <span class="section-title">Piani attivi</span>
+        <span class="badge badge-info">2 farmaci</span>
+      </div>
+    </div>
+
+    <div style="padding:4px 20px 0" class="fade-up fade-up-3">
+      <!-- PIANO 1 -->
+      <div class="therapy-card morning">
+        <div class="therapy-time">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="display:inline-block;vertical-align:middle;margin-bottom:2px">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          Ogni giorno · mattina + sera
+        </div>
+        <div class="therapy-name">Amlodipina 5 mg</div>
+        <div class="therapy-dose">1 cpr × 2 · antiipertensivo · scorte per ~12 giorni</div>
+        <div class="therapy-card-footer">
+          <div class="dose-bar-wrap" style="flex:1;margin:0">
+            <div class="dose-bar-track">
+              <div class="dose-bar-fill warning" style="width:24%"></div>
+            </div>
+          </div>
+          <button class="btn-sm btn btn-ghost" style="margin-left:12px" onclick="alert('Dettaglio piano')">Dettaglio</button>
+        </div>
+      </div>
+
+      <!-- PIANO 2 -->
+      <div class="therapy-card evening">
+        <div class="therapy-time">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="display:inline-block;vertical-align:middle;margin-bottom:2px">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          Ogni giorno · sera
+        </div>
+        <div class="therapy-name">Atorvastatina 20 mg</div>
+        <div class="therapy-dose">1 cpr · statina · scorte per ~8 giorni — <strong style="color:var(--c-warning)">riacquisto necessario</strong></div>
+        <div class="therapy-card-footer">
+          <div class="dose-bar-wrap" style="flex:1;margin:0">
+            <div class="dose-bar-track">
+              <div class="dose-bar-fill danger" style="width:16%"></div>
+            </div>
+          </div>
+          <button class="btn-sm btn btn-ghost" style="margin-left:12px" onclick="alert('Dettaglio piano')">Dettaglio</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADERENZA SETTIMANALE -->
+    <div class="section fade-up fade-up-4">
+      <div class="section-header">
+        <span class="section-title">Aderenza · ultima settimana</span>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:12px">
+            <div>
+              <div style="font-size:1.8rem;font-weight:800;color:var(--c-ok)">92%</div>
+              <div style="font-size:.73rem;color:var(--c-text-3);font-weight:500">compresse assunte</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600">
+              <span style="display:flex;align-items:center;gap:4px;color:var(--c-ok)">
+                <span style="width:10px;height:10px;background:var(--c-ok);border-radius:3px;display:inline-block"></span>
+                Completa
+              </span>
+              <span style="display:flex;align-items:center;gap:4px;color:var(--c-warning)">
+                <span style="width:10px;height:10px;background:var(--c-warning);border-radius:3px;display:inline-block"></span>
+                Parziale
+              </span>
+            </div>
+          </div>
+          <div class="adherence-chart">
+            <div class="bar-col">
+              <div class="bar-fill full" style="height:40px"></div>
+              <div class="bar-label">L</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-fill full" style="height:40px"></div>
+              <div class="bar-label">M</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-fill part" style="height:32px"></div>
+              <div class="bar-label">M</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-fill full" style="height:40px"></div>
+              <div class="bar-label">G</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-fill full" style="height:40px"></div>
+              <div class="bar-label">V</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-fill full" style="height:40px"></div>
+              <div class="bar-label">S</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-fill today" style="height:28px"></div>
+              <div class="bar-label" style="color:var(--c-primary);font-weight:800">D</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:12px"></div>
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item">
+      <div class="nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </div>
+      Home
+    </a>
+    <a href="inventory.html" class="nav-item">
+      <div class="nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <rect x="3" y="3" width="7" height="7" rx="1"/>
+          <rect x="14" y="3" width="7" height="7" rx="1"/>
+          <rect x="3" y="14" width="7" height="7" rx="1"/>
+          <rect x="14" y="14" width="7" height="7" rx="1"/>
+        </svg>
+      </div>
+      Inventario
+    </a>
+    <div class="nav-item-scan">
+      <a href="scan.html" class="scan-fab">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+          <polyline points="23 7 23 1 17 1"/>
+          <polyline points="1 17 1 23 7 23"/>
+          <polyline points="17 23 23 23 23 17"/>
+          <polyline points="1 7 1 1 7 1"/>
+          <rect x="7" y="7" width="10" height="10" rx="1"/>
+        </svg>
+      </a>
+    </div>
+    <a href="therapy.html" class="nav-item active">
+      <div class="nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+      </div>
+      Terapie
+    </a>
+    <a href="household.html" class="nav-item">
+      <div class="nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      Famiglia
+    </a>
+  </nav>
+
+</div>
+</div>
+<script>
+function confirmDose(btn) {
+  btn.className = 'dose-btn done';
+  btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Presa';
+  btn.closest('.dose-section').querySelector('.badge').textContent = '1/1 presa';
+  btn.closest('.dose-section').querySelector('.badge').className = 'badge badge-ok';
+}
+</script>
+</body>
+</html>

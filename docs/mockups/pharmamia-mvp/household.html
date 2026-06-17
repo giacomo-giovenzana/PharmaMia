@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PharmaMia – Famiglia</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.member-cabinet {
+  background: var(--c-surface);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--sh-sm);
+  margin-bottom: 10px;
+}
+
+.member-cabinet-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.member-cabinet-info { flex: 1; min-width: 0; }
+
+.member-cabinet-name {
+  font-size: .92rem;
+  font-weight: 700;
+  color: var(--c-text);
+}
+
+.member-cabinet-sub {
+  font-size: .73rem;
+  color: var(--c-text-3);
+  margin-top: 2px;
+}
+
+.member-cabinet-stats {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--c-border);
+}
+
+.member-stat {
+  flex: 1;
+  padding: 10px 12px;
+  text-align: center;
+  border-right: 1px solid var(--c-border);
+}
+
+.member-stat:last-child { border-right: none; }
+
+.member-stat-val {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--c-text);
+  line-height: 1;
+}
+
+.member-stat-val.warning { color: var(--c-warning); }
+.member-stat-val.danger  { color: var(--c-danger); }
+
+.member-stat-lbl {
+  font-size: .63rem;
+  color: var(--c-text-3);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  margin-top: 3px;
+}
+
+.invite-card {
+  background: linear-gradient(135deg, var(--c-primary-lt) 0%, #F0F8FF 100%);
+  border-radius: var(--r-lg);
+  border: 1.5px dashed var(--c-primary);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: opacity .15s;
+  margin-bottom: 10px;
+}
+
+.invite-card:hover { opacity: .85; }
+
+.invite-icon {
+  width: 40px; height: 40px;
+  background: var(--c-primary);
+  border-radius: var(--r-md);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.loan-btn-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.loan-accept {
+  flex: 1;
+  height: 40px;
+  background: var(--c-ok);
+  color: #fff;
+  border-radius: var(--r-full);
+  font-size: .8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: opacity .15s;
+}
+
+.loan-decline {
+  height: 40px;
+  padding: 0 16px;
+  background: var(--c-surface-3);
+  color: var(--c-text-3);
+  border-radius: var(--r-full);
+  font-size: .8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity .15s;
+}
+
+.loan-accept:hover, .loan-decline:hover { opacity: .8; }
+</style>
+</head>
+<body>
+<div class="shell">
+<div class="phone">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <span class="topbar-title">Famiglia & Rete</span>
+    <div class="topbar-actions">
+      <button class="topbar-icon-btn" onclick="alert('Invita membro')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="8.5" cy="7" r="4"/>
+          <line x1="20" y1="8" x2="20" y2="14"/>
+          <line x1="23" y1="11" x2="17" y2="11"/>
+        </svg>
+      </button>
+      <button class="topbar-icon-btn" style="background:var(--c-primary);color:#fff" onclick="alert('Impostazioni household')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- SCREEN -->
+  <div class="screen">
+
+    <!-- HOUSEHOLD HERO -->
+    <div class="household-hero">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between">
+        <div>
+          <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;opacity:.7;margin-bottom:6px">La tua farmacia</div>
+          <div class="household-name">Casa Bianchi</div>
+          <div class="household-sub">Milano · 4 membri attivi</div>
+        </div>
+        <div style="background:rgba(255,255,255,.15);border-radius:var(--r-lg);padding:10px 14px;text-align:center">
+          <div style="font-size:1.6rem;font-weight:800;line-height:1">46</div>
+          <div style="font-size:.65rem;opacity:.8;font-weight:600">farmaci</div>
+        </div>
+      </div>
+      <div class="household-stats">
+        <div class="household-stat">
+          <div class="household-stat-val" style="color:#FFD580">1</div>
+          <div class="household-stat-lbl">Scaduto</div>
+        </div>
+        <div class="household-stat">
+          <div class="household-stat-val" style="color:#FFD580">5</div>
+          <div class="household-stat-lbl">In scadenza</div>
+        </div>
+        <div class="household-stat">
+          <div class="household-stat-val">2</div>
+          <div class="household-stat-lbl">Terapie attive</div>
+        </div>
+        <div class="household-stat">
+          <div class="household-stat-val">1</div>
+          <div class="household-stat-lbl">Richieste</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RICHIESTA PRESTITO -->
+    <div class="section fade-up fade-up-1">
+      <div class="section-header">
+        <span class="section-title">Richiesta prestito</span>
+        <span class="badge badge-danger">1 nuova</span>
+      </div>
+
+      <div class="loan-card" id="loanCard">
+        <div class="loan-card-header">
+          <div class="avatar avatar-rose" style="width:38px;height:38px;font-size:.78rem">SI</div>
+          <div>
+            <div class="loan-from">Richiesta da Silvia Marini · Rete amica</div>
+            <div style="font-size:.72rem;color:var(--c-text-3)">Ricevuta oggi alle 10:24</div>
+          </div>
+        </div>
+        <div style="background:var(--c-surface-2);border-radius:var(--r-md);padding:12px;display:flex;align-items:center;gap:10px">
+          <div style="width:36px;height:36px;background:var(--c-ok-lt);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--c-ok)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="loan-med-name">Voltaren Emulgel 1%</div>
+            <div style="font-size:.74rem;color:var(--c-text-3)">Diclofenac · 100g · disponibile nel tuo armadietto</div>
+          </div>
+          <span class="badge badge-ok" style="margin-left:auto;flex-shrink:0">Disponibile</span>
+        </div>
+        <div class="loan-btn-row">
+          <button class="loan-accept" onclick="acceptLoan()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Accetta e condividi
+          </button>
+          <button class="loan-decline" onclick="declineLoan()">Rifiuta</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEMBRI -->
+    <div class="section fade-up fade-up-2">
+      <div class="section-header">
+        <span class="section-title">Membri</span>
+      </div>
+
+      <!-- GIULIA (tu) -->
+      <div class="member-cabinet">
+        <div class="member-cabinet-header">
+          <div class="avatar avatar-teal" style="width:44px;height:44px">GI</div>
+          <div class="member-cabinet-info">
+            <div class="member-cabinet-name">
+              Giulia Bianchi
+              <span style="margin-left:6px" class="caregiver-chip">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                Caregiver
+              </span>
+            </div>
+            <div class="member-cabinet-sub">Tu · armadietto personale</div>
+          </div>
+          <span class="badge badge-muted">23 farmaci</span>
+        </div>
+        <div class="member-cabinet-stats">
+          <div class="member-stat">
+            <div class="member-stat-val danger">1</div>
+            <div class="member-stat-lbl">Scaduti</div>
+          </div>
+          <div class="member-stat">
+            <div class="member-stat-val warning">2</div>
+            <div class="member-stat-lbl">In scad.</div>
+          </div>
+          <div class="member-stat">
+            <div class="member-stat-val">2</div>
+            <div class="member-stat-lbl">Terapie</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MARIO (papà) -->
+      <div class="member-cabinet">
+        <div class="member-cabinet-header">
+          <div class="avatar avatar-amber" style="width:44px;height:44px">MA</div>
+          <div class="member-cabinet-info">
+            <div class="member-cabinet-name">Mario Bianchi</div>
+            <div class="member-cabinet-sub">Papà · gestito da Giulia</div>
+          </div>
+          <span class="badge badge-muted">15 farmaci</span>
+        </div>
+        <div class="member-cabinet-stats">
+          <div class="member-stat">
+            <div class="member-stat-val">0</div>
+            <div class="member-stat-lbl">Scaduti</div>
+          </div>
+          <div class="member-stat">
+            <div class="member-stat-val warning">2</div>
+            <div class="member-stat-lbl">In scad.</div>
+          </div>
+          <div class="member-stat">
+            <div class="member-stat-val">4</div>
+            <div class="member-stat-lbl">Terapie</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MARIA (mamma) -->
+      <div class="member-cabinet">
+        <div class="member-cabinet-header">
+          <div class="avatar avatar-purple" style="width:44px;height:44px">MR</div>
+          <div class="member-cabinet-info">
+            <div class="member-cabinet-name">Maria Bianchi</div>
+            <div class="member-cabinet-sub">Mamma · gestito da Giulia</div>
+          </div>
+          <span class="badge badge-muted">5 farmaci</span>
+        </div>
+        <div class="member-cabinet-stats">
+          <div class="member-stat">
+            <div class="member-stat-val">0</div>
+            <div class="member-stat-lbl">Scaduti</div>
+          </div>
+          <div class="member-stat">
+            <div class="member-stat-val">1</div>
+            <div class="member-stat-lbl">In scad.</div>
+          </div>
+          <div class="member-stat">
+            <div class="member-stat-val">2</div>
+            <div class="member-stat-lbl">Terapie</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LUCA (fratello) -->
+      <div class="member-cabinet">
+        <div class="member-cabinet-header">
+          <div class="avatar avatar-blue" style="width:44px;height:44px">LU</div>
+          <div class="member-cabinet-info">
+            <div class="member-cabinet-name">Luca Bianchi</div>
+            <div class="member-cabinet-sub">Fratello · autonomo</div>
+          </div>
+          <span class="badge badge-muted">3 farmaci</span>
+        </div>
+        <div class="member-cabinet-stats">
+          <div class="member-stat">
+            <div class="member-stat-val">0</div>
+            <div class="member-stat-lbl">Scaduti</div>
+          </div>
+          <div class="member-stat">
+            <div class="member-stat-val">0</div>
+            <div class="member-stat-lbl">In scad.</div>
+          </div>
+          <div class="member-stat">
+            <div class="member-stat-val">0</div>
+            <div class="member-stat-lbl">Terapie</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INVITA -->
+      <div class="invite-card fade-up fade-up-3" onclick="alert('Invita un nuovo membro')">
+        <div class="invite-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </div>
+        <div>
+          <div style="font-size:.88rem;font-weight:700;color:var(--c-primary)">Invita un membro</div>
+          <div style="font-size:.74rem;color:var(--c-text-3);margin-top:2px">Condividi la farmacia di famiglia</div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-primary)" stroke-width="2.5" stroke-linecap="round" style="margin-left:auto">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- RETI COLLEGATE -->
+    <div class="section fade-up fade-up-4">
+      <div class="section-header">
+        <span class="section-title">Reti collegate</span>
+        <button class="section-link" onclick="alert('Connetti una rete')">+ Connetti</button>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="member-row" style="border:none;padding:0">
+            <div class="avatar avatar-rose" style="width:40px;height:40px;font-size:.82rem">SN</div>
+            <div class="member-info">
+              <div class="member-name">Rete Silvia & Nonno</div>
+              <div class="member-sub">3 membri · 1 richiesta pendente</div>
+            </div>
+            <span class="badge badge-warning">1 richiesta</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:12px"></div>
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item">
+      <div class="nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </div>
+      Home
+    </a>
+    <a href="inventory.html" class="nav-item">
+      <div class="nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <rect x="3" y="3" width="7" height="7" rx="1"/>
+          <rect x="14" y="3" width="7" height="7" rx="1"/>
+          <rect x="3" y="14" width="7" height="7" rx="1"/>
+          <rect x="14" y="14" width="7" height="7" rx="1"/>
+        </svg>
+      </div>
+      Inventario
+    </a>
+    <div class="nav-item-scan">
+      <a href="scan.html" class="scan-fab">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+          <polyline points="23 7 23 1 17 1"/>
+          <polyline points="1 17 1 23 7 23"/>
+          <polyline points="17 23 23 23 23 17"/>
+          <polyline points="1 7 1 1 7 1"/>
+          <rect x="7" y="7" width="10" height="10" rx="1"/>
+        </svg>
+      </a>
+    </div>
+    <a href="therapy.html" class="nav-item">
+      <div class="nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+      </div>
+      Terapie
+    </a>
+    <a href="household.html" class="nav-item active">
+      <div class="nav-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      Famiglia
+    </a>
+  </nav>
+
+</div>
+</div>
+<script>
+function acceptLoan() {
+  const card = document.getElementById('loanCard');
+  card.style.transition = 'opacity .3s';
+  card.style.opacity = '0';
+  setTimeout(() => {
+    card.innerHTML = `
+      <div style="display:flex;align-items:center;gap:10px;padding:4px 0">
+        <div style="width:36px;height:36px;background:var(--c-ok);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;color:#fff">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div>
+          <div style="font-size:.84rem;font-weight:700;color:var(--c-ok)">Prestito confermato!</div>
+          <div style="font-size:.73rem;color:var(--c-text-3)">Silvia è stata avvisata · Voltaren Emulgel condiviso</div>
+        </div>
+      </div>`;
+    card.style.opacity = '1';
+    card.style.background = 'var(--c-ok-lt)';
+    card.style.borderRadius = 'var(--r-lg)';
+    card.style.padding = '16px';
+    card.style.border = '1px solid rgba(37,161,105,.2)';
+  }, 300);
+}
+
+function declineLoan() {
+  const card = document.getElementById('loanCard');
+  card.style.transition = 'opacity .3s, transform .3s';
+  card.style.opacity = '0';
+  card.style.transform = 'scale(.95)';
+  setTimeout(() => card.remove(), 300);
+}
+</script>
+</body>
+</html>
